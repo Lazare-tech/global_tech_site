@@ -1,5 +1,5 @@
 <!-- Main Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2" id="mainNavbar">
+<nav class="navbar navbar-expand-lg navbar-light bg-white  shadow-sm py-2" id="mainNavbar">
   <div class="container">
 
       <!-- Logo + titre -->
