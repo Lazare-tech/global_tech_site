@@ -34,3 +34,21 @@
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     color: white;
 }
+.solu{
+    background: #0056a6;
+}
+.warn{
+    background: #F4A300;
+}
+.service-icon {
+    background-color: #0E3253;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    font-size: 2rem;
+}

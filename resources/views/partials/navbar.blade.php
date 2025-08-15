@@ -1,58 +1,61 @@
+<!-- Main Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2" id="mainNavbar">
+  <div class="container">
 
-
-  <!-- Main Navbar -->
-  <nav class="navbar  navbar-expand-lg  navbar-custom mt-0 mb-0 py-3 shadow-4" id="mainNavbar" style="background-color: #142f6a">
-    <div class="container">
-    <div class="d-block">
-      <a class="navbar-brand me-2 brand-log-title" href="#">
-        <img src="" alt="logo">
-     
+      <!-- Logo + titre -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:50px; height:auto;">
+          
+          <div class="d-flex flex-column ms-2">
+            <span class="fw-bold" style="font-size: 1.1rem; color: #000000;">GLOBAL TECH</span>
+            <small style="font-size: 0.85rem; color: #555555;">INTERNATIONAL CORPORATION</small>
+          </div>
       </a>
-      <h6 class="brand-log-title-h6 text-white">GROUP CONSULTING OFFICE SARL</h6>
-    </div>
+
+      <!-- Bouton mobile -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtonsExample"
           aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars text-white"></i>
+          <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse ms-5" id="navbarButtonsExample">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-menu">
-          <li class="nav-item">
-            <a class="nav-link nav-link-home text-white fw-bold" href="#">Acceuil</a>
-          </li>
-<!-- Navbar dropdown -->
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Expertises
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-      <li>
-        <a class="dropdown-item" href="#">
-        item 1
+      <!-- Liens -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-        </a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="#">
-        item 1
+              <li class="nav-item">
+                  <a class="nav-link fw-bold text-dark" href="#">Accueil</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link fw-bold text-dark" href="#">À propos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link fw-bold text-dark" href="#">Notre histoire</a>
+              </li>
+              
 
-        </a>
-      </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle fw-bold text-dark" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Nos services
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Service 1</a></li>
+                      <li><a class="dropdown-item" href="#">Service 2</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold text-dark" href="#">Nos réalisations</a>
+            </li>
 
-  </ul>
-</li>
-    
+              <li class="nav-item">
+                  <a class="nav-link fw-bold text-white px-3" href="#" style="background-color:#0056A6; border-radius:4px;">
+                      Contacts
+                  </a>
+              </li>
 
-          <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="#">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="#">Contacts</a>
-          </li>
-          
-        </ul>
-
+          </ul>
       </div>
-    </div>
-  </nav>
-  
+
+  </div>
+</nav>
