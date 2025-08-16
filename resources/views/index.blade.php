@@ -67,13 +67,27 @@
         <h3 class="pt-4 fw-bold" style="color:#0E3253;">Qui sommes-nous?</h3>
         <div class="row">
             <div class="col-lg-6">
-                Velit amet dolore magna officia cupidatat laboris velit. Officia et elit id incididunt non qui occaecat do
-                labore ea. Do ullamco consequat labore duis laboris eiusmod ut esse et ea pariatur aliquip Lorem cupidatat.
-                Nisi magna qui pariatur cupidatat incididunt exercitation enim. Anim minim anim eu nisi aute labore
-                excepteur do. Id eu sit tempor labore ut minim ipsum.
-
+                <p>
+                    Velit amet dolore magna officia cupidatat laboris velit. Officia et elit id incididunt non qui occaecat do
+                    labore ea. Do ullamco consequat labore duis laboris eiusmod ut esse et ea pariatur aliquip Lorem cupidatat.
+                    Nisi magna qui pariatur cupidatat incididunt exercitation enim. Anim minim anim eu nisi aute labore
+                    excepteur do. Id eu sit tempor labore ut minim ipsum.
+                </p>
+    
+                <!-- Points forts -->
+                <ul class="list-unstyled mt-3">
+                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Expertise de plus de 10 ans</li>
+                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Une équipe qualifiée et engagée</li>
+                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Des solutions adaptées à vos besoins</li>
+                </ul>
+    
+                <!-- Bouton -->
+                <a href="#about" class="btn btn-dark mt-3">Notre histoire</a>
             </div>
             <div class="col-lg-6">
+                <div class="image-wrapper">
+                    <img src="{{ asset('assets/images/global_groupe.jpg') }}" alt="Notre équipe" class="img-fluid">
+                </div>
             </div>
         </div>
 
@@ -95,37 +109,72 @@
 
             <!-- Service 1 -->
             <div class="col-md-6 col-lg-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <img src="{{ asset('assets/images/distribution.jpg') }}" class="card-img-top" alt="Distribution et alimentation électrique">
-                    <div class="card-body text-center">
-                        <h5 class="fw-bold">Distribution et alimentation électrique</h5>
-                        <p class="text-muted mt-2">
+                <div class="card border-0 shadow-sm">
+                    <!-- Header avec titre stylisé -->
+                    <div class="bg-dark p-3 d-flex align-items-center">
+                        <h6 class="m-0 text-white  px-3 py-2"
+                            style="background: #d7910b; 
+                                   position: relative; 
+                                   display: inline-block; 
+                                   border-radius: 0 5px 5px 0;">
+                            Distribution et alimentation électrique
+                            <!-- effet plié -->
+                            <span style="content:''; position:absolute; left:-15px; top:0; 
+                                         width:0; height:0; 
+                                         border-top: 18px solid transparent; 
+                                         border-bottom: 18px solid transparent; 
+                                         border-right:15px solid #d7910b"></span>
+                        </h6>
+                    </div>
+                
+                    <!-- Contenu -->
+                    <div class="card-body text">
+                        <p class="text-muted">
                             Installation et maintenance de réseaux électriques fiables pour vos infrastructures.
                         </p>
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
+                
+                        <!-- bouton un peu décalé à droite -->
+                        <a href="#" class="btn btn-primary btn-sm mt-3 float-end">
+                            Plus de détails
+                        </a>
                     </div>
                 </div>
+                
+                
+                
             </div>
 
             <!-- Service 2 -->
             <div class="col-md-6 col-lg-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <img src="{{ asset('assets/images/systeme_courant_faible.jpg') }}" class="card-img-top" alt="Systèmes de courants faibles et communications">
-                    <div class="card-body text-center">
-                        <h5 class="fw-bold">Systèmes de courants faibles et communications</h5>
+                <div class="card border-0 shadow-sm">
+                    <div class="d-flex align-items-center bg-dark p-3">
+
+                    <span class="fw-bold text-white ms-3">Systèmes de courants faibles et communications</span>
+                    </div>
+                    <div class="card-body">
                         <p class="text-muted mt-2">
                             Solutions modernes pour vos réseaux informatiques, téléphoniques et domotiques.
                         </p>
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
+ <!-- bouton un peu décalé à droite -->
+ <a href="#" class="btn btn-primary btn-sm mt-2 float-end">
+    Plus de détails
+</a>
                     </div>
                 </div>
             </div>
 
             <!-- Service 3 -->
             <div class="col-md-6 col-lg-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <img src="{{ asset('assets/images/electronique_puissance.jpg') }}" class="card-img-top"
-                        alt="Électronique de puissance et systèmes de contrôle">
+                <div class="card border-0 shadow-sm">
+                    <div class="d-flex align-items-center bg-secondary p-3">
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
+                        <span class="fw-bold text-white ms-3">                        Électronique de puissance et systèmes de contrôle
+                        </span>
+
+                    </div>
                     <div class="card-body text-center">
-                        <h5 class="fw-bold">Électronique de puissance et systèmes de contrôle</h5>
                         <p class="text-muted mt-2">
                             Conception et intégration de systèmes de contrôle et de gestion de l’énergie.
                         </p>
@@ -135,10 +184,14 @@
 
             <!-- Service 4 -->
             <div class="col-md-6 col-lg-3">
-                <div class="card border-0 shadow-sm h-100">
-                    <img src="{{asset('assets/images/ingenierie_securite.jpg')}}" class="card-img-top" alt="Ingénierie de la sécurité">
+                <div class="card border-0 shadow-sm">
+                    <div class="d-flex align-items-center bg-secondary p-3">
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
+                        <span class="fw-bold text-white ms-3">Ingénierie de la sécurité
+                        </span>
+
+                    </div>                   
                     <div class="card-body text-center">
-                        <h5 class="fw-bold">Ingénierie de la sécurité</h5>
                         <p class="text-muted mt-2">
                             Systèmes de surveillance, contrôle d’accès et solutions de sécurité avancées.
                         </p>
@@ -210,20 +263,80 @@
     </section>
 
 
-    <section class='container'>
-        <h3 class="fw-bold" style="color:#0E3253;">Notre parcours</h3>
-        <div class="row">
+    <section class="container-fluid py-5" style="background: linear-gradient(135deg, #0056A6, #0099FF);
+">
+    <div class="container">
+        <div class="row mb-5 align-items-center">
             <div class="col-lg-6">
-                Velit amet dolore magna officia cupidatat laboris velit. Officia et elit id incididunt non qui occaecat do
-                labore ea. Do ullamco consequat labore duis laboris eiusmod ut esse et ea pariatur aliquip Lorem cupidatat.
-                Nisi magna qui pariatur cupidatat incididunt exercitation enim. Anim minim anim eu nisi aute labore
-                excepteur do. Id eu sit tempor labore ut minim ipsum.
-
+                <h2 class="fw-bold text-dark" style="color:#0E3253;">excepteur do. Id eu sit tempor labore ut minim ipsum.
+                </h2>
+                <p class="text-white">Des solutions innovantes et fiables adaptées à vos besoins</p>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 text-lg-end">
+                <a href="#" class="btn btn-dark">Nous contacter</a>
             </div>
         </div>
-
-
-    </section>
+    </div>
+</section>
+<!-- ===================  NEWSLETTER  =================== -->
+<section class="container-fluid py-5 bg-primary bg-gradient text-white">
+    <div class="container">
+      <div class="mx-auto text-center" style="max-width: 700px;">
+        <!-- Ruban -->
+        <span class="badge rounded-pill bg-light text-primary mb-3">
+          🎯 Restez informé
+        </span>
+  
+        <h2 class="fw-bold">Inscrivez-vous à notre newsletter</h2>
+        <p class="text-light opacity-75 mb-4">
+          Des actus sélectionnées, zéro spam. 1 à 2 emails / mois.
+        </p>
+  
+        <!-- Formulaire Bootstrap -->
+        <form action="#" method="post" class="needs-validation" novalidate>
+          <div class="row g-2 justify-content-center">
+            <div class="col-md-7">
+              <div class="input-group">
+                <span class="input-group-text bg-white text-primary">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <input type="email" 
+                       class="form-control" 
+                       name="email" 
+                       placeholder="Votre email" 
+                       required 
+                       autocomplete="email">
+                <div class="invalid-feedback text-start">
+                  Veuillez entrer un email valide.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 d-grid">
+              <button type="submit" class="btn btn-dark fw-bold">
+                S’inscrire
+              </button>
+            </div>
+          </div>
+  
+          <!-- Consentement + honeypot anti-bot -->
+          <div class="form-check mt-3 text-start">
+            <input class="form-check-input" type="checkbox" value="" id="consent" required>
+            <label class="form-check-label" for="consent">
+              J’accepte de recevoir les communications par email.
+            </label>
+            <div class="invalid-feedback">
+              Vous devez accepter pour continuer.
+            </div>
+          </div>
+  
+          <!-- Honeypot caché -->
+          <input type="text" name="_gotcha" class="d-none" tabindex="-1" autocomplete="off">
+  
+          <p class="small text-light opacity-75 mt-3">
+            Vous pourrez vous désabonner à tout moment via le lien présent dans nos emails.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
 @endsection
