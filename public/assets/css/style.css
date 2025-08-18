@@ -59,6 +59,42 @@
     background: #0E3253;
 }
 
+/* Boutons personnalisés du carrousel */
+.carousel-button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FF7F50;
+    color: white;
+    border: none;
+    padding: 1px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Boutons suivant/précédent */
+  .carousel-button.next,
+  .carousel-button.prev {
+    position: relative;
+    left: 50px;
+    background-color: white;
+    border: 1px solid #142f6a;
+    color: #142f6a;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-weight: 900;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Hover des boutons */
+  .carousel-button.next:hover,
+  .carousel-button.prev:hover {
+    background-color: #FF7F50;
+    color: #f2e9d8;
+    border-color: #FF7F50;
+  }
 
 
 /* NEWS LETTER PARTY  */

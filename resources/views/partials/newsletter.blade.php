@@ -32,7 +32,7 @@
               </div>
             </div>
             <div class="col-md-3 d-grid">
-              <button type="submit" class="btn btn-dark bg-dark fw-bold">
+              <button type="submit" class="btn btn-dark bg-white text-dark fw-bold">
                 S’inscrire
               </button>
             </div>

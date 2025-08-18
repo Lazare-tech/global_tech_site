@@ -11,7 +11,7 @@
 
     <!-- Contenu -->
     <div class="container">
-        <h1 class="fw-bold display-4">Construisons ensemble l'avenir numérique</h1>
+        <h1 class="fw-bold display-4">Nos réalisations</h1>
         <p class="lead">Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
         <div class="mt-4">
             <a href="" class="btn btn-primary btn-lg me-2">Découvrir nos solutions</a>
@@ -19,5 +19,6 @@
         </div>
     </div>
 </section>
+@include('partials.ctmain')
 @include('partials.newsletter')
 @endsection

@@ -19,8 +19,10 @@
                     <h1 class="fw-bold text-white">Construisons ensemble l'avenir numérique</h1>
                     <p>Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
-                        <a href="" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos realisations</a>
-                        <a href="{{ route('devis') }}" class="btn btn-responsive-warning text-white btn-lg btn-responsive">Demander un devis</a>
+                        <a href="" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
+                            realisations</a>
+                        <a href="{{ route('devis') }}"
+                            class="btn btn-responsive-warning text-white btn-lg btn-responsive">Demander un devis</a>
                     </div>
                 </div>
             </div>
@@ -67,19 +69,22 @@
         <div class="row">
             <div class="col-lg-6">
                 <p>
-                    Velit amet dolore magna officia cupidatat laboris velit. Officia et elit id incididunt non qui occaecat do
-                    labore ea. Do ullamco consequat labore duis laboris eiusmod ut esse et ea pariatur aliquip Lorem cupidatat.
+                    Velit amet dolore magna officia cupidatat laboris velit. Officia et elit id incididunt non qui occaecat
+                    do
+                    labore ea. Do ullamco consequat labore duis laboris eiusmod ut esse et ea pariatur aliquip Lorem
+                    cupidatat.
                     Nisi magna qui pariatur cupidatat incididunt exercitation enim. Anim minim anim eu nisi aute labore
                     excepteur do. Id eu sit tempor labore ut minim ipsum.
                 </p>
-    
+
                 <!-- Points forts -->
                 <ul class="list-unstyled mt-3">
                     <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Expertise de plus de 10 ans</li>
                     <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Une équipe qualifiée et engagée</li>
-                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Des solutions adaptées à vos besoins</li>
+                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Des solutions adaptées à vos besoins
+                    </li>
                 </ul>
-    
+
                 <!-- Bouton -->
                 <a href="{{ route('history') }}" class="btn btn-dark mt-3">Notre histoire</a>
             </div>
@@ -103,9 +108,16 @@
                 <a href="#" class="btn btn-dark">Voir tous nos services</a>
             </div>
         </div>
-
+ <div class="d-flex">
+                <button class="carousel-button prev" onclick="scrollCarousel(-1)">
+                  <i class="fas fa-angle-left"></i>
+                </button>
+                <button class="carousel-button next" onclick="scrollCarousel(1)">
+                  <i class="fas fa-angle-right"></i>
+                </button>
+              </div>
         <div class="row g-4">
-
+           
             <!-- Service 1 -->
             <div class="col-md-6 col-lg-3">
                 <div class="card border-0 shadow-sm">
@@ -118,48 +130,62 @@
                                    border-radius: 0 5px 5px 0;">
                             Distribution et alimentation électrique
                             <!-- effet plié -->
-                            <span style="content:''; position:absolute; left:-15px; top:0; 
+                            <span
+                                style="content:''; position:absolute; left:-15px; top:0; 
                                          width:0; height:0; 
                                          border-top: 18px solid transparent; 
                                          border-bottom: 18px solid transparent; 
                                          border-right:15px solid #d7910b"></span>
                         </h6>
                     </div>
-                
+
                     <!-- Contenu -->
                     <div class="card-body text">
                         <p class="text-muted">
                             Installation et maintenance de réseaux électriques fiables pour vos infrastructures.
                         </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
-                
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo"
+                            style="width:40px; height:auto;">
+
                         <!-- bouton un peu décalé à droite -->
                         <a href="#" class="btn btnservice btn-sm mt-3 float-end text-white">
                             Plus de détails
                         </a>
                     </div>
                 </div>
-                
-                
-                
             </div>
-
             <!-- Service 2 -->
             <div class="col-md-6 col-lg-3">
                 <div class="card border-0 shadow-sm">
                     <div class="d-flex align-items-center bg-dark p-3">
 
-                    <span class="fw-bold text-white ms-3">Systèmes de courants faibles et communications</span>
+
+
+                        <h6 class="m-0 text-white  px-3 py-2"
+                            style="background: #d7910b; 
+                           position: relative; 
+                           display: inline-block; 
+                           border-radius: 0 5px 5px 0;">
+                            Systèmes de courants faibles et communications
+                            <!-- effet plié -->
+                            <span
+                                style="content:''; position:absolute; left:-15px; top:0; 
+                                 width:0; height:0; 
+                                 border-top: 18px solid transparent; 
+                                 border-bottom: 18px solid transparent; 
+                                 border-right:15px solid #d7910b"></span>
+                        </h6>
                     </div>
                     <div class="card-body">
                         <p class="text-muted mt-2">
                             Solutions modernes pour vos réseaux informatiques, téléphoniques et domotiques.
                         </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
- <!-- bouton un peu décalé à droite -->
- <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
-    Plus de détails
-</a>
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo"
+                            style="width:40px; height:auto;">
+                        <!-- bouton un peu décalé à droite -->
+                        <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+                            Plus de détails
+                        </a>
                     </div>
                 </div>
             </div>
@@ -168,20 +194,34 @@
             <div class="col-md-6 col-lg-3">
                 <div class="card border-0 shadow-sm">
                     <div class="d-flex align-items-center bg-dark p-3">
-    <span class="fw-bold text-white ms-3">                      
-                     Électronique de puissance et systèmes de contrôle
-    </span>
 
+
+
+                        <h6 class="m-0 text-white  px-3 py-2"
+                            style="background: #d7910b; 
+                               position: relative; 
+                               display: inline-block; 
+                               border-radius: 0 5px 5px 0;">
+                            Systèmes de courants faibles et communications
+                            <!-- effet plié -->
+                            <span
+                                style="content:''; position:absolute; left:-15px; top:0; 
+                                     width:0; height:0; 
+                                     border-top: 18px solid transparent; 
+                                     border-bottom: 18px solid transparent; 
+                                     border-right:15px solid #d7910b"></span>
+                        </h6>
                     </div>
                     <div class="card-body">
                         <p class="text-muted mt-2">
                             Conception et intégration de systèmes de contrôle et de gestion de l’énergie.
                         </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
- <!-- bouton un peu décalé à droite -->
- <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
-    Plus de détails
-</a>
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo"
+                            style="width:40px; height:auto;">
+                        <!-- bouton un peu décalé à droite -->
+                        <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+                            Plus de détails
+                        </a>
                     </div>
                 </div>
             </div>
@@ -189,23 +229,41 @@
             <!-- Service 4 -->
             <div class="col-md-6 col-lg-3">
                 <div class="card border-0 shadow-sm">
-                    <div class="d-flex align-items-center bg-dark p-3">
-                        <span class="fw-bold text-white ms-3">Ingénierie de la sécurité
-                        </span>
 
-                    </div>                   
-                    <div class="card-body">
-                        <p class="text-muted mt-2">
-                            Systèmes de surveillance, contrôle d’accès et solutions de sécurité avancées.
-                        </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
- <!-- bouton un peu décalé à droite -->
- <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
-    Plus de détails
-</a>
+                    <div class="d-flex align-items-center bg-dark p-3">
+
+
+
+                        <h6 class="m-0 text-white  px-3 py-2"
+                            style="background: #d7910b; 
+                                   position: relative; 
+                                   display: inline-block; 
+                                   border-radius: 0 5px 5px 0;">
+                            Ingénierie de la sécurité
+                            
+                            <!-- effet plié -->
+                            <span
+                                style="content:''; position:absolute; left:-15px; top:0; 
+                                         width:0; height:0; 
+                                         border-top: 18px solid transparent; 
+                                         border-bottom: 18px solid transparent; 
+                                         border-right:15px solid #d7910b"></span>
+                        </h6>
                     </div>
                 </div>
+                <div class="card-body">
+                    <p class="text-muted mt-2">
+                        Systèmes de surveillance, contrôle d’accès et solutions de sécurité avancées.
+                    </p>
+                    <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo"
+                        style="width:40px; height:auto;">
+                    <!-- bouton un peu décalé à droite -->
+                    <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+                        Plus de détails
+                    </a>
+                </div>
             </div>
+        </div>
 
         </div>
     </section>
@@ -269,9 +327,9 @@
             </div>
         </div>
     </section>
-   
-  
 
-@include('partials.devismain')
-@include('partials.newsletter')
+
+
+    @include('partials.ctmain')
+    @include('partials.newsletter')
 @endsection

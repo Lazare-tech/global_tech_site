@@ -43,7 +43,7 @@
                   </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link fw-bold text-dark" href="#">Nos réalisations</a>
+                <a class="nav-link fw-bold text-dark" href="{{ route('realisation') }}">Nos réalisations</a>
             </li>
 
               <li class="nav-item">

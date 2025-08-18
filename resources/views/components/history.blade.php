@@ -85,6 +85,6 @@
     </div>
      
 </section>
-@include('partials.devismain')
+@include('partials.ctmain')
 @include('partials.newsletter')
 @endsection

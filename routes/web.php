@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 uSE App\Http\Controllers\HistoryController;
 uSE App\Http\Controllers\HomeController;
+uSE App\Http\Controllers\RealisationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +21,5 @@ Route::get('devis',[HomeController::class,'devis'])->name('devis');
 Route::get('contact',[HomeController::class,'contact'])->name('contact');
 
 Route::get('history',[HistoryController::class,'history'])->name('history');
+// REALISATION 
+Route::get('realisations',[RealisationController::class,'index'])->name('realisation');
