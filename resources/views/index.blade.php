@@ -18,10 +18,9 @@
                 <div class="carousel-caption text-center">
                     <h1 class="fw-bold text-white">Construisons ensemble l'avenir numérique</h1>
                     <p>Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
-                    <div class="mt-3">
-                        <a href="" class="btn btn-primary solu btn-lg">Découvrir nos solutions</a>
-
-                        <a href="" class="btn btn-warning warn text-white btn-lg me-2">Demander un devis</a>
+                    <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
+                        <a href="" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos realisations</a>
+                        <a href="{{ route('devis') }}" class="btn btn-responsive-warning text-white btn-lg btn-responsive">Demander un devis</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +81,7 @@
                 </ul>
     
                 <!-- Bouton -->
-                <a href="#about" class="btn btn-dark mt-3">Notre histoire</a>
+                <a href="{{ route('history') }}" class="btn btn-dark mt-3">Notre histoire</a>
             </div>
             <div class="col-lg-6">
                 <div class="image-wrapper">
@@ -135,7 +134,7 @@
                         <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
                 
                         <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn btn-primary btn-sm mt-3 float-end">
+                        <a href="#" class="btn btnservice btn-sm mt-3 float-end text-white">
                             Plus de détails
                         </a>
                     </div>
@@ -158,7 +157,7 @@
                         </p>
                         <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
  <!-- bouton un peu décalé à droite -->
- <a href="#" class="btn btn-primary btn-sm mt-2 float-end">
+ <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
     Plus de détails
 </a>
                     </div>
@@ -168,16 +167,21 @@
             <!-- Service 3 -->
             <div class="col-md-6 col-lg-3">
                 <div class="card border-0 shadow-sm">
-                    <div class="d-flex align-items-center bg-secondary p-3">
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
-                        <span class="fw-bold text-white ms-3">                        Électronique de puissance et systèmes de contrôle
-                        </span>
+                    <div class="d-flex align-items-center bg-dark p-3">
+    <span class="fw-bold text-white ms-3">                      
+                     Électronique de puissance et systèmes de contrôle
+    </span>
 
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <p class="text-muted mt-2">
                             Conception et intégration de systèmes de contrôle et de gestion de l’énergie.
                         </p>
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
+ <!-- bouton un peu décalé à droite -->
+ <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+    Plus de détails
+</a>
                     </div>
                 </div>
             </div>
@@ -185,16 +189,20 @@
             <!-- Service 4 -->
             <div class="col-md-6 col-lg-3">
                 <div class="card border-0 shadow-sm">
-                    <div class="d-flex align-items-center bg-secondary p-3">
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
+                    <div class="d-flex align-items-center bg-dark p-3">
                         <span class="fw-bold text-white ms-3">Ingénierie de la sécurité
                         </span>
 
                     </div>                   
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <p class="text-muted mt-2">
                             Systèmes de surveillance, contrôle d’accès et solutions de sécurité avancées.
                         </p>
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:40px; height:auto;">
+ <!-- bouton un peu décalé à droite -->
+ <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+    Plus de détails
+</a>
                     </div>
                 </div>
             </div>
@@ -261,82 +269,9 @@
             </div>
         </div>
     </section>
+   
+  
 
-
-    <section class="container-fluid py-5" style="background: linear-gradient(135deg, #0056A6, #0099FF);
-">
-    <div class="container">
-        <div class="row mb-5 align-items-center">
-            <div class="col-lg-6">
-                <h2 class="fw-bold text-dark" style="color:#0E3253;">excepteur do. Id eu sit tempor labore ut minim ipsum.
-                </h2>
-                <p class="text-white">Des solutions innovantes et fiables adaptées à vos besoins</p>
-            </div>
-            <div class="col-lg-6 text-lg-end">
-                <a href="#" class="btn btn-dark">Nous contacter</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ===================  NEWSLETTER  =================== -->
-<section class="container-fluid py-5 bg-primary bg-gradient text-white">
-    <div class="container">
-      <div class="mx-auto text-center" style="max-width: 700px;">
-        <!-- Ruban -->
-        <span class="badge rounded-pill bg-light text-primary mb-3">
-          🎯 Restez informé
-        </span>
-  
-        <h2 class="fw-bold">Inscrivez-vous à notre newsletter</h2>
-        <p class="text-light opacity-75 mb-4">
-          Des actus sélectionnées, zéro spam. 1 à 2 emails / mois.
-        </p>
-  
-        <!-- Formulaire Bootstrap -->
-        <form action="#" method="post" class="needs-validation" novalidate>
-          <div class="row g-2 justify-content-center">
-            <div class="col-md-7">
-              <div class="input-group">
-                <span class="input-group-text bg-white text-primary">
-                  <i class="fas fa-envelope"></i>
-                </span>
-                <input type="email" 
-                       class="form-control" 
-                       name="email" 
-                       placeholder="Votre email" 
-                       required 
-                       autocomplete="email">
-                <div class="invalid-feedback text-start">
-                  Veuillez entrer un email valide.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 d-grid">
-              <button type="submit" class="btn btn-dark fw-bold">
-                S’inscrire
-              </button>
-            </div>
-          </div>
-  
-          <!-- Consentement + honeypot anti-bot -->
-          <div class="form-check mt-3 text-start">
-            <input class="form-check-input" type="checkbox" value="" id="consent" required>
-            <label class="form-check-label" for="consent">
-              J’accepte de recevoir les communications par email.
-            </label>
-            <div class="invalid-feedback">
-              Vous devez accepter pour continuer.
-            </div>
-          </div>
-  
-          <!-- Honeypot caché -->
-          <input type="text" name="_gotcha" class="d-none" tabindex="-1" autocomplete="off">
-  
-          <p class="small text-light opacity-75 mt-3">
-            Vous pourrez vous désabonner à tout moment via le lien présent dans nos emails.
-          </p>
-        </form>
-      </div>
-    </div>
-  </section>
+@include('partials.devismain')
+@include('partials.newsletter')
 @endsection

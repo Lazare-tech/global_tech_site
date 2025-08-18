@@ -1,5 +1,5 @@
 <!-- Main Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white  shadow-sm py-2" id="mainNavbar">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2" id="mainNavbar">
   <div class="container">
 
       <!-- Logo + titre -->
@@ -23,13 +23,11 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
               <li class="nav-item">
-                  <a class="nav-link fw-bold text-dark" href="#">Accueil</a>
+                  <a class="nav-link fw-bold text-dark" href="{{ route('home') }}">Accueil</a>
               </li>
+             
               <li class="nav-item">
-                  <a class="nav-link fw-bold text-dark" href="#">À propos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link fw-bold text-dark" href="#">Notre histoire</a>
+                  <a class="nav-link fw-bold text-dark" href="{{ route('history') }}">Notre histoire</a>
               </li>
               
 
@@ -49,10 +47,15 @@
             </li>
 
               <li class="nav-item">
-                  <a class="nav-link fw-bold text-white px-3" href="#" style="background-color:#0056A6; border-radius:4px;">
+                  <a class="nav-link fw-bold text-dark px-3" href="{{ route('contact') }}">
                       Contacts
                   </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold text-white px-3" href="{{  route('devis') }}" style="background-color:#0056A6; border-radius:4px;">
+                    Demander un devis
+                </a>
+            </li>
 
           </ul>
       </div>

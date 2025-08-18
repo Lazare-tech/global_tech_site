@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+uSE App\Http\Controllers\HistoryController;
+uSE App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',[HomeController::class,'home'])->name('home');
+Route::get('devis',[HomeController::class,'devis'])->name('devis');
+Route::get('contact',[HomeController::class,'contact'])->name('contact');
+
+Route::get('history',[HistoryController::class,'history'])->name('history');

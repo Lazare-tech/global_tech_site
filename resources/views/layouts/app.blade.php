@@ -18,6 +18,8 @@
     {{-- Contenu spécifique à chaque page --}}
     <section>
         @yield('content')
+
+
     </section>
 
     @include('partials.footer')
