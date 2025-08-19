@@ -38,7 +38,7 @@
                       Nos services
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Service 1</a></li>
+                      <li><a class="dropdown-item" href="{{ route('service') }}">Installation et maintenance electrique</a></li>
                       <li><a class="dropdown-item" href="#">Service 2</a></li>
                   </ul>
               </li>

@@ -72,7 +72,7 @@
       
                 <div class="col-12">
                   <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">
+                    <button type="submit" class="btn btn-responsive-primaryl btn-lg">
                       <i class="fas fa-paper-plane"></i> Envoyer
                     </button>
                   </div>

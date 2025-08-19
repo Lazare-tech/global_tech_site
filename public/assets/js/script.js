@@ -1,37 +1,35 @@
-    const backToTopButton = document.getElementById('backToTop');
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200;
 
-    // Afficher le bouton après 100px de scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            backToTopButton.style.display = 'block';
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const suffix = counter.getAttribute('data-suffix') || "";
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 20);
         } else {
-            backToTopButton.style.display = 'none';
+          counter.innerText = target + suffix;
         }
+      };
+      updateCount();
     });
+  };
 
-    // Scroll vers le haut au clic
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // scroll doux
-        });
-    });
-let mybutton = document.getElementById("myBtn");
-    
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
+  let triggered = false;
+  window.addEventListener('scroll', () => {
+    const section = document.querySelector('#chiffres-cles');
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight && !triggered) {
+      animateCounters();
+      triggered = true;
     }
-    
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-    
+  });
+});

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+   
 </head>
 <body>
 
@@ -25,5 +26,7 @@
     @include('partials.footer')
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/carousel-category.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+
 </body>
 </html>

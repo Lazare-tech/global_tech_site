@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 uSE App\Http\Controllers\HistoryController;
 uSE App\Http\Controllers\HomeController;
 uSE App\Http\Controllers\RealisationController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::get('contact',[HomeController::class,'contact'])->name('contact');
 Route::get('history',[HistoryController::class,'history'])->name('history');
 // REALISATION 
 Route::get('realisations',[RealisationController::class,'index'])->name('realisation');
+Route::get('detail/realisations',[RealisationController::class,'show'])->name('detail_realisation');
+
+//SERVICES
+Route::get('services',[ServiceController::class,'index'])->name('service');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RealisationController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class RealisationController extends Controller
      */
     public function index()
     {
-        return view('components.realisat');
         //
+        return view('components.services');
     }
 
     /**
@@ -44,11 +44,8 @@ class RealisationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show($id)
-
-    public function show()
+    public function show($id)
     {
-        return view('components.realisat_detail');
         //
     }
 
