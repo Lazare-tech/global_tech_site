@@ -257,3 +257,57 @@
 #chiffres-cles h2 {
   font-size: 2.5rem;
 }
+/* team photo */
+.team-photo {
+  width: 130px;          /* largeur fixe */
+  height: 130px;         /* hauteur fixe */
+  object-fit: cover;     /* évite la déformation */
+  border-radius: 50%;    /* arrondi pour faire un cercle */
+}
+/* Section fond dégradé */
+.team-section {
+  background: linear-gradient(135deg, #0056A6, #030e14);
+  color: white;
+}
+
+/* Photo ronde avec bordure branding */
+.team-photo-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #0056b3, #f39c12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Effet hover */
+.team-photo-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(243, 156, 18, 0.8);
+}
+
+/* Bouton moderne */
+.btn-team {
+  background: linear-gradient(135deg, #0056b3, #f39c12);
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.btn-team:hover {
+  background: linear-gradient(135deg, #f39c12, #0056b3);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}

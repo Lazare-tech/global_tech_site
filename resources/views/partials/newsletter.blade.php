@@ -1,5 +1,5 @@
 <!-- ===================  NEWSLETTER  =================== -->
-<section class="container-fluid py-5 bg-dark  text-white">
+<section class="container-fluid py-5   text-white" style="background: #0c0c0c;">
     <div class="container">
       <div class="mx-auto text-center" style="max-width: 700px;">
         <!-- Ruban -->

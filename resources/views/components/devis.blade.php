@@ -31,7 +31,7 @@
                             <label for="projet" class="form-label">Votre projet</label>
                             <textarea class="form-control" id="projet" rows="3" placeholder="Décrivez votre projet" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg w-100">Envoyer ma demande</button>
+                        <button type="submit" class="btn btn-responsive-primaryl btn-lg w-100">Envoyer ma demande</button>
                     </form>
                 </div>
             </div>

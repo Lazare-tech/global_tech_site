@@ -331,5 +331,7 @@
 
 
     @include('partials.ctmain')
+    @include('partials.ctteam')
+
     @include('partials.newsletter')
 @endsection

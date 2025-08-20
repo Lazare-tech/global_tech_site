@@ -82,6 +82,5 @@
       </div>
   
   </section>
-@include('partials.ctaskmain')
 @include('partials.ctmain')
 @endsection

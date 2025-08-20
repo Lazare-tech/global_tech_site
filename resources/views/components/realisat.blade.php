@@ -182,7 +182,7 @@
       </div>
     </div>
   </section>
-@include('partials.ctaskmain')
+
 @include('partials.ctmain')
 @include('partials.newsletter')
 @endsection

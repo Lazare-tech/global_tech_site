@@ -11,7 +11,7 @@
 
     <!-- Contenu -->
     <div class="container">
-        <h1 class="fw-bold display-4">Construisons ensemble l'avenir numérique</h1>
+        <h1 class="fw-bold display-4">Notre histoire</h1>
         <p class="lead">Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
         <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
             <a href="" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos solutions</a>
@@ -86,5 +86,110 @@
      
 </section>
 @include('partials.ctmain')
+<section class="team-section py-3">
+    <div class="container" id="equipe">
+      <h2 class="text-center fw-bold text-white mb-4">Notre Équipe</h2>
+  
+      <!-- Directeur Général -->
+      <div class="text-center mb-3">
+        <div class="team-photo-wrapper mx-auto">
+          <img src="{{ asset('assets/images/team/person3.jpg') }}" 
+               class="rounded-circle team-photo" 
+               alt="Directeur Général">
+        </div>
+        <h5 class="fw-bold text-white mt-3">Jean Dupont</h5>
+        <small class="text-light">Directeur Général</small>
+      </div>
+  
+      <!-- 3 autres membres -->
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4 text-center">
+          <div class="team-photo-wrapper mx-auto">
+            <img src="{{ asset('assets/images/team/person2.png') }}" 
+                 class="rounded-circle team-photo" 
+                 alt="Membre 1">
+          </div>
+          <h6 class="fw-bold text-white mt-3">Marie Koné</h6>
+          <small class="text-light">Directeur support et stratégies</small>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="team-photo-wrapper mx-auto">
+            <img src="{{ asset('assets/images/team/person4.jpg') }}" 
+                 class="rounded-circle team-photo" 
+                 alt="Membre 2">
+          </div>
+          <h6 class="fw-bold text-white mt-3">Ali Sawadogo</h6>
+          <small class="text-light">Directeur des opérations</small>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="team-photo-wrapper mx-auto">
+            <img src="{{ asset('assets/images/team/person1.png') }}" 
+                 class="rounded-circle team-photo" 
+                 alt="Membre 3">
+          </div>
+          <h6 class="fw-bold text-white mt-3">Fatou Diarra</h6>
+          <small class="text-light">Directeur administratif et financier</small>
+        </div>
+      </div>
+      <!--second row team-->
+      <div class="row justify-content-center g-4 py-5">
+        <div class="col-md-2 text-center">
+            <div class="team-photo-wrapper mx-auto">
+              <img src="{{ asset('assets/images/team/person9.jpg') }}" 
+                   class="rounded-circle team-photo" 
+                   alt="Membre 3">
+            </div>
+            <h6 class="fw-bold text-white mt-3">SIRIMA Chadrack</h6>
+            <small class="text-light">Directeur de maintenance et services</small>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="team-photo-wrapper mx-auto">
+              <img src="{{ asset('assets/images/team/person6.jpg') }}" 
+                   class="rounded-circle team-photo" 
+                   alt="Membre 3">
+            </div>
+            <h6 class="fw-bold text-white mt-3">Fatou Diarra</h6>
+            <small class="text-light">Directeur administratif et financier</small>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="team-photo-wrapper mx-auto">
+              <img src="{{ asset('assets/images/team/person7.jpg') }}" 
+                   class="rounded-circle team-photo" 
+                   alt="Membre 3">
+            </div>
+            <h6 class="fw-bold text-white mt-3">KONE Rachid</h6>
+            <small class="text-light">Directeur des projets</small>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="team-photo-wrapper mx-auto">
+              <img src="{{ asset('assets/images/team/person8.jpg') }}" 
+                   class="rounded-circle team-photo" 
+                   alt="Membre 3">
+            </div>
+            <h6 class="fw-bold text-white mt-3">Fatou Diarra</h6>
+            <small class="text-light">Directeur administratif et financier</small>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="team-photo-wrapper mx-auto">
+              <img src="{{ asset('assets/images/team/person5.jpg') }}" 
+                   class="rounded-circle team-photo" 
+                   alt="Membre 3">
+            </div>
+            <h6 class="fw-bold text-white mt-3">SOULAMA Mariam</h6>
+            <small class="text-light">Directrice ressources humaines</small>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="team-photo-wrapper mx-auto">
+              <img src="{{ asset('assets/images/team/person1.png') }}" 
+                   class="rounded-circle team-photo" 
+                   alt="Membre 3">
+            </div>
+            <h6 class="fw-bold text-white mt-3">CISSE Junior</h6>
+            <small class="text-light">Directeur comptable et commercial</small>
+          </div>
+      </div>
+  
+    </div>
+  </section>
 @include('partials.newsletter')
 @endsection
