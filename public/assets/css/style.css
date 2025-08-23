@@ -80,7 +80,7 @@
   .carousel-button.next,
   .carousel-button.prev {
     position: relative;
-    left: 50px;
+    left: 20px;
     background-color: white;
     border: 1px solid #142f6a;
     color: #142f6a;
@@ -93,12 +93,89 @@
   /* Hover des boutons */
   .carousel-button.next:hover,
   .carousel-button.prev:hover {
-    background-color: #FF7F50;
+    background-color: #d7910b;;
     color: #f2e9d8;
-    border-color: #FF7F50;
+    border-color: #d7910b;;
   }
 
 
+  .carousel-container {
+    display: flex;              /* met les items en ligne */
+    flex-wrap: nowrap;          /* empêche le retour à la ligne */
+    overflow-x: auto;           /* active le scroll horizontal */
+    scroll-behavior: smooth;
+  }
+  
+  .carou .carousel-item {
+    flex: 0 0 auto;             /* largeur fixe, pas de rétrécissement */
+    width: 250px;
+    margin-right: 15px;
+  }
+  
+  .carou .carousel-item h6 {
+    white-space: normal;        /* permet au texte du titre de se couper normalement */
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+  
+/* Chaque item est en ligne */
+.carou .carousel-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+  margin-right: 15px;
+}
+
+/* Corps de la carte un peu plus compact */
+.carou .carousel-item .card-body {
+  font-size: 13px;
+}
+
+/* Masquer la scrollbar */
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.carousel-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+ 
+.band{content:'';
+position:absolute;
+left:-15px;
+ top:0; 
+width:0; height:0; 
+border-top: 18px solid transparent; 
+border-bottom: 18px solid transparent; 
+border-right:15px solid #d7910b;
+display:inline-block;
+}
+.band-title{
+  
+background: #d7910b; 
+  position: relative; 
+  display: inline-block; 
+  border-radius: 0 5px 5px 0;
+  height: 50px;
+}
+.text-band{
+  font-size: 15px;
+}
+.band-log{
+  width:40px;
+   height:auto;
+
+}
+/* Style pour la scrollbar cachée */
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.carousel-container {
+  -ms-overflow-style: none; /* Cache la scrollbar sur Internet Explorer et Edge */
+  scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+}
+/* fin defilement image des categories  */
 /* NEWS LETTER PARTY  */
 .image-wrapper {
     position: relative;
@@ -122,7 +199,7 @@
 .line {
     position: relative;
     width: 4px;
-    background: #b30000;
+    background: #0056A6;
     min-height: 150px; /* hauteur entre les blocs */
   }
   
@@ -136,7 +213,7 @@
     width: 20px;
     height: 20px;
     background: #fff;
-    border: 4px solid #b30000;
+    border: 4px solid #0056A6;
     border-radius: 50%;
     z-index: 2;
   }
@@ -152,7 +229,7 @@
     content: '';
     position: absolute;
     width: 4px;
-    background: #b30000;
+    background: #0056A6;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -178,7 +255,9 @@
     border-radius: 50%;
     z-index: 1;
   }
- 
+ .text-history{
+   color:black
+ }
   /* Image hexagonale */
   .hex-img {
     width: 480px;
@@ -234,8 +313,47 @@
   .btn-responsive-warning,.btn-responsive-warning:hover{
     background:    #f9ac07;
         border-radius:4px !important;
+        color:black;
 
   }
+  .btn-responsive-primaryl:active {
+  background: #004080 !important; /* une teinte plus foncée de bleu */
+  color: white !important;
+  border-color:#004080  ;
+
+}
+
+.btn-responsive-warning:active {
+  background: #e69900 !important; /* une teinte plus foncée de orange */
+  color: black !important;
+  
+}
+.text-global-tech{
+  color:#f9ac07;
+}
+.text-global,span{
+  font-size: 1.1rem; 
+  color: #000000;
+  
+}
+.text-global , small{
+  font-size: 0.85rem; 
+  color: #555555;
+}
+.btn-responsive-primaryl,
+.btn-responsive-warning {
+  -webkit-tap-highlight-color: transparent; /* supprime le highlight bleu sur mobile */
+  -webkit-user-select: none; /* évite la sélection de texte par erreur */
+  user-select: none;
+}
+p.lead {
+  max-width: 600px;     /* limite la largeur pour forcer un retour à la ligne */
+  white-space: normal;  /* permet de couper le texte */
+  word-wrap: break-word; /* si un mot est trop long, il sera coupé */
+  margin: 0 auto;       /* centre le texte */
+}
+
+
 
   #hist{
     font-family: Arial, sans-serif;

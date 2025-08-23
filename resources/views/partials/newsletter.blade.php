@@ -8,9 +8,7 @@
         </span>
   
         <h2 class="fw-bold">Inscrivez-vous à notre newsletter</h2>
-        <p class="text-light opacity-75 mb-4">
-          Des actus sélectionnées, zéro spam. 1 à 2 emails / mois.
-        </p>
+     
   
         <!-- Formulaire Bootstrap -->
         <form action="#" method="post" class="needs-validation" novalidate>
@@ -38,16 +36,7 @@
             </div>
           </div>
   
-          <!-- Consentement + honeypot anti-bot -->
-          <div class="form-check mt-3 text-start">
-            <input class="form-check-input" type="checkbox" value="" id="consent" required>
-            <label class="form-check-label" for="consent">
-              J’accepte de recevoir les communications par email.
-            </label>
-            <div class="invalid-feedback">
-              Vous devez accepter pour continuer.
-            </div>
-          </div>
+         
   
           <!-- Honeypot caché -->
           <input type="text" name="_gotcha" class="d-none" tabindex="-1" autocomplete="off">

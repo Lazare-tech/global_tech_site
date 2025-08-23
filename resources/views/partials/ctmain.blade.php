@@ -1,5 +1,5 @@
 
-<section class="container-fluid py-5" style="background: #0c0c0c;">
+    <section class="container-fluid py-5 ctmain" style="background: {{ $bg ?? '#0c0c0c' }};">
     <div class="container">
         <div class="row mb-5 align-items-center">
             <div class="col-lg-6">

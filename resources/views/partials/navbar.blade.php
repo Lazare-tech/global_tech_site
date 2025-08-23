@@ -6,9 +6,9 @@
       <a class="navbar-brand d-flex align-items-center" href="#">
           <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:50px; height:auto;">
           
-          <div class="d-flex flex-column ms-2">
-            <span class="fw-bold" style="font-size: 1.1rem; color: #000000;">GLOBAL TECH</span>
-            <small style="font-size: 0.85rem; color: #555555;">INTERNATIONAL CORPORATION</small>
+          <div class="d-flex flex-column ms-2 text-global">
+            <span class="fw-bold">GLOBAL <span class="text-global-tech">TECH</span></span>
+            <small>INTERNATIONAL CORPORATION</small>
           </div>
       </a>
 
@@ -47,12 +47,12 @@
             </li>
 
               <li class="nav-item">
-                  <a class="nav-link fw-bold text-dark px-3" href="{{ route('contact') }}">
+                  <a class="nav-link fw-bold text-dark" href="{{ route('contact') }}">
                       Contacts
                   </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fw-bold text-white px-3" href="{{  route('devis') }}" style="background-color:#0056A6; border-radius:4px;">
+                <a class="fw-bold text-white btn-md  btn btn-responsive btn-responsive-primaryl" href="{{  route('devis') }}">
                     Demander un devis
                 </a>
             </li>

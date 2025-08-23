@@ -51,5 +51,7 @@
   
   </section>
   
-@include('partials.ctmain')
+@include('partials.ctmain', ['bg' => 'linear-gradient(135deg, #0056A6, #030e14)'])
+
+@include('partials.newsletter')
 @endsection

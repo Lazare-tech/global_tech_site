@@ -36,43 +36,54 @@
   
     <!-- Section: Links  -->
     <section class="">
-      <div class="container text-center text-md-start mt-5">
+      <div class="container-fluid text-center text-md-start mt-5">
         <!-- Grid row -->
         <div class="row mt-3">
           <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Company name
-            </h6>
+            <div class="d-flex align-items-center mb-4">
+              <!-- Logo -->
+              <img src="{{ asset('assets/images/logo_noire.png') }}" 
+                   alt="logo" 
+                   style="width:50px; height:auto;">
+            
+              <!-- Texte à droite -->
+              <div class="ms-2 text-white">
+                <span class="fw-bold" style="font-size:">GLOBAL TECH</span><br>
+                <small style="font-size: 0.85rem">INTERNATIONAL CORPORATION</small>
+              </div>
+            </div>
+            
             <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
+                 Fondée en 2018,l'entreprise Global Africa Technology est un leader spécialisé dans la conception,
+              l'installation et la maintenance de solutions électriques complètes pour les infrastructures
+              de grande envergure.
             </p>
           </div>
           <!-- Grid column -->
   
           <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <div class="col-md-4 col-lg-4 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-              Products
+              Services
             </h6>
             <p>
-              <a href="#!" class="text-reset">Angular</a>
+              <a href="#!" class="text-reset">Distribution et alimentation électrique </a>
             </p>
             <p>
-              <a href="#!" class="text-reset">React</a>
+              <a href="#!" class="text-reset">Systèmes de courant faibles et communication</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Vue</a>
+              <a href="#!" class="text-reset">Electronique de puissance et Systèmes de controle</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Laravel</a>
+              <a href="#!" class="text-reset">Ingénierie de la sécurité</a>
             </p>
           </div>
           <!-- Grid column -->
-  
+{{--   
           <!-- Grid column -->
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -91,20 +102,19 @@
             <p>
               <a href="#!" class="text-reset">Help</a>
             </p>
-          </div>
+          </div> --}}
           <!-- Grid column -->
   
           <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-home me-1"></i>Burkina Faso,Bobo-Dioulasso</p>
             <p>
-              <i class="fas fa-envelope me-3"></i>
-              info@example.com
+              <i class="fas fa-envelope me-1"></i>
+              globaltechnology.bf@gmail.com
             </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            <p><i class="fas fa-phone me-1"></i>+226 76 34 28 07<br>+226 72 13 94 15</p>
           </div>
           <!-- Grid column -->
         </div>

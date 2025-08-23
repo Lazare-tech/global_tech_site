@@ -16,13 +16,13 @@
             <div class="carousel-item active" data-bs-interval="10000">
                 <img src="{{ asset('assets/images/work1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption text-center">
-                    <h1 class="fw-bold text-white">Construisons ensemble l'avenir numérique</h1>
+                    <h1 class="fw-bold text-white">Découvrez votre partenaire idéale pour vos projets en génie electrique</h1>
                     <p>Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
-                        <a href="" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
+                        <a href="{{ route('realisation') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
                             realisations</a>
                         <a href="{{ route('devis') }}"
-                            class="btn btn-responsive-warning text-white btn-lg btn-responsive">Demander un devis</a>
+                            class="btn btn-responsive-warning  btn-lg btn-responsive">Demander un devis</a>
                     </div>
                 </div>
             </div>
@@ -116,72 +116,86 @@
                   <i class="fas fa-angle-right"></i>
                 </button>
               </div>
-        <div class="row g-4">
-           
+        <div class="carousel-container   carou ">
             <!-- Service 1 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="carousel-item">
                 <div class="card border-0 shadow-sm">
                     <!-- Header avec titre stylisé -->
                     <div class="bg-dark p-3 d-flex align-items-center">
-                        <h6 class="m-0 text-white  px-3 py-2"
-                            style="background: #d7910b; 
-                                   position: relative; 
-                                   display: inline-block; 
-                                   border-radius: 0 5px 5px 0;">
+                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                          >
                             Distribution et alimentation électrique
                             <!-- effet plié -->
-                            <span
-                                style="content:''; position:absolute; left:-15px; top:0; 
-                                         width:0; height:0; 
-                                         border-top: 18px solid transparent; 
-                                         border-bottom: 18px solid transparent; 
-                                         border-right:15px solid #d7910b"></span>
+                            <span class="band"
+                              >
+                            </span>
                         </h6>
                     </div>
 
                     <!-- Contenu -->
                     <div class="card-body text">
-                        <p class="text-muted">
+                        <p class="text-muted text-band">
                             Installation et maintenance de réseaux électriques fiables pour vos infrastructures.
                         </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo"
-                            style="width:40px; height:auto;">
-
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log"
+>
                         <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn btnservice btn-sm mt-3 float-end text-white">
+                        <a href="#" class="btn btnservice btn-sm mt-2 float-end text-white">
                             Plus de détails
                         </a>
                     </div>
                 </div>
             </div>
+            
+            <div class="carousel-item">
+                <div class="card border-0 shadow-sm">
+                    <!-- Header avec titre stylisé -->
+                    <div class="bg-dark p-3 d-flex align-items-center">
+                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                          >
+                            Distribution et alimentation électrique
+                            <!-- effet plié -->
+                            <span class="band"
+                              >
+                            </span>
+                        </h6>
+                    </div>
+
+                    <!-- Contenu -->
+                    <div class="card-body text">
+                        <p class="text-muted mt-2 text-band">
+                            Installation et maintenance de réseaux électriques fiables pour vos infrastructures.
+                        </p>
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log"
+>
+                        <!-- bouton un peu décalé à droite -->
+                        <a href="#" class="btn btnservice btn-sm mt-2 float-end text-white">
+                            Plus de détails
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Service 2 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="carousel-item">
                 <div class="card border-0 shadow-sm">
                     <div class="d-flex align-items-center bg-dark p-3">
 
 
 
-                        <h6 class="m-0 text-white  px-3 py-2"
-                            style="background: #d7910b; 
-                           position: relative; 
-                           display: inline-block; 
-                           border-radius: 0 5px 5px 0;">
+                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                           >
                             Systèmes de courants faibles et communications
                             <!-- effet plié -->
-                            <span
-                                style="content:''; position:absolute; left:-15px; top:0; 
-                                 width:0; height:0; 
-                                 border-top: 18px solid transparent; 
-                                 border-bottom: 18px solid transparent; 
-                                 border-right:15px solid #d7910b"></span>
+                            <span class="band"
+                                ></span>
                         </h6>
                     </div>
                     <div class="card-body">
-                        <p class="text-muted mt-2">
+                        <p class="text-muted mt-2 text-band">
                             Solutions modernes pour vos réseaux informatiques, téléphoniques et domotiques.
                         </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo"
-                            style="width:40px; height:auto;">
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
                         <!-- bouton un peu décalé à droite -->
                         <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
                             Plus de détails
@@ -191,33 +205,25 @@
             </div>
 
             <!-- Service 3 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="carousel-item">
                 <div class="card border-0 shadow-sm">
                     <div class="d-flex align-items-center bg-dark p-3">
 
 
 
-                        <h6 class="m-0 text-white  px-3 py-2"
-                            style="background: #d7910b; 
-                               position: relative; 
-                               display: inline-block; 
-                               border-radius: 0 5px 5px 0;">
+                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                           >
                             Systèmes de courants faibles et communications
                             <!-- effet plié -->
-                            <span
-                                style="content:''; position:absolute; left:-15px; top:0; 
-                                     width:0; height:0; 
-                                     border-top: 18px solid transparent; 
-                                     border-bottom: 18px solid transparent; 
-                                     border-right:15px solid #d7910b"></span>
+                            <span class="band"
+                              ></span>
                         </h6>
                     </div>
                     <div class="card-body">
-                        <p class="text-muted mt-2">
+                        <p class="text-muted mt-2 text-band">
                             Conception et intégration de systèmes de contrôle et de gestion de l’énergie.
                         </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo"
-                            style="width:40px; height:auto;">
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
                         <!-- bouton un peu décalé à droite -->
                         <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
                             Plus de détails
@@ -226,43 +232,34 @@
                 </div>
             </div>
 
-            <!-- Service 4 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="carousel-item">
                 <div class="card border-0 shadow-sm">
-
                     <div class="d-flex align-items-center bg-dark p-3">
 
 
 
-                        <h6 class="m-0 text-white  px-3 py-2"
-                            style="background: #d7910b; 
-                                   position: relative; 
-                                   display: inline-block; 
-                                   border-radius: 0 5px 5px 0;">
-                            Ingénierie de la sécurité
-                            
+                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                           >
+                            Systèmes de courant
                             <!-- effet plié -->
-                            <span
-                                style="content:''; position:absolute; left:-15px; top:0; 
-                                         width:0; height:0; 
-                                         border-top: 18px solid transparent; 
-                                         border-bottom: 18px solid transparent; 
-                                         border-right:15px solid #d7910b"></span>
+                            <span class="band"
+                              ></span>
                         </h6>
                     </div>
-                </div>
-                <div class="card-body">
-                    <p class="text-muted mt-2">
-                        Systèmes de surveillance, contrôle d’accès et solutions de sécurité avancées.
-                    </p>
-                    <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo"
-                        style="width:40px; height:auto;">
-                    <!-- bouton un peu décalé à droite -->
-                    <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
-                        Plus de détails
-                    </a>
+                    <div class="card-body">
+                        <p class="text-muted mt-2 text-band">
+                            Conception et intégration de systèmes de contrôle et de gestion de l’énergie.
+                        </p>
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
+                        <!-- bouton un peu décalé à droite -->
+                        <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+                            Plus de détails
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            
         </div>
 
         </div>
@@ -330,7 +327,8 @@
 
 
 
-    @include('partials.ctmain')
+    @include('partials.ctmain', ['bg' => '#0c0c0c'])
+
     @include('partials.ctteam')
 
     @include('partials.newsletter')

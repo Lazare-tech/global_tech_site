@@ -1,11 +1,40 @@
 @extends('layouts.app')
 @section('title','Devis')
 @section('content')
-<section class="devis-section py-5 text-white" style="background: linear-gradient(135deg, #0056A6, #030e14);">
+<!-- Hero Demander un Devis -->
+
+  <section class="hero position-relative text-center text-white d-flex align-items-center" style="height:100vh;">
+    <!-- Overlay sombre -->
+    <img src="{{ asset('assets/images/19315.jpg') }}" class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" alt="Hero Background" style="z-index:-2;">
+
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.6); z-index:-1;"></div>
+    <div class="container text-center">
+        <h1 class="fw-bold display-5 text-white">
+          Demandez votre devis en ligne
+        </h1>
+        <p class="lead mt-3">
+          Recevez un devis gratuit, rapide et personnalisé selon vos besoins.  
+          <br>Un conseiller vous répond sous 24h, sans aucun engagement.
+        </p>
+            <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
+
+          <a href="#form-devis" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">
+            Remplir le formulaire
+          </a>
+          <a href="{{ route('contact') }}#contacteconsl" class="btn btn-outline-light btn-lg btn-responsive">
+            Contacter un conseiller
+          </a>
+        </div>
+    </div>
+    
+</section>
+
+  
+<section class="devis-section py-5 text-white" id="form-devis">
     <div class="container">
         <div class="row align-items-center">
             <!-- Texte + Icône -->
-            <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
+            <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start text-dark">
                 <div class="mb-3">
                     <i class="fas fa-lightbulb fa-3x"></i>
                 </div>
@@ -38,5 +67,4 @@
         </div>
     </div>
 </section>
-@include('partials.newsletter')
 @endsection

@@ -16,10 +16,9 @@
         <p class="lead">
             Nous accompagnons entreprises, institutions et particuliers dans la mise en place de solutions électriques modernes, sécurisées et durables.
         </p>
-        <div class="mt-4">
-            <a href="" class="btn btn-primary btn-lg me-2">Découvrir nos solutions</a>
-            <a href="" class="btn btn-warning text-white btn-lg">Demander un devis</a>
-        </div>
+        <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
+          <a href="{{ route('realisation') }}#portofolio-section" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Explorer nos projets</a>
+             </div>
     </div>
 </section>
   <!-- Section Chiffres Clés -->
@@ -65,7 +64,7 @@
     </div>
   </section>
   <!-- Section Réalisations -->
-<section class="container py-5">
+<section class="container py-5" id="portofolio-section">
 
     <!-- Header -->
     <div class="row mb-4 align-items-center">
@@ -182,7 +181,7 @@
       </div>
     </div>
   </section>
+@include('partials.ctmain', ['bg' => 'linear-gradient(135deg, #0056A6, #030e14)'])
 
-@include('partials.ctmain')
 @include('partials.newsletter')
 @endsection

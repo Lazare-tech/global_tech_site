@@ -12,10 +12,11 @@
     <!-- Contenu -->
     <div class="container">
         <h1 class="fw-bold display-4">Notre histoire</h1>
-        <p class="lead">Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
+        <p class="lead">
+          Depuis notre création, nous accompagnons les entreprises avec passion et innovation.        
+        </p>
         <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
-            <a href="" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos solutions</a>
-            <a href="" class="btn btn-responsive-warning text-white btn-lg btn-responsive">Demander un devis</a>
+            <a href="#story-section" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">  En savoir plus</a>
         </div>
         
         
@@ -23,13 +24,13 @@
 </section>
 <section class="container-fluid" id="hist">
 
-    <div class="timeline container">
+    <div class="timeline container" id="story-section">
 
         <!-- Étape 1 : Texte - Ligne - Image -->
         <div class="row align-items-center mb-5 flex-column flex-md-row">
             <div class="col-md-5 text-start mb-3 mb-md-0">
                 <div class="content bg-white shadow rounded p-4 d-inline-block">
-                    <h2 class="text-danger">2018</h2>
+                    <h2 class="text-history">2018</h2>
                     <p>
                         Une équipe d'ingénieurs passionnés, forts de plusieurs années d'expérience, crée une entité capable de relever 
                         les défis complexes de l'électricité. Début avec de petits projets qui ont permis de consolider les bases techniques.
@@ -54,7 +55,7 @@
             </div>
             <div class="col-md-5 text-start text-md-start mb-3 mb-md-0">
                 <div class="content bg-white shadow rounded p-4 d-inline-block">
-                    <h2 class="text-danger">Années suivantes</h2>
+                    <h2 class="text-history">Années suivantes</h2>
                     <p>
                         Nos expertises se diversifient avec les énergies renouvelables, l’automatisation industrielle et les solutions smart grid. 
                         Chaque projet est une opportunité de démontrer notre savoir-faire et d’accroître la confiance de nos clients.
@@ -67,7 +68,7 @@
         <div class="row align-items-center mb-5 flex-column flex-md-row">
             <div class="col-md-5 text-start mb-3 mb-md-0">
                 <div class="content bg-white shadow rounded p-4 d-inline-block">
-                    <h2 class="text-danger">Aujourd'hui</h2>
+                    <h2 class="text-history">Aujourd'hui</h2>
                     <p>
                         Nous sommes fiers du chemin parcouru. Notre histoire est celle d’une croissance constante, d’une adaptation aux évolutions du marché et d’un engagement pour l’innovation. 
                         Nous projetons un avenir où l’électricité sera toujours plus efficace, plus sûre et plus respectueuse de l’environnement.
@@ -85,7 +86,6 @@
     </div>
      
 </section>
-@include('partials.ctmain')
 <section class="team-section py-3">
     <div class="container" id="equipe">
       <h2 class="text-center fw-bold text-white mb-4">Notre Équipe</h2>

@@ -2,28 +2,34 @@
 @section('title','contacts')
 @section('content')
 <!-- Hero Section -->
-<section class="hero position-relative text-center text-white d-flex align-items-center" style="height:100vh;">
+<section class="hero position-relative text-center text-white d-flex align-items-center" style="height:100vh;"  id="contacteconsl">
     <!-- Image de fond -->
-    <img src="{{ asset('assets/images/IMG-20250815-WA0023.jpg') }}" class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" alt="Hero Background" style="z-index:-2;">
+    <img src="{{ asset('assets/images/contact.jpg') }}" class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" alt="Hero Background" style="z-index:-2;">
 
     <!-- Overlay sombre -->
     <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.6); z-index:-1;"></div>
 
     <!-- Contenu -->
-    <div class="container">
-        <h1 class="fw-bold display-4">Nous vous repondons </h1>
-        <p class="lead">
-            Nous apprécions vos retours et sommes là pour vous aider avec toutes vos
-            questions.
-        </p>
-        <div class="mt-4">
-            <a href="" class="btn btn-primary btn-lg me-2">Découvrir nos solutions</a>
-            <a href="" class="btn btn-warning text-white btn-lg">Demander un devis</a>
-        </div>
+    <div class="container text-center">
+      <h1 class="fw-bold display-4">Besoin d’échanger avec nous&nbsp;?</h1>
+      <p class="lead">
+        Une question, un projet ou simplement envie d’en savoir plus&nbsp;? 
+        Notre équipe est disponible pour vous accompagner à chaque étape.
+      </p>
+      <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
+        <a href="{{ route('contact') }}#form-contact" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">
+          Envoyer un message
+        </a>
+        <a href="tel:+22667487164" class="btn btn-responsive-warning btn-lg btn-responsive">
+          Appeler directement
+        </a>
+        
+      </div>
     </div>
+    
 </section>
 <section class="">
-    <div class="container py-5">
+    <div class="container py-5" id="form-contact">
         <div class="row">
       
           <!-- Formulaire de contact -->
@@ -89,7 +95,7 @@
               <a href="https://wa.me/1234567890?text=Bonjour,%20je%20souhaite%20en%20savoir%20plus"
                  class="btn btn-success btn-sm d-block"
                  target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-whatsapp"></i> Contactez-nous via WhatsApp
+                Contactez-nous via WhatsApp
               </a>
             </div>
       
@@ -109,5 +115,4 @@
         </div>
       </div>
 </section>
-@include('partials.newsletter')
 @endsection
