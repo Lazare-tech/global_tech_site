@@ -18,10 +18,15 @@
 
     {{-- Contenu spécifique à chaque page --}}
     <section>
+    
         @yield('content')
+        
     </section>
 
     @include('partials.footer')
+    <a href="#" class="back-to-top" id="myBtn" onclick="topFunction()">
+        <i class="fas fa-chevron-up"></i> <!-- Icône pour le bouton -->
+      </a>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/carousel-category.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>

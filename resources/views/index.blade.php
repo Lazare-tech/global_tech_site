@@ -3,8 +3,7 @@
 
 @section('content')
 
-    <div id="carouselExampleDark" class="carousel carousel-dark slide">
-        <div class="carousel-overlay"></div>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></button>
@@ -13,8 +12,10 @@
         </div>
 
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
+            <div class="carousel-item active" data-bs-interval="5000">
                 <img src="{{ asset('assets/images/work1.jpg') }}" class="d-block w-100" alt="...">
+                <div class="carousel-overlay"></div>
+
                 <div class="carousel-caption text-center">
                     <h1 class="fw-bold text-white">Découvrez votre partenaire idéale pour vos projets en génie electrique</h1>
                     <p>Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
@@ -27,28 +28,34 @@
                 </div>
             </div>
 
-            <div class="carousel-item" data-bs-interval="2000">
+            <div class="carousel-item" data-bs-interval="5000">
                 <img src="{{ asset('assets/images/work2.jpg') }}" class="d-block w-100" alt="...">
+                <div class="carousel-overlay"></div>
+
                 <div class="carousel-caption text-center">
                     <h1 class="fw-bold text-white">Des services sur mesure</h1>
                     <p>Nous adaptons chaque projet à vos besoins spécifiques.</p>
-                    <div class="mt-3">
-                        <a href="" class="btn btn-primary solu btn-lg">Découvrir nos solutions</a>
-
-                        <a href="" class="btn btn-warning warn text-white btn-lg me-2">Demander un devis</a>
+                    <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
+                        <a href="{{ route('realisation') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
+                            realisations</a>
+                        <a href="{{ route('devis') }}"
+                            class="btn btn-responsive-warning  btn-lg btn-responsive">Demander un devis</a>
                     </div>
                 </div>
             </div>
 
             <div class="carousel-item">
                 <img src="{{ asset('assets/images/work3.jpg') }}" class="d-block w-100" alt="...">
+                <div class="carousel-overlay"></div>
+
                 <div class="carousel-caption text-center">
                     <h1 class="fw-bold text-white">Votre partenaire de confiance</h1>
                     <p>Un accompagnement de bout en bout pour vos projets digitaux.</p>
-                    <div class="mt-3">
-                        <a href="" class="btn btn-primary solu btn-lg">Découvrir nos solutions</a>
-
-                        <a href="" class="btn btn-warning warn text-white btn-lg me-2">Demander un devis</a>
+                    <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
+                        <a href="{{ route('realisation') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
+                            realisations</a>
+                        <a href="{{ route('devis') }}"
+                            class="btn btn-responsive-warning  btn-lg btn-responsive">Demander un devis</a>
                     </div>
                 </div>
             </div>
@@ -122,7 +129,7 @@
                 <div class="card border-0 shadow-sm">
                     <!-- Header avec titre stylisé -->
                     <div class="bg-dark p-3 d-flex align-items-center">
-                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                        <h6 class="m-0 text-white  px-3 py-2"
                           >
                             Distribution et alimentation électrique
                             <!-- effet plié -->
@@ -137,10 +144,9 @@
                         <p class="text-muted text-band">
                             Installation et maintenance de réseaux électriques fiables pour vos infrastructures.
                         </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log"
->
+                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
                         <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn btnservice btn-sm mt-2 float-end text-white">
+                        <a href="#" class="btn btn-dark btn-sm mt-2  float-end text-white">
                             Plus de détails
                         </a>
                     </div>
@@ -151,13 +157,10 @@
                 <div class="card border-0 shadow-sm">
                     <!-- Header avec titre stylisé -->
                     <div class="bg-dark p-3 d-flex align-items-center">
-                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                        <h6 class="m-0 text-white  px-3 py-2"
                           >
                             Distribution et alimentation électrique
-                            <!-- effet plié -->
-                            <span class="band"
-                              >
-                            </span>
+                           
                         </h6>
                     </div>
 
@@ -169,7 +172,7 @@
                         <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log"
 >
                         <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn btnservice btn-sm mt-2 float-end text-white">
+                        <a href="#" class="btn btn-dark btn-sm mt-2 float-end text-white">
                             Plus de détails
                         </a>
                     </div>
@@ -183,12 +186,10 @@
 
 
 
-                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                        <h6 class="m-0 text-white  px-3 py-2"
                            >
                             Systèmes de courants faibles et communications
-                            <!-- effet plié -->
-                            <span class="band"
-                                ></span>
+                           
                         </h6>
                     </div>
                     <div class="card-body">
@@ -197,7 +198,7 @@
                         </p>
                         <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
                         <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+                        <a href="#" class="btn  btn-dark  btn-sm mt-2 float-end text-white">
                             Plus de détails
                         </a>
                     </div>
@@ -211,12 +212,10 @@
 
 
 
-                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                        <h6 class="m-0 text-white  px-3 py-2"
                            >
                             Systèmes de courants faibles et communications
-                            <!-- effet plié -->
-                            <span class="band"
-                              ></span>
+                           
                         </h6>
                     </div>
                     <div class="card-body">
@@ -225,7 +224,7 @@
                         </p>
                         <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
                         <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+                        <a href="#" class="btn  btn-dark  btn-sm mt-2 float-end text-white">
                             Plus de détails
                         </a>
                     </div>
@@ -238,12 +237,11 @@
 
 
 
-                        <h6 class="m-0 text-white  px-3 py-2 band-title"
+                        <h6 class="m-0 text-white  px-3 py-2"
                            >
-                            Systèmes de courant
-                            <!-- effet plié -->
-                            <span class="band"
-                              ></span>
+                            Systèmes de courant&ensp;&ensp;&ensp;&ensp;&ensp;
+                            &ensp;&ensp;&ensp;&ensp;&ensp;
+                         
                         </h6>
                     </div>
                     <div class="card-body">
@@ -252,7 +250,7 @@
                         </p>
                         <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
                         <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn  btnservice  btn-sm mt-2 float-end text-white">
+                        <a href="#" class="btn  btn-dark  btn-sm mt-2 float-end text-white">
                             Plus de détails
                         </a>
                     </div>
@@ -264,8 +262,65 @@
 
         </div>
     </section>
+    <!-- Section Pourquoi Nous Choisir -->
+    <section class="container-fluid" style="background:#f8f9fa">
+<div class="container py-5">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">Pourquoi nous choisir ?</h2>
+      <p class="text-dark">
+        Nous mettons notre expertise au service de vos projets avec un seul objectif : 
+        garantir des solutions fiables, sécurisées et livrées dans les temps.
+      </p>
+    </div>
+  
+    <div class="row g-4">
+      <!-- Point 1 -->
+      <div class="col-md-4">
+        <div class=" h-100  border-0 text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-bolt fa-2x choiceglobtech"></i>
+          </div>
+          <h5 class="fw-bold">Expertise éprouvée & polyvalence</h5>
+          <p class="text-muted">
+            Des années d’expérience et une équipe multidisciplinaire capable 
+            de répondre à des besoins variés avec professionnalisme.
+          </p>
+        </div>
+      </div>
+  
+      <!-- Point 2 -->
+      <div class="col-md-4">
+        <div class=" h-100 border-0 text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-shield-alt fa-2x text-success"></i>
+          </div>
+          <h5 class="fw-bold">Qualité & sécurité sans compromis</h5>
+          <p class="text-muted">
+            Chaque projet respecte des standards élevés afin de vous assurer 
+            fiabilité, durabilité et tranquillité d’esprit.
+          </p>
+        </div>
+      </div>
+  
+      <!-- Point 3 -->
+      <div class="col-md-4">
+        <div class="h-100 border-0 text-center p-4">
+          <div class="mb-3">
+            <i class="fas fa-clock fa-2x choiceglobtech"></i>
+          </div>
+          <h5 class="fw-bold">Respect des délais & du budget</h5>
+          <p class="text-muted">
+            Nous planifions avec rigueur pour livrer vos projets dans les 
+            temps impartis, sans dépassement imprévu.
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+  </section>
+  
     <!-- Section Mission – Vision – Valeurs -->
-    <section class="container-fluid py-5" style="background-color: #f8f9fa;">
+    <section class="container-fluid py-5">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold" style="color:#0E3253;">Mission, Valeurs & Vision</h2>
@@ -327,7 +382,7 @@
 
 
 
-    @include('partials.ctmain', ['bg' => '#0c0c0c'])
+    @include('partials.ctmain', ['bg' => 'linear-gradient(135deg, #0056A6, #030e14'])
 
     @include('partials.ctteam')
 

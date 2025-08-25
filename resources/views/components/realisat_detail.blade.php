@@ -17,8 +17,7 @@
             Nous accompagnons entreprises, institutions et particuliers dans la mise en place de solutions électriques modernes, sécurisées et durables.
         </p>
         <div class="mt-4">
-            <a href="" class="btn btn-primary btn-lg me-2">Découvrir nos solutions</a>
-            <a href="" class="btn btn-warning text-white btn-lg">Demander un devis</a>
+            <a href="" class="btn btn-primary btn-lg me-2">Découvrir</a>
         </div>
     </div>
 </section>

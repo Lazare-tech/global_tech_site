@@ -88,104 +88,104 @@
 </section>
 <section class="team-section py-3">
     <div class="container" id="equipe">
-      <h2 class="text-center fw-bold text-white mb-4">Notre Équipe</h2>
+      <h2 class="text-center fw-bold text-dark mb-4">Notre Équipe</h2>
   
       <!-- Directeur Général -->
-      <div class="text-center mb-3">
+      <div class="text-center mb-3 text-dark">
         <div class="team-photo-wrapper mx-auto">
           <img src="{{ asset('assets/images/team/person3.jpg') }}" 
                class="rounded-circle team-photo" 
                alt="Directeur Général">
         </div>
-        <h5 class="fw-bold text-white mt-3">Jean Dupont</h5>
-        <small class="text-light">Directeur Général</small>
+        <h5 class="fw-bold  mt-3">Jean Dupont</h5>
+        <small class="">Directeur Général</small>
       </div>
   
       <!-- 3 autres membres -->
       <div class="row justify-content-center g-4">
-        <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center text-dark">
           <div class="team-photo-wrapper mx-auto">
             <img src="{{ asset('assets/images/team/person2.png') }}" 
                  class="rounded-circle team-photo" 
                  alt="Membre 1">
           </div>
-          <h6 class="fw-bold text-white mt-3">Marie Koné</h6>
-          <small class="text-light">Directeur support et stratégies</small>
+          <h6 class="fw-bold  mt-3">Marie Koné</h6>
+          <small class="">Directeur support et stratégies</small>
         </div>
-        <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center text-dark">
           <div class="team-photo-wrapper mx-auto">
             <img src="{{ asset('assets/images/team/person4.jpg') }}" 
                  class="rounded-circle team-photo" 
                  alt="Membre 2">
           </div>
-          <h6 class="fw-bold text-white mt-3">Ali Sawadogo</h6>
-          <small class="text-light">Directeur des opérations</small>
+          <h6 class="fw-bold mt-3">Ali Sawadogo</h6>
+          <small class="">Directeur des opérations</small>
         </div>
-        <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center text-dark">
           <div class="team-photo-wrapper mx-auto">
             <img src="{{ asset('assets/images/team/person1.png') }}" 
                  class="rounded-circle team-photo" 
                  alt="Membre 3">
           </div>
-          <h6 class="fw-bold text-white mt-3">Fatou Diarra</h6>
-          <small class="text-light">Directeur administratif et financier</small>
+          <h6 class="fw-bold mt-3">Fatou Diarra</h6>
+          <small class="">Directeur administratif et financier</small>
         </div>
       </div>
       <!--second row team-->
       <div class="row justify-content-center g-4 py-5">
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center text-dark">
             <div class="team-photo-wrapper mx-auto">
               <img src="{{ asset('assets/images/team/person9.jpg') }}" 
                    class="rounded-circle team-photo" 
                    alt="Membre 3">
             </div>
-            <h6 class="fw-bold text-white mt-3">SIRIMA Chadrack</h6>
-            <small class="text-light">Directeur de maintenance et services</small>
+            <h6 class="fw-bold mt-3">SIRIMA Chadrack</h6>
+            <small class="">Directeur de maintenance et services</small>
           </div>
-          <div class="col-md-2 text-center">
+          <div class="col-md-2 text-center text-dark">
             <div class="team-photo-wrapper mx-auto">
               <img src="{{ asset('assets/images/team/person6.jpg') }}" 
                    class="rounded-circle team-photo" 
                    alt="Membre 3">
             </div>
-            <h6 class="fw-bold text-white mt-3">Fatou Diarra</h6>
-            <small class="text-light">Directeur administratif et financier</small>
+            <h6 class="fw-bold mt-3">Fatou Diarra</h6>
+            <small class="">Directeur administratif et financier</small>
           </div>
-          <div class="col-md-2 text-center">
+          <div class="col-md-2 text-center text-dark">
             <div class="team-photo-wrapper mx-auto">
               <img src="{{ asset('assets/images/team/person7.jpg') }}" 
                    class="rounded-circle team-photo" 
                    alt="Membre 3">
             </div>
-            <h6 class="fw-bold text-white mt-3">KONE Rachid</h6>
-            <small class="text-light">Directeur des projets</small>
+            <h6 class="fw-bold  mt-3">KONE Rachid</h6>
+            <small class="">Directeur des projets</small>
           </div>
-          <div class="col-md-2 text-center">
+          <div class="col-md-2 text-center text-dark">
             <div class="team-photo-wrapper mx-auto">
               <img src="{{ asset('assets/images/team/person8.jpg') }}" 
                    class="rounded-circle team-photo" 
                    alt="Membre 3">
             </div>
-            <h6 class="fw-bold text-white mt-3">Fatou Diarra</h6>
-            <small class="text-light">Directeur administratif et financier</small>
+            <h6 class="fw-bold mt-3">Fatou Diarra</h6>
+            <small class="">Directeur administratif et financier</small>
           </div>
-          <div class="col-md-2 text-center">
+          <div class="col-md-2 text-center text-dark">
             <div class="team-photo-wrapper mx-auto">
               <img src="{{ asset('assets/images/team/person5.jpg') }}" 
                    class="rounded-circle team-photo" 
                    alt="Membre 3">
             </div>
-            <h6 class="fw-bold text-white mt-3">SOULAMA Mariam</h6>
-            <small class="text-light">Directrice ressources humaines</small>
+            <h6 class="fw-bold mt-3">SOULAMA Mariam</h6>
+            <small class="">Directrice ressources humaines</small>
           </div>
-          <div class="col-md-2 text-center">
+          <div class="col-md-2 text-center text-dark">
             <div class="team-photo-wrapper mx-auto">
               <img src="{{ asset('assets/images/team/person1.png') }}" 
                    class="rounded-circle team-photo" 
                    alt="Membre 3">
             </div>
-            <h6 class="fw-bold text-white mt-3">CISSE Junior</h6>
-            <small class="text-light">Directeur comptable et commercial</small>
+            <h6 class="fw-bold mt-3">CISSE Junior</h6>
+            <small class="">Directeur comptable et commercial</small>
           </div>
       </div>
   

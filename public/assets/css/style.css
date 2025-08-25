@@ -27,7 +27,7 @@
     top: 50%;
     transform: translateY(-50%);
     bottom: initial;
-    z-index:100;
+    z-index:2;
 }
 
 /* Texte plus visible */
@@ -54,12 +54,7 @@
     margin: 0 auto 15px;
     font-size: 2rem;
 }
-.btnservice{
-    background: #0E3253;
-}
-.btnservice:hover{
-    background: #0E3253;
-}
+
 
 /* Boutons personnalisés du carrousel */
 .carousel-button {
@@ -69,7 +64,7 @@
     background-color: #FF7F50;
     color: white;
     border: none;
-    padding: 1px 15px;
+    padding: 1px 19px;
     cursor: pointer;
     font-size: 24px;
     border-radius: 50%;
@@ -141,24 +136,7 @@
 }
 
  
-.band{content:'';
-position:absolute;
-left:-15px;
- top:0; 
-width:0; height:0; 
-border-top: 18px solid transparent; 
-border-bottom: 18px solid transparent; 
-border-right:15px solid #d7910b;
-display:inline-block;
-}
-.band-title{
-  
-background: #d7910b; 
-  position: relative; 
-  display: inline-block; 
-  border-radius: 0 5px 5px 0;
-  height: 50px;
-}
+
 .text-band{
   font-size: 15px;
 }
@@ -176,6 +154,9 @@ background: #d7910b;
   scrollbar-width: none; /* Cache la scrollbar sur Firefox */
 }
 /* fin defilement image des categories  */
+
+
+
 /* NEWS LETTER PARTY  */
 .image-wrapper {
     position: relative;
@@ -305,6 +286,7 @@ background: #d7910b;
     }
     
     
+  
   }
   .btn-responsive-primaryl,.btn-responsive-primaryl:hover{
     background:#0056A6; border-radius:4px !important;
@@ -363,6 +345,10 @@ p.lead {
     color: #333;
     
   }
+  /* CHOICE  */
+  .choiceglobtech{
+    color: #d7910b; 
+  }
  /* end party */
  /* REALISA  */
  #chiffres-cles .card {
@@ -384,8 +370,7 @@ p.lead {
 }
 /* Section fond dégradé */
 .team-section {
-  background: linear-gradient(135deg, #0056A6, #030e14);
-  color: white;
+  color: black;
 }
 
 /* Photo ronde avec bordure branding */
@@ -428,4 +413,19 @@ p.lead {
   background: linear-gradient(135deg, #f39c12, #0056b3);
   color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: black;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50%;
+  display: none; /* caché par défaut */
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background: #333;
 }

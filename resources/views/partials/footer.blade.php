@@ -1,11 +1,10 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start  text-white" style="background: linear-gradient(135deg, #0056A6, #030e14);
-">
+<footer class="text-center text-lg-start  text-white" style="background: linear-gradient(135deg, #0056A6, #030e14);">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <!-- Left -->
       <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
+        <span class="text-white">Suivez-nous sur les reseaux sociaux:</span>
       </div>
       <!-- Left -->
   
@@ -49,9 +48,9 @@
                    style="width:50px; height:auto;">
             
               <!-- Texte à droite -->
-              <div class="ms-2 text-white">
-                <span class="fw-bold" style="font-size:">GLOBAL TECH</span><br>
-                <small style="font-size: 0.85rem">INTERNATIONAL CORPORATION</small>
+              <div class="ms-2">
+                <span class="fw-bold text-white">GLOBAL TECH</span><br>
+                <small class="text-white">INTERNATIONAL CORPORATION</small>
               </div>
             </div>
             
@@ -70,16 +69,16 @@
               Services
             </h6>
             <p>
-              <a href="#!" class="text-reset">Distribution et alimentation électrique </a>
+              <a href="#!" class="text-reset text-decoration-none">Distribution et alimentation électrique </a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Systèmes de courant faibles et communication</a>
+              <a href="#!" class="text-reset text-decoration-none">Systèmes de courant faibles et communication</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Electronique de puissance et Systèmes de controle</a>
+              <a href="#!" class="text-reset text-decoration-none">Electronique de puissance et Systèmes de controle</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Ingénierie de la sécurité</a>
+              <a href="#!" class="text-reset text-decoration-none">Ingénierie de la sécurité</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -125,8 +124,8 @@
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2025 Copyright.Tous droits réservés.Powered by
+      <a class="text-reset fw-bold" href="#">yelmaniyel@gmail.com</a>
     </div>
     <!-- Copyright -->
   </footer>
