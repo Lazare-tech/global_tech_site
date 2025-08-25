@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+Use App\Models\Hero;
 use Illuminate\Http\Request;
-use App\Models\Services;
-//
-class ServiceController extends Controller
+
+class HeroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,6 @@ class ServiceController extends Controller
     public function index()
     {
         //
-        $services = Services::all();
-        return response()->json([
-            'services'=> $services
-        ]);
-        return view('components.services');
     }
 
     /**
@@ -40,23 +34,19 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //valider le form
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'image' => 'required|image|mimes;jpeg,jpg,png,gif|max:2048',
         ]);
-        //stocker l'image
-        $imagePath = $request->file('image')->store('service_image','public');
-        //creer champ
-        $service=Services::create([
-            'nom_service' =>$request->nom_service,
+        $imagePath = $request->file('image')->store('hero_image','public');
+        $hero=Hero::create([
             'image' => $imagePath,
-            'description' => $request->description,
+            'texte_principal' => $request->text_principal,
+            'texte_secondaire' => $request->texte_secondaire,
+            'call_to_action_first' => $request->call_to_action_fist,
+            'call_to_action_second' => $request->call_to_action_second,
         ]);
-        return response() ->json([
-            'message' => 'Champ créé avec succès',
-            
-           'service'=>$service ,
-        ]);
+        return response()->json(['message' => 'Champ created successfully','hero'=> $hero]);
     }
 
     /**
@@ -68,7 +58,6 @@ class ServiceController extends Controller
     public function show($id)
     {
         //
-      
     }
 
     /**

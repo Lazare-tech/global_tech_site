@@ -1,7 +1,7 @@
 <!-- ===================  NEWSLETTER  =================== -->
 <section class="container-fluid py-5   text-white" style="background: linear-gradient(135deg, #0A2342, #030e14);
 ">
-    <div class="container">
+    <div class="container" id="newsletterForm" >
       <div class="mx-auto text-center" style="max-width: 700px;">
         <!-- Ruban -->
         <span class="badge rounded-pill bg-light text-primary mb-3">
@@ -12,13 +12,29 @@
      
   
         <!-- Formulaire Bootstrap -->
-        <form action="#" method="post" class="needs-validation" novalidate>
+        @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+        <form action="{{ route('newsletter.store') }}" method="post" class="needs-validation" novalidate>
           <div class="row g-2 justify-content-center">
             <div class="col-md-7">
               <div class="input-group">
                 <span class="input-group-text bg-white text-primary">
                   <i class="fas fa-envelope"></i>
                 </span>
+                @csrf
                 <input type="email" 
                        class="form-control" 
                        name="email" 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 uSE App\Http\Controllers\HistoryController;
 uSE App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsletterController;
 uSE App\Http\Controllers\RealisationController;
 use App\Http\Controllers\ServiceController;
 
@@ -28,3 +29,5 @@ Route::get('detail/realisations',[RealisationController::class,'show'])->name('d
 
 //SERVICES
 Route::get('services',[ServiceController::class,'index'])->name('service');
+//NEWSLETTER
+Route::post('',[NewsletterController::class,'store'])->name('newsletter.store');

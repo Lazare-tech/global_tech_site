@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Services;
+use App\Models\Newsletter;
 //
-class ServiceController extends Controller
+class NewsletterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,6 @@ class ServiceController extends Controller
     public function index()
     {
         //
-        $services = Services::all();
-        return response()->json([
-            'services'=> $services
-        ]);
-        return view('components.services');
     }
 
     /**
@@ -30,6 +25,7 @@ class ServiceController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
@@ -42,21 +38,15 @@ class ServiceController extends Controller
     {
         //
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'email' => 'required|string|email|max:255|unique:newsletters,email',
         ]);
-        //stocker l'image
-        $imagePath = $request->file('image')->store('service_image','public');
-        //creer champ
-        $service=Services::create([
-            'nom_service' =>$request->nom_service,
-            'image' => $imagePath,
-            'description' => $request->description,
+        //
+      
+        Newsletter::create([
+            'email' => $request->email, // ✅ correspond à la colonne
         ]);
-        return response() ->json([
-            'message' => 'Champ créé avec succès',
-            
-           'service'=>$service ,
-        ]);
+        
+        return redirect()->back()->with('success', 'Merci pour votre inscription à la newsletter !');
     }
 
     /**
@@ -68,7 +58,6 @@ class ServiceController extends Controller
     public function show($id)
     {
         //
-      
     }
 
     /**

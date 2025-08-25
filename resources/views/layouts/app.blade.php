@@ -30,6 +30,16 @@
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/carousel-category.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
-
+    @if ($errors->any() || session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('newsletterForm');
+            if(form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    </script>
+    @endif
+    
 </body>
 </html>
