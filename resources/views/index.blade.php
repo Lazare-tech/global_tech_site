@@ -71,6 +71,8 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+  
+    
     <section class='container'>
         <h3 class="pt-4 fw-bold" style="color:#0E3253;">Qui sommes-nous?</h3>
         <div class="row">

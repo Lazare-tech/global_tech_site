@@ -41,6 +41,7 @@ class HeroController extends Controller
         $imagePath = $request->file('image')->store('hero_image','public');
         $hero=Hero::create([
             'image' => $imagePath,
+            'nom-page' =>  $request->nom_page,
             'texte_principal' => $request->text_principal,
             'texte_secondaire' => $request->texte_secondaire,
             'call_to_action_first' => $request->call_to_action_fist,

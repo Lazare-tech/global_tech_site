@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Realisation;
 class HomeController extends Controller
 {
     public function home()
     {
-        return view('index');
+        $realisation=Realisation::all();
+        return view('index',['realisation' => $realisation]);
     }
     public function devis()
     {

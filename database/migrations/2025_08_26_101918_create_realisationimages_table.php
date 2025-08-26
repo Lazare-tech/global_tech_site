@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->unsignedBigInteger('realisation_id');
-            $table->foreign('realisation_id')->references('id')->on('realisations')->OnDelete('cascade'); // chaque image appartient à une réalisation
+            $table->foreign('realisation_id')->references('id')->on('realisations')->onDelete('cascade'); // chaque image appartient à une réalisation
               $table->timestamps();
         });
     }

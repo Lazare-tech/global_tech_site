@@ -39,6 +39,13 @@ class RealisationResource extends Resource
                 DatePicker::make('date_realisation')
                 ->label('Date de realisation')
                 ->required(),
+                FileUpload::make('image')
+                ->label('Image principale')
+                ->image() // force l’upload d’image
+                ->directory('realisation_image') // dossier de stockage (storage/app/public/services)
+                ->disk('public')
+                ->maxSize(2048) // limite en Ko (ici 2 Mo)
+                ->required(),
                             
                             
                 Repeater::make('realisationImages')
@@ -48,7 +55,7 @@ class RealisationResource extends Resource
                     FileUpload::make('image')
                         ->label('Photo du chantier')
                         ->image()
-                        ->directory('realisation_images')
+                        ->directory('realisation_image')
                         ->disk('public')
                         ->required(),
                 ])
@@ -72,6 +79,9 @@ class RealisationResource extends Resource
                 TextColumn::make('date_realisation'),
                 ImageColumn::make('image')
                 ->disk('public')
+                ->visibility('public')
+                ->url(fn ($record) => asset('storage/' . $record->image))
+            
                 ->circular()
                 ->size(60)
 

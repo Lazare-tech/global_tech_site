@@ -2,24 +2,26 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\RealisationimageResource\Pages;
-use App\Filament\Resources\RealisationimageResource\RelationManagers;
-use App\Models\Realisationimage;
+use App\Filament\Resources\HeroResource\Pages;
+use App\Filament\Resources\HeroResource\RelationManagers;
+use App\Models\Hero;
 use Filament\Forms;
-use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+
 //
-class RealisationimageResource extends Resource
+class HeroResource extends Resource
 {
-    protected static ?string $model = Realisationimage::class;
+    protected static ?string $model = Hero::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -28,14 +30,19 @@ class RealisationimageResource extends Resource
         return $form
             ->schema([
                 //
+                TextInput::make('nom_page'),
+                Textarea::make('texte_principal'),
+                Textarea::make('texte_secondaire'),
+                TextInput::make('call_to_action_first'),
+                TextInput::make('call_to_action_second'),
+                
                 FileUpload::make('image')
-                ->label('Image du service')
+                ->label('Image de la page')
                 ->image() // force l’upload d’image
-                ->directory('realisation_image') // dossier de stockage (storage/app/public/services)
+                ->directory('hero_image') // dossier de stockage (storage/app/public/services)
                 ->disk('public')
                 ->maxSize(2048) // limite en Ko (ici 2 Mo)
                 ->required(),
-        
             ]);
     }
 
@@ -45,9 +52,14 @@ class RealisationimageResource extends Resource
             ->columns([
                 //
                 TextColumn::make('id'),
-                TextColumn::make('realisation_id'),
+                TextColumn::make('slug'),
+                TextColumn::make('nom_page'),
+                TextColumn::make('texte_principal'),
+                TextColumn::make('texte_secondaire'),
+                TextColumn::make('call_to_action_first'),
+                TextColumn::make('call_to_action_second'),
                 ImageColumn::make('image')
-                ->label('image')
+                ->label('Image de la page')
                 ->disk('public')
                 ->circular()
                 ->size(60)
@@ -73,9 +85,9 @@ class RealisationimageResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRealisationimages::route('/'),
-            'create' => Pages\CreateRealisationimage::route('/create'),
-            'edit' => Pages\EditRealisationimage::route('/{record}/edit'),
+            'index' => Pages\ListHeroes::route('/'),
+            'create' => Pages\CreateHero::route('/create'),
+            'edit' => Pages\EditHero::route('/{record}/edit'),
         ];
     }    
 }
