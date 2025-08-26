@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Realisation;
+//
 class RealisationController extends Controller
 {
     /**
@@ -36,6 +37,13 @@ class RealisationController extends Controller
     public function store(Request $request)
     {
         //
+        $imagePath = $request->file('image')->store('realisation_image','public');
+        Realisation::create([
+            'titre' => $request->titre,
+            'image' => $imagePath,
+            'description' => $request->description,
+            'lieu_realisation' => $request->lieu_realisation,
+        ]);
     }
 
     /**

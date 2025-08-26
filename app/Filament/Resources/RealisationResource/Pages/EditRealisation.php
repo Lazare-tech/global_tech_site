@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ServiceResource\Pages;
+namespace App\Filament\Resources\RealisationResource\Pages;
 
-use App\Filament\Resources\ServiceResource;
+use App\Filament\Resources\RealisationResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditService extends EditRecord
+class EditRealisation extends EditRecord
 {
-    protected static string $resource = ServiceResource::class;
+    protected static string $resource = RealisationResource::class;
 
     protected function getActions(): array
     {
@@ -17,9 +17,8 @@ class EditService extends EditRecord
         ];
     }
     //
-    public function getRedirectUrl():string
+    public function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
-
     }
 }
