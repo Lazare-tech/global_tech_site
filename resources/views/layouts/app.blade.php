@@ -6,6 +6,7 @@
     <title>@yield('title', 'Homepage')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"/>
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
@@ -30,6 +31,7 @@
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/carousel-category.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     @if ($errors->any() || session('success'))
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -38,7 +40,18 @@
                 form.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
+        ////
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('form-contact');
+            if(form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+        //
+        
     </script>
+   
+      
     @endif
     
 </body>

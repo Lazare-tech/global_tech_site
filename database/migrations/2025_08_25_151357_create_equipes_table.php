@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('post');
+            $table->string('image');
             $table->timestamps();
         });
     }

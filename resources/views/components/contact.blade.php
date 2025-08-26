@@ -35,20 +35,38 @@
           <!-- Formulaire de contact -->
           <div class="col-12 col-lg-6 order-2 order-lg-1 py-5 contact-form">
             <div class="bg-white border rounded shadow-sm p-4 p-xl-5">
-              <form method="post" enctype="multipart/form-data">
-                
+            
+        <!-- Formulaire Bootstrap -->
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+              <form action="{{ route('contact.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
+
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label class="form-label" for="nom">
                       <i class="fas fa-user"></i> Nom <span class="text-danger">*</span>
                     </label>
-                    <input type="text" id="nom" class="form-control" placeholder="Votre nom" required>
+                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom" required>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="email">
                       <i class="fas fa-envelope"></i> Email <span class="text-danger">*</span>
                     </label>
-                    <input type="email" id="email" class="form-control" placeholder="Votre email" required>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Votre email" required>
                   </div>
                 </div>
       
@@ -57,13 +75,13 @@
                     <label class="form-label" for="telephone">
                       <i class="fas fa-phone-alt"></i> Téléphone <span class="text-danger">*</span>
                     </label>
-                    <input type="tel" id="telephone" class="form-control" placeholder="Votre numéro" required>
+                    <input id="telephone" type="tel" name="numero_telephone" class="form-control" required>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="objet">
                       <i class="fas fa-tag"></i> Objet <span class="text-danger">*</span>
                     </label>
-                    <input type="text" id="objet" class="form-control" placeholder="Objet de votre message" required>
+                    <input type="text" id="objet" name="objet" class="form-control" placeholder="Objet de votre message" required>
                   </div>
                 </div>
       
@@ -72,7 +90,7 @@
                     <label class="form-label" for="message">
                       <i class="fas fa-comment-alt"></i> Message <span class="text-danger">*</span>
                     </label>
-                    <textarea id="message" class="form-control" rows="4" placeholder="Votre message" required></textarea>
+                    <textarea id="message" name="message" class="form-control" rows="4" placeholder="Votre message" required></textarea>
                   </div>
                 </div>
       
