@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ContactResource\Pages;
-use App\Filament\Resources\ContactResource\RelationManagers;
-use App\Models\Contact;
+use App\Filament\Resources\DevisResource\Pages;
+use App\Filament\Resources\DevisResource\RelationManagers;
+use App\Models\Devis;
 use Filament\Forms;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -15,15 +15,13 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\TextEntry;
-use Filament\Infolists\Components\ImageEntry;
-
-class ContactResource extends Resource
+//
+class DevisResource extends Resource
 {
-    protected static ?string $model = Contact::class;
+    protected static ?string $model = Devis::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-phone';
+    protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
     {
@@ -31,10 +29,8 @@ class ContactResource extends Resource
             ->schema([
                 //
                 TextInput::make('nom'),
-                TextInput::make('objet'),
-                TextInput::make('numero_telephone'),
                 TextInput::make('email'),
-                Textarea::make('message'),
+                Textarea::make('message')
             ]);
     }
 
@@ -45,19 +41,14 @@ class ContactResource extends Resource
                 //
                 TextColumn::make('id'),
                 TextColumn::make('nom'),
-                TextColumn::make('objet'),
-                TextColumn::make('numero_telephone'),
                 TextColumn::make('email'),
-                TextColumn::make('message')->limit(50),
-                  
-               
+                TextColumn::make('message')->limit(50)
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),  
-
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(), 
 
@@ -77,24 +68,21 @@ class ContactResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListContacts::route('/'),
-            'create' => Pages\CreateContact::route('/create'),
-            'edit' => Pages\EditContact::route('/{record}/edit'),
-            'view' => Pages\ViewContact::route('/{record}'), // 👈 page voir
+            'index' => Pages\ListDevis::route('/'),
+            'create' => Pages\CreateDevis::route('/create'),
+            'edit' => Pages\EditDevis::route('/{record}/edit'),
+            'view' => Pages\ViewDevis::route('/{record}'), // 👈 page voir
+
         ];
-        
-    }   
+    }    
     //
-    
     // public static function infolist(Infolist $infolist): Infolist
     // {
     //     return $infolist
     //         ->schema([
     //             TextEntry::make('nom')->label('Nom'),
     //             TextEntry::make('email')->label('Email'),
-    //             TextEntry::make('numero_telephone')->label('Téléphone'),
     //             TextEntry::make('message')->label('Message'),
     //         ]);
     // }
-     
 }

@@ -9,4 +9,10 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateNewsLetter extends CreateRecord
 {
     protected static string $resource = NewsLetterResource::class;
+    //
+    public function getRedirectUrl():string
+    {
+        return $this->getResource()::getUrl('index');
+
+    }
 }

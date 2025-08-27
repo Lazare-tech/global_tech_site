@@ -7,6 +7,7 @@ use App\Http\Controllers\NewsletterController;
 uSE App\Http\Controllers\RealisationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DevisController;
 
 
 /*
@@ -35,3 +36,6 @@ Route::get('services',[ServiceController::class,'index'])->name('service');
 Route::post('',[NewsletterController::class,'store'])->name('newsletter.store');
 //CONTACT
 Route::post('contact',[ContactController::class,'store'])->name('contact.store');
+//DEVIS
+Route::post('devis',[DevisController::class,'store'])->name('devis.store');
+

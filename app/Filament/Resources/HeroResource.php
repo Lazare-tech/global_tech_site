@@ -23,7 +23,7 @@ class HeroResource extends Resource
 {
     protected static ?string $model = Hero::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-sparkles';
 
     public static function form(Form $form): Form
     {
@@ -68,7 +68,10 @@ class HeroResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),  
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(), 
+
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -88,6 +91,8 @@ class HeroResource extends Resource
             'index' => Pages\ListHeroes::route('/'),
             'create' => Pages\CreateHero::route('/create'),
             'edit' => Pages\EditHero::route('/{record}/edit'),
+            'view' => Pages\ViewHero::route('/{record}'), // 👈 page voir
+
         ];
     }    
 }

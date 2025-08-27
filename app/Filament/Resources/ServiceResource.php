@@ -22,7 +22,7 @@ class ServiceResource extends Resource
 {
     protected static ?string $model = Services::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-light-bulb';
 
     public static function form(Form $form): Form
     {
@@ -61,7 +61,10 @@ class ServiceResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),  
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(), 
+
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -80,6 +83,8 @@ class ServiceResource extends Resource
             'index' => Pages\ListServices::route('/'),
             'create' => Pages\CreateService::route('/create'),
             'edit' => Pages\EditService::route('/{record}/edit'),
+            'view' => Pages\ViewService::route('/{record}'), // 👈 page voir
+
         ];
     }    
 }

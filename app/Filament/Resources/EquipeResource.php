@@ -23,7 +23,7 @@ class EquipeResource extends Resource
 {
     protected static ?string $model = Equipe::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
     public static function form(Form $form): Form
     {
@@ -61,7 +61,10 @@ class EquipeResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),  
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(), 
+
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -81,6 +84,8 @@ class EquipeResource extends Resource
             'index' => Pages\ListEquipes::route('/'),
             'create' => Pages\CreateEquipe::route('/create'),
             'edit' => Pages\EditEquipe::route('/{record}/edit'),
+            'view' => Pages\ViewEquipe::route('/{record}'), // 👈 page voir
+
         ];
     }    
 }

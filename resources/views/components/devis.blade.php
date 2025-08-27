@@ -44,24 +44,45 @@
             </div>
 
             <!-- Formulaire -->
-            <div class="col-lg-6">
+            <div class="col-lg-6" id="form-devis">
                 <div class="card shadow-lg rounded p-4 bg-white text-dark">
                     <h4 class="mb-3">Demander un devis</h4>
-                    <form>
-                        <div class="mb-3">
-                            <label for="nom" class="form-label">Nom</label>
-                            <input type="text" class="form-control" id="nom" placeholder="Votre nom" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Votre email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="projet" class="form-label">Votre projet</label>
-                            <textarea class="form-control" id="projet" rows="3" placeholder="Décrivez votre projet" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-responsive-primaryl btn-lg w-100">Envoyer ma demande</button>
-                    </form>
+                    @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <form action="{{ route('devis.store') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="projet" class="form-label">Votre projet</label>
+                        <textarea class="form-control" id="projet" name="message" rows="3" placeholder="Décrivez votre projet" required></textarea>
+                    </div>
+                
+                    <button type="submit" class="btn btn-responsive-primaryl btn-lg w-100">Envoyer ma demande</button>
+                </form>
+                
                 </div>
             </div>
         </div>

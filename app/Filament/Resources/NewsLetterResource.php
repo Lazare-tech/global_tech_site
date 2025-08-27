@@ -19,7 +19,7 @@ class NewsletterResource extends Resource
 {
     protected static ?string $model = Newsletter::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
     public static function form(Form $form): Form
     {
@@ -27,6 +27,11 @@ class NewsletterResource extends Resource
             ->schema([
                 //
                 TextInput::make('email')
+                ->email()
+                ->unique(ignoreRecord: true)
+                ->required()
+                ->rule('email:rfc,dns')
+                ->unique(ignorable: fn ($record) => $record)
             ]);
     }
 

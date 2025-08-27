@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contact;
+use App\Models\Devis;
 //
-class ContactController extends Controller
+class DevisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,18 +38,16 @@ class ContactController extends Controller
         //
         $request->validate([
             'email' => 'required|email:rfc,dns|max:255',
-            'nom' => 'required|string|max:255',
-            'numero_telephone' => 'required|string|max:255',
-            'message' => 'required|string',
+
+        ],[
+            'email.email' => 'Veuillez saisir une adresse e-mail valide.',
         ]);
-        Contact::create([
+        Devis::create([
             'nom' => $request->nom,
-            'objet' => $request->objet,
-            'numero_telephone' => $request->numero_telephone,
             'email' => $request->email,
-            'message' => $request->message,
+            'message' => $request->message
         ]);
-        return redirect()->back()->with('success', 'Merci de nous avoir contacter !');
+        return redirect()->back()->with('success', 'Merci de nous avoir contacter,nous vous repondons au plus vite');
 
     }
 

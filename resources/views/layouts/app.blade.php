@@ -33,23 +33,7 @@
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     @if ($errors->any() || session('success'))
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('newsletterForm');
-            if(form) {
-                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-        ////
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('form-contact');
-            if(form) {
-                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-        //
-        
-    </script>
+    
    
       
     @endif

@@ -49,3 +49,12 @@ function topFunction() {
 }
 
 //
+function scrollToForm(id) {
+  const form = document.getElementById(id);
+  if(form) {
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+      
+        
