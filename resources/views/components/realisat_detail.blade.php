@@ -5,19 +5,19 @@
 <!-- Hero Section -->
 <section class="hero position-relative text-center text-white d-flex align-items-center" style="height:100vh;">
     <!-- Image de fond -->
-    <img src="{{ asset('assets/images/IMG-20250815-WA0023.jpg') }}" class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" alt="Hero Background" style="z-index:-2;">
+    <img src="{{ asset('assets/images/IMG-20250815-WA0023.jpg') }}" class="" alt="Hero Background" id="herocontent">
 
     <!-- Overlay sombre -->
-    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.6); z-index:-1;"></div>
+    <div class="hero-opaciti-hero"></div>
 
     <!-- Contenu -->
-    <div class="container">
+    <div class="container  infoherocontent">
         <h1 class="fw-bold display-4">Installation solaire</h1>
         <p class="lead">
             Nous accompagnons entreprises, institutions et particuliers dans la mise en place de solutions électriques modernes, sécurisées et durables.
         </p>
         <div class="mt-4">
-            <a href="" class="btn btn-primary btn-lg me-2">Découvrir</a>
+            <a href="" class="btn btn-responsive-primaryl btn-lg me-2">Découvrir</a>
         </div>
     </div>
 </section>

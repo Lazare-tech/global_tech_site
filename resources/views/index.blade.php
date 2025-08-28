@@ -16,7 +16,7 @@
                 <img src="{{ asset('assets/images/work1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-overlay"></div>
 
-                <div class="carousel-caption text-center">
+                <div class="carousel-caption text-center  infoherocontent">
                     <h1 class="fw-bold text-white">Découvrez votre partenaire idéale pour vos projets en génie electrique</h1>
                     <p>Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
@@ -32,7 +32,7 @@
                 <img src="{{ asset('assets/images/work2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-overlay"></div>
 
-                <div class="carousel-caption text-center">
+                <div class="carousel-caption text-center  infoherocontent">
                     <h1 class="fw-bold text-white">Des services sur mesure</h1>
                     <p>Nous adaptons chaque projet à vos besoins spécifiques.</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
@@ -48,7 +48,7 @@
                 <img src="{{ asset('assets/images/work3.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-overlay"></div>
 
-                <div class="carousel-caption text-center">
+                <div class="carousel-caption text-center  infoherocontent">
                     <h1 class="fw-bold text-white">Votre partenaire de confiance</h1>
                     <p>Un accompagnement de bout en bout pour vos projets digitaux.</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
@@ -272,6 +272,7 @@
       <p class="text-dark">
         Nous mettons notre expertise au service de vos projets avec un seul objectif : 
         garantir des solutions fiables, sécurisées et livrées dans les temps.
+        
       </p>
     </div>
   
@@ -284,8 +285,9 @@
           </div>
           <h5 class="fw-bold">Expertise éprouvée & polyvalence</h5>
           <p class="text-muted">
-            Des années d’expérience et une équipe multidisciplinaire capable 
-            de répondre à des besoins variés avec professionnalisme.
+               
+            Notre équipe est composée d'ingénieurs et de techniciens hautement qualifiés,
+            possédant une vaste expérience dans tous les aspects du génie électrique.
           </p>
         </div>
       </div>
@@ -298,8 +300,10 @@
           </div>
           <h5 class="fw-bold">Qualité & sécurité sans compromis</h5>
           <p class="text-muted">
-            Chaque projet respecte des standards élevés afin de vous assurer 
-            fiabilité, durabilité et tranquillité d’esprit.
+                 
+            La sécurité est une priorité absolue.Nous nous engageons a fournir des installations
+            électriques qui respectent  les normes de sécurité les plus strictes,minimisant
+            ainsi les risques pour les personnes et les biens.
           </p>
         </div>
       </div>
@@ -312,9 +316,9 @@
           </div>
           <h5 class="fw-bold">Respect des délais & du budget</h5>
           <p class="text-muted">
-            Nous planifions avec rigueur pour livrer vos projets dans les 
-            temps impartis, sans dépassement imprévu.
-          </p>
+          Nous savons que le temps,c'est de l'argent.C'est pourquoi nous nous engageons a respecter
+          scrupuleusement les délais convenus et le budget alloué a chaque projet.
+                  </p>
         </div>
       </div>
     </div>

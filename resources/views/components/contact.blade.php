@@ -4,13 +4,13 @@
 <!-- Hero Section -->
 <section class="hero position-relative text-center text-white d-flex align-items-center" style="height:100vh;"  id="contacteconsl">
     <!-- Image de fond -->
-    <img src="{{ asset('assets/images/contact.jpg') }}" class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" alt="Hero Background" style="z-index:-2;">
+    <img src="{{ asset('assets/images/contact.jpg') }}" alt="Hero Background" id="herocontent">
 
     <!-- Overlay sombre -->
-    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.6); z-index:-1;"></div>
+    <div class="hero-opaciti-hero"></div>
 
     <!-- Contenu -->
-    <div class="container text-center">
+    <div class="container text-center  infoherocontent">
       <h1 class="fw-bold display-4">Besoin d’échanger avec nous&nbsp;?</h1>
       <p class="lead">
         Une question, un projet ou simplement envie d’en savoir plus&nbsp;? 

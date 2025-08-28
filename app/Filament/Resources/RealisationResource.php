@@ -90,7 +90,10 @@ class RealisationResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),  
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(), 
+
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -110,6 +113,8 @@ class RealisationResource extends Resource
             'index' => Pages\ListRealisations::route('/'),
             'create' => Pages\CreateRealisation::route('/create'),
             'edit' => Pages\EditRealisation::route('/{record}/edit'),
+            'view' => Pages\ViewRealisation::route('/{record}'), // 👈 page voir
+
         ];
     }    
 }

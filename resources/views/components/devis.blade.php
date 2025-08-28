@@ -5,10 +5,10 @@
 
   <section class="hero position-relative text-center text-white d-flex align-items-center" style="height:100vh;">
     <!-- Overlay sombre -->
-    <img src="{{ asset('assets/images/19315.jpg') }}" class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" alt="Hero Background" style="z-index:-2;">
+    <img src="{{ asset('assets/images/19315.jpg') }}"  alt="Hero Background" id="herocontent">
 
-    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.6); z-index:-1;"></div>
-    <div class="container text-center">
+    <div class="hero-opaciti-hero"></div>
+    <div class="container text-center infoherocontent">
         <h1 class="fw-bold display-5 text-white">
           Demandez votre devis en ligne
         </h1>

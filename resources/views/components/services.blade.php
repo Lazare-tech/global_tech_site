@@ -11,19 +11,18 @@
     <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.6); z-index:-1;"></div>
 
     <!-- Contenu -->
-    <div class="container">
+    <div class="container  infoherocontent">
         <h1 class="fw-bold display-5">Installation et maintenance electrique</h1>
         <p class="lead">
             Nous accompagnons entreprises, institutions et particuliers dans la mise en place de solutions électriques modernes, sécurisées et durables.
         </p>
         <div class="mt-4">
-            <a href="" class="btn btn-primary btn-lg me-2">Découvrir nos solutions</a>
-            <a href="" class="btn btn-warning text-white btn-lg">Demander un devis</a>
+            <a href="#servicessection" class="btn btn-responsive-primaryl btn-lg me-2">Découvrir</a>
         </div>
     </div>
 </section>
 <!-- Section Service -->
-<section class="container py-5">
+<section class="container py-5" id="servicessection">
     <div class="row align-items-center mb-5">
       <!-- Image illustrative -->
       <div class="col-lg-6 mb-4 mb-lg-0">

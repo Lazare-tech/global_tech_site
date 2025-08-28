@@ -1,5 +1,27 @@
+/* HRO  */
+#herocontent{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  object-fit: cover;
+  z-index: -2;
+}
+.hero-opaciti-hero{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0,0,0,0.6);
+}
+@media screen and (max-width: 753px) {
 
-
+  .infoherocontent{
+    padding-bottom: 200px;
+    
+  }
+}
 /* Carousel plein écran */
 #carouselExampleDark {
     height: 100vh; /* Prend toute la hauteur de l'écran */
