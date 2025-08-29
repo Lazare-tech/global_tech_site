@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Realisation;
+use Illuminate\Support\Str;
+
 //
 class RealisationController extends Controller
 {
@@ -14,7 +16,8 @@ class RealisationController extends Controller
      */
     public function index()
     {
-        return view('components.realisat');
+        $realisations= Realisation::all();
+        return view('components.realisat',compact('realisations'));
         //
     }
 
@@ -54,9 +57,17 @@ class RealisationController extends Controller
      */
     // public function show($id)
 
-    public function show()
+    public function show($id,$slug)
     {
-        return view('components.realisat_detail');
+        $realisations_detail=Realisation::findOrFail($id);
+        $realisations_images=Realisation::with('realisationImages')->findOrFail($id);
+        if($slug !==Str::slug($realisations_detail->titre)){
+            return redirect()->route('detail_realisation',[
+                'id' => $realisations_detail->id,
+                'slug' => Str::slug($realisations_detail->titre)
+            ]);
+        }
+        return view('components.realisat_detail',compact('realisations_detail','realisations_images'));
         //
     }
 

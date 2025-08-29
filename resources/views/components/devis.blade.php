@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title','Devis')
+@section('title', 'Demander un devis - Global Tech International Corporation')
+@section('description', 'Remplissez notre formulaire pour obtenir un devis rapide et personnalisé pour vos projets en électricité, automatisation, sécurité incendie et domotique.')
+
+
 @section('content')
 <!-- Hero Demander un Devis -->
 

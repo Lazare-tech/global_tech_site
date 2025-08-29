@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Realisation;
+use App\Models\Services;
 class HomeController extends Controller
 {
     public function home()
     {
-        $realisation=Realisation::all();
-        return view('index',['realisation' => $realisation]);
+        $services=Services::all();
+        
+        return view('index',compact('services'));
     }
     public function devis()
     {

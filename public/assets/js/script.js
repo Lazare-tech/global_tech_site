@@ -55,6 +55,37 @@ function scrollToForm(id) {
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
+//
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById("toggleProjects");
+  const extraProjects = document.querySelectorAll(".extra-project");
+  let expanded = false;
 
-      
+  toggleBtn.addEventListener("click", function () {
+    expanded = !expanded;
+
+    extraProjects.forEach(project => {
+      if (expanded) {
+        project.classList.remove("d-none");   // on l’affiche
+        project.classList.add("fade-in");     // préparation animation
+
+        // petit délai pour déclencher le show
+        setTimeout(() => {
+          project.classList.add("show");
+        }, 50);
+      } else {
+        project.classList.remove("show"); // fade-out
         
+        // attendre la fin de la transition avant de cacher
+        setTimeout(() => {
+          project.classList.add("d-none");
+          project.classList.remove("fade-in");
+        }, 400);
+      }
+    });
+
+    toggleBtn.textContent = expanded 
+      ? "Voir moins de réalisations" 
+      : "Voir tous nos réalisations";
+  });
+}); 

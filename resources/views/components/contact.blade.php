@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title','contacts')
+@section('title', 'Contactez GLobal Tech International Corporation - Demande de devis et informations')
+@section('description', 'Contactez Global Tech International Corporation pour vos projets d’électricité, automatisation, sécurité incendie et domotique au Burkina Faso.')
+
 @section('content')
 <!-- Hero Section -->
 <section class="hero position-relative text-center text-white d-flex align-items-center" style="height:100vh;"  id="contacteconsl">

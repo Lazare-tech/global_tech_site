@@ -27,11 +27,13 @@ Route::get('contact',[HomeController::class,'contact'])->name('contact');
 
 Route::get('history',[HistoryController::class,'history'])->name('history');
 // REALISATION 
-Route::get('realisations',[RealisationController::class,'index'])->name('realisation');
-Route::get('detail/realisations',[RealisationController::class,'show'])->name('detail_realisation');
+Route::get('realisations/',[RealisationController::class,'index'])->name('realisation');
+Route::get('detail/realisations/{id}/{slug}',[RealisationController::class,'show'])->name('detail_realisation');
 
 //SERVICES
 Route::get('services',[ServiceController::class,'index'])->name('service');
+Route::get('services/{id}/{slug}',[ServiceController::class,'show'])->name('detail_service');
+
 //NEWSLETTER
 Route::post('',[NewsletterController::class,'store'])->name('newsletter.store');
 //CONTACT

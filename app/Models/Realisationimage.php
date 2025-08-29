@@ -9,7 +9,9 @@ class Realisationimage extends Model
 {
     use HasFactory;
     //
-    protected $fillable=['image'];
+    protected $fillable=['realisation_id','image'];
+    protected $table = 'realisationimages';
+
     public function realisation()
     {
         return $this->belongsTo(Realisation::class);

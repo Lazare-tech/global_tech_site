@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title','Notre histoire')
+
+@section('title', 'Notre Histoire - Global Tech International Corporation, expert en solutions électriques')
+@section('description', 'Découvrez l’histoire de Global Tech International Corporation, notre expertise en électricité, automatisation et sécurité depuis notre création.')
+
 @section('content')
 <!-- Hero Section -->
 <section class="hero position-relative text-center text-white d-flex align-items-center" style="height:100vh;">

@@ -68,18 +68,14 @@
             <h6 class="text-uppercase fw-bold mb-4">
               Services
             </h6>
+            @foreach ($services_item as $nom_service )
+              
             <p>
-              <a href="#!" class="text-reset text-decoration-none">Distribution et alimentation électrique </a>
+              <a href="{{ route('detail_service',['id' => $nom_service->id,'slug' => $nom_service->slug]) }}" class="text-reset text-decoration-none">{{ $nom_service->nom_service }}</a>
             </p>
-            <p>
-              <a href="#!" class="text-reset text-decoration-none">Systèmes de courant faibles et communication</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset text-decoration-none">Electronique de puissance et Systèmes de controle</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset text-decoration-none">Ingénierie de la sécurité</a>
-            </p>
+            @endforeach
+
+           
           </div>
           <!-- Grid column -->
 {{--   

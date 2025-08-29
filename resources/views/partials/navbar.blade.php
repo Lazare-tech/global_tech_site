@@ -38,8 +38,11 @@
                       Nos services
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="{{ route('service') }}">Installation et maintenance electrique</a></li>
-                      <li><a class="dropdown-item" href="#">Service 2</a></li>
+                  @foreach ($services_item as $nom_service )
+                      
+                      <li><a class="dropdown-item" href="{{ route('detail_service',['id' => $nom_service->id,'slug'=>$nom_service->slug]) }}">{{ $nom_service->nom_service }}</a></li>
+                      @endforeach
+
                   </ul>
               </li>
               <li class="nav-item">

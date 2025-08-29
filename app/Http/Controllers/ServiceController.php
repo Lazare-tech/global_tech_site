@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Services;
+use Illuminate\Support\Str;
+
 //
 class ServiceController extends Controller
 {
@@ -15,6 +17,7 @@ class ServiceController extends Controller
     public function index()
     {
         //
+
         
         return view('components.services');
     }
@@ -62,9 +65,19 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id,$slug)
     {
         //
+        $services_detail=Services::findOrFail($id);
+        if($slug !==Str::slug($services_detail->nom_service)){
+            return redirect()->route('detail_service',[
+                'id' => $services_detail->id,
+                'slug' => Str::slug($services_detail->nom_service)
+            ]);
+        }
+        return view('components.service_detail',compact('services_detail'));
+
+        
       
     }
 

@@ -1,5 +1,6 @@
 @extends('layouts.app')
-@section('title','Nos réalisations')
+@section('title', 'Nos Réalisations -Global Tech International Corporation, projets électriques et automatisation')
+@section('description', 'Découvrez les projets réalisés par Global Tech International Corporation en électricité, automatisation, sécurité incendie, domotique et réseaux de communication.')
 
 @section('content')
 <!-- Hero Section -->
@@ -93,61 +94,22 @@
     <div class="row g-4" id="projectsContainer">
   
       <!-- Projet 1 -->
+      @foreach ($realisations as $realisations )
+        
       <div class="col-md-4 project-card" data-year="2023">
         <div class="card shadow-sm h-100">
-          <img src="assets/images/systeme_courant_faible.jpg" class="card-img-top" alt="Installation solaire">
+          <img src="{{ asset('storage/' .$realisations->image) }}" class="card-img-top" alt="{{ $realisations->titre }}">
           <div class="card-body">
-            <h5 class="card-title">Installation Solaire</h5>
-            <p class="card-text text-muted">Site industriel - Ouagadougou (2023)</p>
-            <a href="{{ route('detail_realisation') }}" class="btn btn-responsive-primaryl">En savoir plus</a>
+            <h5 class="card-title">{{ $realisations->titre }}</h5>
+            <p class="card-text text-muted">{{ $realisations->lieu_realisation }}-{{ $realisations->date_realisation }}</p>
+            <a href="{{ route('detail_realisation',['id' =>$realisations->id,'slug' => $realisations->slug]) }}" class="btn btn-responsive-primaryl">En savoir plus</a>
           </div>
         </div>
       </div>
+      @endforeach
+
   
-      <!-- Projet 2 -->
-      <div class="col-md-4 project-card" data-year="2022">
-        <div class="card shadow-sm h-100">
-          <img src="assets/images/electronique_puissance.jpg" class="card-img-top" alt="Câblage immeuble">
-          <div class="card-body">
-            <h5 class="card-title">Câblage d’un Immeuble</h5>
-            <p class="card-text text-muted">Bureaux - Bobo Dioulasso (2022)</p>
-            
-          </div>
-        </div>
-      </div>
   
-      <!-- Projet 3 -->
-      <div class="col-md-4 project-card" data-year="2021">
-        <div class="card shadow-sm h-100">
-          <img src="assets/images/ingenierie_securite.jpg" class="card-img-top" alt="Poste électrique">
-          <div class="card-body">
-            <h5 class="card-title">Poste Électrique</h5>
-            <p class="card-text text-muted">Projet gouvernemental - Koudougou (2021)</p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Projet 4 (caché par défaut) -->
-      <div class="col-md-4 project-card d-none extra-project" data-year="2020">
-        <div class="card shadow-sm h-100">
-          <img src="assets/images/projet4.jpg" class="card-img-top" alt="Maintenance électrique">
-          <div class="card-body">
-            <h5 class="card-title">Maintenance Électrique</h5>
-            <p class="card-text text-muted">Entreprise privée - Ouagadougou (2020)</p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Projet 5 (caché par défaut) -->
-      <div class="col-md-4 project-card d-none extra-project" data-year="2019">
-        <div class="card shadow-sm h-100">
-          <img src="assets/images/projet5.jpg" class="card-img-top" alt="Projet solaire">
-          <div class="card-body">
-            <h5 class="card-title">Projet Solaire</h5>
-            <p class="card-text text-muted">Zone rurale - Fada (2019)</p>
-          </div>
-        </div>
-      </div>
   
     </div>
   </section>

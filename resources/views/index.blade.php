@@ -1,5 +1,8 @@
+
 @extends('layouts.app')
-@section('title', 'Accueil')
+
+@section('title', 'Accueil - GLobal Tech International Corporation, expert en électricité, automatisation et sécurité')
+@section('description', 'GLobal Tech International Corporation propose des services professionnels en électricité, automatisation, sécurité incendie, domotique et réseaux de communication à Ouagadougou et partout au Burkina Faso.')
 
 @section('content')
 
@@ -78,21 +81,19 @@
         <div class="row">
             <div class="col-lg-6">
                 <p>
-                    Velit amet dolore magna officia cupidatat laboris velit. Officia et elit id incididunt non qui occaecat
-                    do
-                    labore ea. Do ullamco consequat labore duis laboris eiusmod ut esse et ea pariatur aliquip Lorem
-                    cupidatat.
-                    Nisi magna qui pariatur cupidatat incididunt exercitation enim. Anim minim anim eu nisi aute labore
-                    excepteur do. Id eu sit tempor labore ut minim ipsum.
+                    Fondée en 2018, l'entreprise <strong>Global Africa Technology</strong> est un leader spécialisé dans la conception, l'installation et la maintenance de solutions électriques complètes pour les infrastructures de grande envergure. Notre expertise nous permet de proposer des solutions sur mesure, garantissant performance, sécurité et conformité aux normes les plus récentes.
                 </p>
-
-                <!-- Points forts -->
+                
+               
+                
+                <!-- Liste des points forts -->
                 <ul class="list-unstyled mt-3">
-                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Expertise de plus de 10 ans</li>
                     <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Une équipe qualifiée et engagée</li>
-                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Des solutions adaptées à vos besoins
-                    </li>
+                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Des solutions adaptées aux besoins spécifiques</li>
+                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Accompagnement complet de la conception à la maintenance</li>
+                    <li><i class="fas fa-check-circle text-success me-2 fa-2x"></i> Respect des normes nationales et internationales</li>
                 </ul>
+                
 
                 <!-- Bouton -->
                 <a href="{{ route('history') }}" class="btn btn-dark mt-3">Notre histoire</a>
@@ -127,13 +128,15 @@
               </div>
         <div class="carousel-container   carou ">
             <!-- Service 1 -->
+            @foreach ($services as $services )
             <div class="carousel-item">
                 <div class="card border-0 shadow-sm">
                     <!-- Header avec titre stylisé -->
-                    <div class="bg-dark p-3 d-flex align-items-center">
+                    <div class="bg-dark p-3 d-flex align-items-center" style="height: 70px">
                         <h6 class="m-0 text-white  px-3 py-2"
                           >
-                            Distribution et alimentation électrique
+                            {{ $services->nom_service }}
+                            
                             <!-- effet plié -->
                             <span class="band"
                               >
@@ -144,120 +147,21 @@
                     <!-- Contenu -->
                     <div class="card-body text">
                         <p class="text-muted text-band">
-                            Installation et maintenance de réseaux électriques fiables pour vos infrastructures.
+                        {{ $services->description }}
                         </p>
                         <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
                         <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn btn-dark btn-sm mt-2  float-end text-white">
+                        <a href="{{ route('detail_service',['id' => $services->id,'slug' =>$services->slug]) }}" class="btn btn-dark btn-sm mt-2  float-end text-white">
                             Plus de détails
                         </a>
                     </div>
                 </div>
             </div>
+            @endforeach
+
             
-            <div class="carousel-item">
-                <div class="card border-0 shadow-sm">
-                    <!-- Header avec titre stylisé -->
-                    <div class="bg-dark p-3 d-flex align-items-center">
-                        <h6 class="m-0 text-white  px-3 py-2"
-                          >
-                            Distribution et alimentation électrique
-                           
-                        </h6>
-                    </div>
+           
 
-                    <!-- Contenu -->
-                    <div class="card-body text">
-                        <p class="text-muted mt-2 text-band">
-                            Installation et maintenance de réseaux électriques fiables pour vos infrastructures.
-                        </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log"
->
-                        <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn btn-dark btn-sm mt-2 float-end text-white">
-                            Plus de détails
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Service 2 -->
-            <div class="carousel-item">
-                <div class="card border-0 shadow-sm">
-                    <div class="d-flex align-items-center bg-dark p-3">
-
-
-
-                        <h6 class="m-0 text-white  px-3 py-2"
-                           >
-                            Systèmes de courants faibles et communications
-                           
-                        </h6>
-                    </div>
-                    <div class="card-body">
-                        <p class="text-muted mt-2 text-band">
-                            Solutions modernes pour vos réseaux informatiques, téléphoniques et domotiques.
-                        </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
-                        <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn  btn-dark  btn-sm mt-2 float-end text-white">
-                            Plus de détails
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="carousel-item">
-                <div class="card border-0 shadow-sm">
-                    <div class="d-flex align-items-center bg-dark p-3">
-
-
-
-                        <h6 class="m-0 text-white  px-3 py-2"
-                           >
-                            Systèmes de courants faibles et communications
-                           
-                        </h6>
-                    </div>
-                    <div class="card-body">
-                        <p class="text-muted mt-2 text-band">
-                            Conception et intégration de systèmes de contrôle et de gestion de l’énergie.
-                        </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
-                        <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn  btn-dark  btn-sm mt-2 float-end text-white">
-                            Plus de détails
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="card border-0 shadow-sm">
-                    <div class="d-flex align-items-center bg-dark p-3">
-
-
-
-                        <h6 class="m-0 text-white  px-3 py-2"
-                           >
-                            Systèmes de courant&ensp;&ensp;&ensp;&ensp;&ensp;
-                            &ensp;&ensp;&ensp;&ensp;&ensp;
-                         
-                        </h6>
-                    </div>
-                    <div class="card-body">
-                        <p class="text-muted mt-2 text-band">
-                            Conception et intégration de systèmes de contrôle et de gestion de l’énergie.
-                        </p>
-                        <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
-                        <!-- bouton un peu décalé à droite -->
-                        <a href="#" class="btn  btn-dark  btn-sm mt-2 float-end text-white">
-                            Plus de détails
-                        </a>
-                    </div>
-                </div>
-            </div>
 
             
         </div>
