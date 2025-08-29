@@ -247,9 +247,9 @@
                             </div>
                             <h5 class="card-title fw-bold">Mission</h5>
                             <p class="card-text text-muted">
-                                Offrir des solutions digitales innovantes et accessibles pour accompagner la transformation
-                                des entreprises en Afrique.
-                            </p>
+                                Concevoir et réaliser des solutions électriques innovantes et fiables, au service de nos partenaires, afin de répondre aux défis énergétiques.
+                              
+    </p>
                         </div>
                     </div>
                 </div>
@@ -262,9 +262,8 @@
                                 <i class="fas fa-heart fa-3x" style="color:#0E3253;"></i>
                             </div>
                             <h5 class="card-title fw-bold">Valeurs</h5>
-                            <p class="card-text text-muted">
-                                Innovation, intégrité, excellence et collaboration sont les piliers qui guident toutes nos
-                                actions.
+                            <p class="card-text text-muted">                               
+                                Honnêteté, intégrité, professionnalisme et respect des engagements.
                             </p>
                         </div>
                     </div>
@@ -279,9 +278,9 @@
                             </div>
                             <h5 class="card-title fw-bold">Vision</h5>
                             <p class="card-text text-muted">
-                                Devenir le leader africain de la transformation digitale, en favorisant l’innovation et la
-                                croissance durable.
-                            </p>
+                                Façonner l’avenir du génie électrique en conjuguant un savoir-faire inégalé à une soif d’innovation inébranlable, pour bâtir une confiance durable.
+                               
+                                      </p>
                         </div>
                     </div>
                 </div>
