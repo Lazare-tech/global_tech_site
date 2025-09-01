@@ -18,7 +18,7 @@
             Nous accompagnons entreprises, institutions et particuliers dans la mise en place de solutions électriques modernes, sécurisées et durables.
         </p>
         <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
-          <a href="{{ route('realisation') }}#portofolio-section" class="btn btn-responsive-primaryl btn-lg me-2">Explorer nos projets</a>
+          <a href="{{ route('realisation.index') }}#portofolio-section" class="btn btn-responsive-primaryl btn-lg me-2">Explorer nos projets</a>
              </div>
     </div>
 </section>
@@ -30,7 +30,7 @@
       <div class="col-md-3">
         <div class="card shadow-sm p-4 border-0 rounded">
           <i class="fas fa-project-diagram fa-2x text-warning mb-3"></i>
-          <h2 class="fw-bold text-warning counter" data-target="150" data-suffix="+">0</h2>
+          <h2 class="fw-bold text-warning counter" data-target="{{ $projet_realise->nombre_projet_realise }}" data-suffix="+">0</h2>
           <p class="text-muted">Projets réalisés</p>
         </div>
       </div>
@@ -39,7 +39,7 @@
       <div class="col-md-3">
         <div class="card shadow-sm p-4 border-0 rounded">
           <i class="fas fa-history fa-2x text-primary mb-3"></i>
-          <h2 class="fw-bold text-primary counter" data-target="10" data-suffix="+">0</h2>
+          <h2 class="fw-bold text-primary counter" data-target="{{ $projet_realise->annee_experience }}" data-suffix="+">0</h2>
           <p class="text-muted">Années d'expérience</p>
         </div>
       </div>
@@ -48,7 +48,7 @@
       <div class="col-md-3">
         <div class="card shadow-sm p-4 border-0 rounded">
           <i class="fas fa-users fa-2x text-success mb-3"></i>
-          <h2 class="fw-bold text-success counter" data-target="50" data-suffix="+">0</h2>
+          <h2 class="fw-bold text-success counter" data-target="{{ $projet_realise->nombre_client_satisfait }}" data-suffix="+">0</h2>
           <p class="text-muted">Clients satisfaits</p>
         </div>
       </div>
@@ -57,7 +57,7 @@
       <div class="col-md-3">
         <div class="card shadow-sm p-4 border-0 rounded">
           <i class="fas fa-map-marker-alt fa-2x text-danger mb-3"></i>
-          <h2 class="fw-bold text-danger counter" data-target="8">0</h2>
+          <h2 class="fw-bold text-danger counter" data-target="{{ $projet_realise->nombre_zone_intervention }}">0</h2>
           <p class="text-muted">Zones d'intervention</p>
         </div>
       </div>
@@ -68,22 +68,24 @@
 <section class="container py-5" id="portofolio-section">
 
     <!-- Header -->
-    <div class="row mb-4 align-items-center">
+    <div class="row mb-4 align-items-center" id="projectsContainer">
       <div class="col-6">
         <h3 class="fw-bold" style="color:#0E3253;">Quelques réalisations</h3>
       </div>
       <div class="col-6 text-end">
-        <button class="btn btn-dark" id="toggleProjects">Voir tous nos réalisations</button>
+        {{-- <button class="btn btn-dark" id="toggleProjects">Voir tous nos réalisations</button> --}}
+        <a href="{{ route('realisation.index') }}#projectsContainer" class="btn btn-dark mt-3">Tout voir</a>
+
       </div>
     </div>
   
     <!-- Filtre par date -->
-    <form id="filterForm" class="row g-2 mb-4">
+    <form action="{{ route('realisation.index') }}#projectsContainer" id="filterForm" class="row g-2 mb-4">
       <div class="col-md-2">
-        <input type="date" id="startDate" class="form-control" placeholder="Date début">
+        <input type="date" id="startDate" class="form-control" name="startDate"  placeholder="Date début"  value="{{ request('startDate') }}">
       </div>
       <div class="col-md-2">
-        <input type="date" id="endDate" class="form-control" placeholder="Date fin">
+        <input type="date" id="endDate" class="form-control" name="endDate"  placeholder="Date fin"  value="{{ request('endDate') }}">
       </div>
       <div class="col-md-2">
         <button type="submit" class="btn btn-responsive-primaryl w-100">Filtrer</button>
@@ -91,27 +93,39 @@
     </form>
   
     <!-- Grille des projets -->
-    <div class="row g-4" id="projectsContainer">
+    <div class="row g-4">
+      @forelse ($realisations as $realisation)
+          <div class="col-md-4 project-card">
+              <div class="card shadow-sm h-100">
+                  <img src="{{ asset('storage/' . $realisation->image) }}" 
+                       class="card-img-top" 
+                       alt="{{ $realisation->titre }}">
   
-      <!-- Projet 1 -->
-      @foreach ($realisations as $realisations )
-        
-      <div class="col-md-4 project-card" data-year="2023">
-        <div class="card shadow-sm h-100">
-          <img src="{{ asset('storage/' .$realisations->image) }}" class="card-img-top" alt="{{ $realisations->titre }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ $realisations->titre }}</h5>
-            <p class="card-text text-muted">{{ $realisations->lieu_realisation }}-{{ $realisations->date_realisation }}</p>
-            <a href="{{ route('detail_realisation',['id' =>$realisations->id,'slug' => $realisations->slug]) }}" class="btn btn-responsive-primaryl">En savoir plus</a>
+                  <div class="card-body">
+                      <h5 class="card-title">{{ $realisation->titre }}</h5>
+                      <p class="card-text text-muted">
+                          {{ $realisation->lieu_realisation }} - {{ $realisation->date_realisation }}
+                      </p>
+                      <a href="{{ route('detail_realisation', [
+                          'id' => $realisation->id,
+                          'slug' => $realisation->slug
+                      ]) }}" 
+                         class="btn btn-responsive-primaryl">
+                          En savoir plus
+                      </a>
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
-      @endforeach
-
+      @empty
+          <!-- Message si aucun résultat -->
+          <div class="col-12 text-center">
+              <div class="alert alert-warning">
+                  Aucun projet trouvé pour cette période.
+              </div>
+          </div>
+      @endforelse
+  </div>
   
-  
-  
-    </div>
   </section>
 
   <!-- Témoignages -->

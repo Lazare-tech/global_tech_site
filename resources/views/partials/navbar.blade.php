@@ -46,7 +46,7 @@
                   </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link fw-bold text-dark" href="{{ route('realisation') }}">Nos réalisations</a>
+                <a class="nav-link fw-bold text-dark" href="{{ route('realisation.index') }}">Nos réalisations</a>
             </li>
 
               <li class="nav-item">

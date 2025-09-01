@@ -27,7 +27,7 @@ Route::get('contact',[HomeController::class,'contact'])->name('contact');
 
 Route::get('history',[HistoryController::class,'history'])->name('history');
 // REALISATION 
-Route::get('realisations/',[RealisationController::class,'index'])->name('realisation');
+Route::get('realisations/',[RealisationController::class,'index'])->name('realisation.index');
 Route::get('detail/realisations/{id}/{slug}',[RealisationController::class,'show'])->name('detail_realisation');
 
 //SERVICES

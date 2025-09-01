@@ -41,6 +41,8 @@ class ContactController extends Controller
             'nom' => 'required|string|max:255',
             'numero_telephone' => 'required|string|max:255',
             'message' => 'required|string',
+        ],[
+            'email.email' => 'Veuillez saisir une adresse e-mail valide.',
         ]);
         Contact::create([
             'nom' => $request->nom,

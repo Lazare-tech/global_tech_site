@@ -92,3 +92,18 @@
     </div>
 </section>
 @endsection
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Vérifie si un message Laravel est présent
+        const form = document.getElementById("form-devis");
+        const hasError = document.querySelector(".invalid-feedback");
+        const hasSuccess = document.querySelector(".alert-success");
+    
+        if ((hasError && hasError.innerText.trim() !== "") || hasSuccess) {
+            if (form) {
+                window.location.hash = "form-devis";
+            }
+        }
+    });
+    </script>
+    

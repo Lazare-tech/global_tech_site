@@ -38,7 +38,11 @@ class NewsletterController extends Controller
     {
         //
         $request->validate([
-            'email' => 'required|string|email|max:255|unique:newsletters,email',
+            'email' => 'required|email:rfc,dns|max:255',
+
+        ],[
+            'email.email' => 'Veuillez saisir une adresse e-mail valide.',
+            'email.required' => 'Veuillez saisir votre adresse e-mail.',
         ]);
         //
       
@@ -47,6 +51,8 @@ class NewsletterController extends Controller
         ]);
         
         return redirect()->back()->with('success', 'Merci pour votre inscription à la newsletter !');
+
+
     }
 
     /**

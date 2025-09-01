@@ -27,7 +27,7 @@
         </ul>
     </div>
 @endif
-        <form action="{{ route('newsletter.store') }}" method="post" class="needs-validation" novalidate>
+        <form action="{{ route('newsletter.store') }}" method="post">
           <div class="row g-2 justify-content-center">
             <div class="col-md-7">
               <div class="input-group">
@@ -35,15 +35,14 @@
                   <i class="fas fa-envelope"></i>
                 </span>
                 @csrf
+                
                 <input type="email" 
                        class="form-control" 
                        name="email" 
                        placeholder="Votre email" 
                        required 
-                       autocomplete="email">
-                <div class="invalid-feedback text-start">
-                  Veuillez entrer un email valide.
-                </div>
+                       >
+                 
               </div>
             </div>
             <div class="col-md-3 d-grid">
@@ -65,4 +64,18 @@
       </div>
     </div>
   </section>
-  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Vérifie si un message Laravel est présent
+        const form = document.getElementById("newsletterForm");
+        const hasError = document.querySelector(".invalid-feedback");
+        const hasSuccess = document.querySelector(".alert-success");
+    
+        if ((hasError && hasError.innerText.trim() !== "") || hasSuccess) {
+            if (form) {
+                window.location.hash = "newsletterForm";
+            }
+        }
+    });
+    </script>
+    

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProjetRealise;
 use Illuminate\Http\Request;
 use App\Models\Realisation;
 use Illuminate\Support\Str;
@@ -14,12 +15,21 @@ class RealisationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $realisations= Realisation::all();
-        return view('components.realisat',compact('realisations'));
-        //
-    }
+        $projet_realise=ProjetRealise::first();
+        $query = Realisation::query();
+        if ($request->filled('startDate')) {
+            $query->whereDate('date_realisation', '>=', $request->startDate);
+        }
+
+        if ($request->filled('endDate')) {
+            $query->whereDate('date_realisation', '<=', $request->endDate);
+        }
+
+        $realisations = $query->latest()->get();
+        return view('components.realisat', compact('realisations','projet_realise'));
+  }
 
     /**
      * Show the form for creating a new resource.

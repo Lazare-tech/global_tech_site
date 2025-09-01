@@ -23,7 +23,7 @@
                     <h1 class="fw-bold text-white">Découvrez votre partenaire idéale pour vos projets en génie electrique</h1>
                     <p>Des solutions innovantes pour propulser votre entreprise vers le succès.</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
-                        <a href="{{ route('realisation') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
+                        <a href="{{ route('realisation.index') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
                             realisations</a>
                         <a href="{{ route('devis') }}"
                             class="btn btn-responsive-warning  btn-lg btn-responsive">Demander un devis</a>
@@ -39,7 +39,7 @@
                     <h1 class="fw-bold text-white">Des services sur mesure</h1>
                     <p>Nous adaptons chaque projet à vos besoins spécifiques.</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
-                        <a href="{{ route('realisation') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
+                        <a href="{{ route('realisation.index') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
                             realisations</a>
                         <a href="{{ route('devis') }}"
                             class="btn btn-responsive-warning  btn-lg btn-responsive">Demander un devis</a>
@@ -55,7 +55,7 @@
                     <h1 class="fw-bold text-white">Votre partenaire de confiance</h1>
                     <p>Un accompagnement de bout en bout pour vos projets digitaux.</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
-                        <a href="{{ route('realisation') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
+                        <a href="{{ route('realisation.index') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
                             realisations</a>
                         <a href="{{ route('devis') }}"
                             class="btn btn-responsive-warning  btn-lg btn-responsive">Demander un devis</a>
