@@ -16,4 +16,18 @@ class EditUser extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+    //
+    protected function getRedirectUrl(): string
+    {
+        $user = auth()->user();
+
+        if ($user?->is_superuser) {
+            // Après modification → retour à la liste
+            return $this->getResource()::getUrl('index');
+        }
+
+        // Après modification → rester sur sa propre page d’édition
+        return $this->getResource()::getUrl('edit', ['record' => $user->id]);
+    }
+    
 }

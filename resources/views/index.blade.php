@@ -36,8 +36,8 @@
                 <div class="carousel-overlay"></div>
 
                 <div class="carousel-caption text-center  infoherocontent">
-                    <h1 class="fw-bold text-white">Des services sur mesure</h1>
-                    <p>Nous adaptons chaque projet à vos besoins spécifiques.</p>
+                    <h1 class="fw-bold text-white">Qualité et conformité garanties</h1>
+                    <p> Respect des normes nationales et internationales</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
                         <a href="{{ route('realisation.index') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
                             realisations</a>
@@ -52,8 +52,8 @@
                 <div class="carousel-overlay"></div>
 
                 <div class="carousel-caption text-center  infoherocontent">
-                    <h1 class="fw-bold text-white">Votre partenaire de confiance</h1>
-                    <p>Un accompagnement de bout en bout pour vos projets digitaux.</p>
+                    <h1 class="fw-bold text-white"> Une équipe qualifiée et engagée</h1>
+                    <p>Compétence et engagement au cœur de nos services</p>
                     <div class="mt-4 d-flex flex-row justify-content-center flex-nowrap">
                         <a href="{{ route('realisation.index') }}" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">Découvrir nos
                             realisations</a>

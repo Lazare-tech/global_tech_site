@@ -38,7 +38,8 @@ class ServiceResource extends Resource
                 ->directory('service_image') // dossier de stockage (storage/app/public/services)
                 ->disk('public')
                 ->maxSize(2048) // limite en Ko (ici 2 Mo)
-                ->required(),
+                ->required()
+              
             ]);
     }
 
@@ -56,6 +57,7 @@ class ServiceResource extends Resource
                 ->disk('public')
                 ->circular()
                 ->size(60)
+                
             ])
             ->filters([
                 //

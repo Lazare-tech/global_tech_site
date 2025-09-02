@@ -36,6 +36,7 @@ class EquipeResource extends Resource
                 FileUpload::make('image')
                 ->label('Image equipe')
                 ->image() // force l’upload d’image
+                ->maxSize(92160)
                 ->directory('equipe_image') // dossier de stockage (storage/app/public/services)
                 ->disk('public')
                 ->maxSize(2048) // limite en Ko (ici 2 Mo)
@@ -56,6 +57,7 @@ class EquipeResource extends Resource
                 ->disk('public')
                 ->circular()
                 ->size(60)
+                
             ])
             ->filters([
                 //

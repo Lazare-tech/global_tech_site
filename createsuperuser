@@ -1,0 +1,7 @@
+
+User::create([
+    'name' => 'lazaro',
+    'email' => 'lazaro@gmail.com',
+    'password' => bcrypt('lazare12'), // change ce mot de passe
+    'is_superuser' => true,
+]);
