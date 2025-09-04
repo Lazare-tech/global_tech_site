@@ -6,6 +6,7 @@ use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -16,6 +17,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\Toggle;
+use Filament\Tables\Columns\IconColumn;
+
 //
 class UserResource extends Resource
 {
@@ -33,8 +36,8 @@ class UserResource extends Resource
                 TextInput::make('password')
                 ->password()
                 ->minLength(8)
-                ->nullable()
-                ->dehydrateStateUsing(fn($state) => bcrypt($state))
+                ->dehydrateStateUsing(fn ($state) => filled($state) ? bcrypt($state) : null) // on hash si rempli
+                ->dehydrated(fn ($state) => filled($state)) // n’envoie pas le champ si vide
                 ->label('Nouveau mot de passe'),
                 
                 Toggle::make('is_superuser')
@@ -50,7 +53,8 @@ class UserResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
-                TextColumn::make('is_superuser'),
+                IconColumn::make('is_superuser')
+                ->boolean(),
                 TextColumn::make('email'),
                 TextColumn::make('password'),
                 TextColumn::make('created_at')->dateTime(),
@@ -96,23 +100,23 @@ class UserResource extends Resource
     // {
     //     return auth()->user()?->is_superuser ?? false;
     // }
-    // public static function canCreate(): bool
-    // {
-    //     return auth()->user()?->is_superuser ?? false;
-    // }
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
     
 
-    //
-//     public static function getEloquentQuery(): Builder
-// {
-//     $query = parent::getEloquentQuery();
+    
+    public static function getEloquentQuery(): Builder
+{
+    $query = parent::getEloquentQuery();
 
-//     // Si l'utilisateur connecté n'est pas superuser
-//     if (! (auth()->user()?->is_superuser ?? false)) {
-//         $query->where('id', auth()->id()); // ne retourne que son propre record
-//     }
+    // Si l'utilisateur connecté n'est pas superuser
+    if (! (auth()->user()?->is_superuser ?? false)) {
+        $query->where('id', auth()->id()); // ne retourne que son propre record
+    }
 
-//     return $query;
-// }
+    return $query;
+}
 }
 

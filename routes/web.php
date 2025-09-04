@@ -20,7 +20,9 @@ use App\Http\Controllers\DevisController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/login', function () {
+    return redirect()->route('filament.auth.login');
+})->name('login');
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('devis',[HomeController::class,'devis'])->name('devis');
 Route::get('contact',[HomeController::class,'contact'])->name('contact');

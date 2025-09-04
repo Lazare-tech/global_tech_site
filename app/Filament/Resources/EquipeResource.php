@@ -17,8 +17,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Illuminate\Database\Eloquent\Model;
 
 //
+use Filament\Forms\Components\ViewField;
 class EquipeResource extends Resource
 {
     protected static ?string $model = Equipe::class;
@@ -32,15 +34,19 @@ class EquipeResource extends Resource
                 //
                 TextInput::make('nom'),
                 TextInput::make('post'),
-                
+              
                 FileUpload::make('image')
                 ->label('Image equipe')
-                ->image() // force l’upload d’image
+                ->imageResizeMode('cover')
+                ->imageResizeTargetWidth(2000)
+                ->imageResizeTargetHeight(2000)
+                            ->image() // force l’upload d’image
+                            
                 ->maxSize(92160)
                 ->directory('equipe_image') // dossier de stockage (storage/app/public/services)
                 ->disk('public')
-                ->maxSize(2048) // limite en Ko (ici 2 Mo)
                 ->required(),
+                
             ]);
     }
 
@@ -90,4 +96,17 @@ class EquipeResource extends Resource
 
         ];
     }    
+       public static function canEdit(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
 }

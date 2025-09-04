@@ -16,6 +16,7 @@ class EquipeController extends Controller
     public function index()
     {
         //
+        
     }
 
     /**

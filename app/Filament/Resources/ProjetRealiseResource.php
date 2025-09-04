@@ -14,7 +14,9 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Database\Eloquent\Model;
 
+//
 class ProjetRealiseResource extends Resource
 {
     protected static ?string $model = ProjetRealise::class;
@@ -51,7 +53,9 @@ class ProjetRealiseResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\DeleteBulkAction::make()
+              ->visible(fn () => auth()->user()?->is_superuser ?? false),
+
             ]);
     }
     
@@ -70,4 +74,18 @@ class ProjetRealiseResource extends Resource
             'edit' => Pages\EditProjetRealise::route('/{record}/edit'),
         ];
     }    
+    //
+     public static function canEdit(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
 }

@@ -17,6 +17,8 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
+
 
 //
 class HeroResource extends Resource
@@ -94,5 +96,19 @@ class HeroResource extends Resource
             'view' => Pages\ViewHero::route('/{record}'), // 👈 page voir
 
         ];
-    }    
+    }  
+    //  
+     public static function canEdit(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
 }

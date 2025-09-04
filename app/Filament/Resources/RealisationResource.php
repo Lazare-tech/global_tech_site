@@ -21,6 +21,8 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\MultiSelect;
+use Illuminate\Database\Eloquent\Model;
+
 //
 class RealisationResource extends Resource
 {
@@ -117,4 +119,17 @@ class RealisationResource extends Resource
 
         ];
     }    
+      public static function canEdit(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
 }

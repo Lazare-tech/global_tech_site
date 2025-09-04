@@ -16,6 +16,8 @@ use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Infolists\Components\TextEntry;
+use Illuminate\Database\Eloquent\Model;
+
 //
 class DevisResource extends Resource
 {
@@ -75,14 +77,18 @@ class DevisResource extends Resource
 
         ];
     }    
-    //
-    // public static function infolist(Infolist $infolist): Infolist
-    // {
-    //     return $infolist
-    //         ->schema([
-    //             TextEntry::make('nom')->label('Nom'),
-    //             TextEntry::make('email')->label('Email'),
-    //             TextEntry::make('message')->label('Message'),
-    //         ]);
-    // }
+    
+       public static function canEdit(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
 }

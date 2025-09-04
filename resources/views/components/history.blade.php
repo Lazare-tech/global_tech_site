@@ -93,104 +93,52 @@
     <div class="container" id="equipe">
       <h2 class="text-center fw-bold text-dark mb-4">Notre Équipe</h2>
   
-      <!-- Directeur Général -->
-      <div class="text-center mb-3 text-dark">
-        <div class="team-photo-wrapper mx-auto">
-          <img src="{{ asset('assets/images/team/person3.jpg') }}" 
-               class="rounded-circle team-photo" 
-               alt="Directeur Général">
+    <!-- DG -->
+@if($equipes->count() > 0)
+    @php $dg = $equipes->first(); @endphp
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-4 text-center">
+            <div class="team-photo-wrapper mx-auto">
+                <img src="{{ asset('storage/' .$dg->image) }}" 
+                     class="rounded-circle team-photo" 
+                     alt="{{ $dg->nom }}">
+            </div>
+            <h5 class="fw-bold text-dark mt-3">{{ $dg->nom }}</h5>
+            <small class="text-dark">{{ $dg->post }}</small>
         </div>
-        <h5 class="fw-bold  mt-3">Jean Dupont</h5>
-        <small class="">Directeur Général</small>
-      </div>
-  
-      <!-- 3 autres membres -->
-      <div class="row justify-content-center g-4">
-        <div class="col-md-4 text-center text-dark">
-          <div class="team-photo-wrapper mx-auto">
-            <img src="{{ asset('assets/images/team/person2.png') }}" 
-                 class="rounded-circle team-photo" 
-                 alt="Membre 1">
-          </div>
-          <h6 class="fw-bold  mt-3">Marie Koné</h6>
-          <small class="">Directeur support et stratégies</small>
+    </div>
+@endif
+
+<!-- Ligne avec 3 membres -->
+<div class="row justify-content-center g-4 mb-4">
+    @foreach($equipes->skip(1)->take(3) as $member)
+        <div class="col-md-4 text-center">
+            <div class="team-photo-wrapper mx-auto">
+                <img src="{{ asset('storage/' .$member->image) }}" 
+                     class="rounded-circle team-photo" 
+                     alt="{{ $member->nom }}">
+            </div>
+            <h6 class="fw-bold mt-3">{{ $member->nom }}</h6>
+            <small>{{ $member->post }}</small>
         </div>
-        <div class="col-md-4 text-center text-dark">
-          <div class="team-photo-wrapper mx-auto">
-            <img src="{{ asset('assets/images/team/person4.jpg') }}" 
-                 class="rounded-circle team-photo" 
-                 alt="Membre 2">
-          </div>
-          <h6 class="fw-bold mt-3">Ali Sawadogo</h6>
-          <small class="">Directeur des opérations</small>
+    @endforeach
+</div>
+
+<!-- Ligne avec 6 membres -->
+<div class="row justify-content-center g-4">
+    @foreach($equipes->skip(4)->take(6) as $member)
+        <div class="col-md-2 text-center">
+            <div class="team-photo-wrapper mx-auto">
+                <img src="{{ asset('storage/' .$member->image) }}" 
+                     class="rounded-circle team-photo" 
+                     alt="{{ $member->nom }}">
+            </div>
+            <h6 class="fw-bold mt-3">{{ $member->nom }}</h6>
+            <small>{{ $member->post }}</small>
         </div>
-        <div class="col-md-4 text-center text-dark">
-          <div class="team-photo-wrapper mx-auto">
-            <img src="{{ asset('assets/images/team/person1.png') }}" 
-                 class="rounded-circle team-photo" 
-                 alt="Membre 3">
-          </div>
-          <h6 class="fw-bold mt-3">Fatou Diarra</h6>
-          <small class="">Directeur administratif et financier</small>
-        </div>
-      </div>
-      <!--second row team-->
-      <div class="row justify-content-center g-4 py-5">
-        <div class="col-md-2 text-center text-dark">
-            <div class="team-photo-wrapper mx-auto">
-              <img src="{{ asset('assets/images/team/person9.jpg') }}" 
-                   class="rounded-circle team-photo" 
-                   alt="Membre 3">
-            </div>
-            <h6 class="fw-bold mt-3">SIRIMA Chadrack</h6>
-            <small class="">Directeur de maintenance et services</small>
-          </div>
-          <div class="col-md-2 text-center text-dark">
-            <div class="team-photo-wrapper mx-auto">
-              <img src="{{ asset('assets/images/team/person6.jpg') }}" 
-                   class="rounded-circle team-photo" 
-                   alt="Membre 3">
-            </div>
-            <h6 class="fw-bold mt-3">Fatou Diarra</h6>
-            <small class="">Directeur administratif et financier</small>
-          </div>
-          <div class="col-md-2 text-center text-dark">
-            <div class="team-photo-wrapper mx-auto">
-              <img src="{{ asset('assets/images/team/person7.jpg') }}" 
-                   class="rounded-circle team-photo" 
-                   alt="Membre 3">
-            </div>
-            <h6 class="fw-bold  mt-3">KONE Rachid</h6>
-            <small class="">Directeur des projets</small>
-          </div>
-          <div class="col-md-2 text-center text-dark">
-            <div class="team-photo-wrapper mx-auto">
-              <img src="{{ asset('assets/images/team/person8.jpg') }}" 
-                   class="rounded-circle team-photo" 
-                   alt="Membre 3">
-            </div>
-            <h6 class="fw-bold mt-3">Fatou Diarra</h6>
-            <small class="">Directeur administratif et financier</small>
-          </div>
-          <div class="col-md-2 text-center text-dark">
-            <div class="team-photo-wrapper mx-auto">
-              <img src="{{ asset('assets/images/team/person5.jpg') }}" 
-                   class="rounded-circle team-photo" 
-                   alt="Membre 3">
-            </div>
-            <h6 class="fw-bold mt-3">SOULAMA Mariam</h6>
-            <small class="">Directrice ressources humaines</small>
-          </div>
-          <div class="col-md-2 text-center text-dark">
-            <div class="team-photo-wrapper mx-auto">
-              <img src="{{ asset('assets/images/team/person1.png') }}" 
-                   class="rounded-circle team-photo" 
-                   alt="Membre 3">
-            </div>
-            <h6 class="fw-bold mt-3">CISSE Junior</h6>
-            <small class="">Directeur comptable et commercial</small>
-          </div>
-      </div>
+    @endforeach
+</div>
+
   
     </div>
   </section>
