@@ -18,6 +18,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Model;
+use Filament\Forms\Components\Placeholder;
 
 //
 use Filament\Forms\Components\ViewField;
@@ -34,18 +35,19 @@ class EquipeResource extends Resource
                 //
                 TextInput::make('nom'),
                 TextInput::make('post'),
-              
-                FileUpload::make('image')
-                ->label('Image equipe')
-                ->imageResizeMode('cover')
-                ->imageResizeTargetWidth(2000)
-                ->imageResizeTargetHeight(2000)
-                            ->image() // force l’upload d’image
-                            
-                ->maxSize(92160)
-                ->directory('equipe_image') // dossier de stockage (storage/app/public/services)
+            //    Placeholder::make('image_preview')
+            // ->label('Photo')
+            // ->content(fn ($record) => view('filament.components.image', ['record' => $record])),
+       // Nouveau upload
+            FileUpload::make('image')
+                ->label('image')
+                ->image()
                 ->disk('public')
-                ->required(),
+                ->directory('equipe_image')
+                ->maxSize(92160)
+                ->required(false)
+                ->imagePreviewHeight('150'), // prévisualisation immédiate de la nouvelle image
+     
                 
             ]);
     }
@@ -109,4 +111,17 @@ class EquipeResource extends Resource
     {
         return auth()->user()?->is_superuser ?? false;
     }
+    //
+//   protected function mutateFormDataBeforeSave(array $data): array
+// {
+//     // Si l’utilisateur a uploadé une nouvelle image
+//     if (isset($data['new_image'])) {
+//         $data['image'] = $data['new_image']; // remplace l’ancienne
+//     }
+
+//     unset($data['new_image']); // supprime le champ temporaire
+//     return $data;
+// }
+
+
 }
