@@ -26,7 +26,7 @@
     <div class="row align-items-center mb-5">
       <!-- Image illustrative -->
       <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src="{{ asset('storage/' . $realisations_detail->image) }}" class="img-fluid rounded shadow" alt="{{ $realisations_detail->titre }}">
+        <img src="{{ asset('storage/' . $realisations_detail->image) }}" class="img-fluid rounded shadow project-imaged" alt="{{ $realisations_detail->titre }}">
       </div>
       
       <!-- Description -->
@@ -37,11 +37,11 @@
          
           {{ $realisations_detail->description }}
         </p>
-        <ul class="list-unstyled">
+        {{-- <ul class="list-unstyled">
           <li><i class="fas fa-check-circle text-success me-2"></i> Études et conception de réseaux électriques</li>
           <li><i class="fas fa-check-circle text-success me-2"></i> Installation et mise en service</li>
           <li><i class="fas fa-check-circle text-success me-2"></i> Maintenance préventive et corrective</li>
-        </ul>
+        </ul> --}}
         <a href="#" class="btn btn-success">Contacter nous via whatsApp</a>
       </div>
     </div>
@@ -57,8 +57,7 @@
   @foreach ($realisations_images->realisationImages as $image )
     
     <div class="col-md-4">
-      <img src="{{ asset('storage/' . $image->image) }}" class="img-fluid rounded shadow-sm"            style="height: 250px; object-fit: cover;" 
-           alt="Travaux terrain 1">
+      <img src="{{ asset('storage/' . $image->image) }}" class="img-fluid rounded shadow-sm project-imagesim" alt="Travaux terrain 1">
     </div>
     @endforeach
 

@@ -35,20 +35,23 @@ class EquipeResource extends Resource
                 //
                 TextInput::make('nom'),
                 TextInput::make('post'),
-            //    Placeholder::make('image_preview')
-            // ->label('Photo')
-            // ->content(fn ($record) => view('filament.components.image', ['record' => $record])),
+                TextInput::make('alt_text'),
+               Placeholder::make('image_preview')
+            ->label('Photo')
+            ->content(fn ($record) => view('filament.components.image', ['record' => $record])),
        // Nouveau upload
-            FileUpload::make('image')
-                ->label('image')
+            FileUpload::make('new_image')
+                ->label('remplacer par une nouvelle image')
                 ->image()
                 ->disk('public')
                 ->directory('equipe_image')
                 ->maxSize(92160)
                 ->required(false)
                 ->imagePreviewHeight('150'), // prévisualisation immédiate de la nouvelle image
-     
+                 
                 
+         
+               
             ]);
     }
 
@@ -111,17 +114,8 @@ class EquipeResource extends Resource
     {
         return auth()->user()?->is_superuser ?? false;
     }
-    //
-//   protected function mutateFormDataBeforeSave(array $data): array
-// {
-//     // Si l’utilisateur a uploadé une nouvelle image
-//     if (isset($data['new_image'])) {
-//         $data['image'] = $data['new_image']; // remplace l’ancienne
-//     }
-
-//     unset($data['new_image']); // supprime le champ temporaire
-//     return $data;
-// }
+    
+   
 
 
 }

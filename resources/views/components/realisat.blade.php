@@ -98,7 +98,7 @@
           <div class="col-md-4 project-card">
               <div class="card shadow-sm h-100">
                   <img src="{{ asset('storage/' . $realisation->image) }}" 
-                       class="card-img-top" 
+                       class="card-img-top  project-image" 
                        alt="{{ $realisation->titre }}">
   
                   <div class="card-body">

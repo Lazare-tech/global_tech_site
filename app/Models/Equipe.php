@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Equipe extends Model
 {
     use HasFactory;
-    protected $fillable =['nom','post','image'];
+    protected $fillable =['nom','post','image','alt_text'];
 }

@@ -13,9 +13,11 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
+use Illuminate\Database\Eloquent\Model;
+use Filament\Forms\Components\Placeholder;
+
+
 //
 class RealisationimageResource extends Resource
 {
@@ -28,8 +30,12 @@ class RealisationimageResource extends Resource
         return $form
             ->schema([
                 //
-                FileUpload::make('image')
-                ->label('Image du service')
+                 Placeholder::make('image_preview')
+            ->label('Photo')
+            ->content(fn ($record) => view('filament.components.image_realisation', ['record' => $record])),
+       
+                FileUpload::make('new_image')
+                ->label('remplacer Image')
                 ->image() // force l’upload d’image
                 ->directory('realisation_image') // dossier de stockage (storage/app/public/services)
                 ->disk('public')
@@ -46,6 +52,7 @@ class RealisationimageResource extends Resource
                 //
                 TextColumn::make('id'),
                 TextColumn::make('realisation_id'),
+                TextColumn::make('realisation.titre'),
                 ImageColumn::make('image')
                 ->label('image')
                 ->disk('public')
@@ -56,7 +63,11 @@ class RealisationimageResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),  
+
                 Tables\Actions\EditAction::make(),
+                                Tables\Actions\DeleteAction::make(), 
+
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -76,6 +87,22 @@ class RealisationimageResource extends Resource
             'index' => Pages\ListRealisationimages::route('/'),
             'create' => Pages\CreateRealisationimage::route('/create'),
             'edit' => Pages\EditRealisationimage::route('/{record}/edit'),
+            'view' => Pages\ViewRealisationimage::route('/{record}'), // 👈 page voir
+
         ];
     }    
+    //
+      public static function canEdit(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
+    public static function canCreate(): bool
+    {
+        return auth()->user()?->is_superuser ?? false;
+    }
 }

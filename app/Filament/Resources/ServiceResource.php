@@ -18,6 +18,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Model;
+use Filament\Forms\Components\Placeholder;
 
 //
 class ServiceResource extends Resource
@@ -34,13 +35,19 @@ class ServiceResource extends Resource
                 TextInput::make('nom_service')->required(),
                 Textarea::make('description')->required(),
                 
-                FileUpload::make('image')
-                ->label('Image du service')
-                ->image() // force l’upload d’image
-                ->directory('service_image') // dossier de stockage (storage/app/public/services)
+            Placeholder::make('image_preview')
+            ->label('Photo')
+            ->content(fn ($record) => view('filament.components.image', ['record' => $record])),
+       // Nouveau upload
+            FileUpload::make('new_image')
+                ->label('remplacer par une nouvelle image')
+                ->image()
                 ->disk('public')
-                ->maxSize(2048) // limite en Ko (ici 2 Mo)
-                ->required()
+                ->directory('service_image')
+                ->maxSize(92160)
+                ->required(false)
+                ->imagePreviewHeight('150'), // prévisualisation immédiate de la nouvelle image
+                 
               
             ]);
     }

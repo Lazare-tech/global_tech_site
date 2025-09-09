@@ -5,7 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Services;
-//
+use Illuminate\Support\Facades\URL;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,11 +26,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-        View::composer('*',function($view)
-                        {
-                            $view->with('services_item',Services::select('id','slug','nom_service')->get());
-                        });
-        
+        // 1️⃣ Composer global pour toutes les vues
+        View::composer('*', function ($view) {
+            $view->with('services_item', Services::select('id','slug','nom_service')->get());
+        });
+
+        // 2️⃣ Forcer le HTTPS si derrière un tunnel (ngrok)
+        if (request()->header('x-forwarded-proto') === 'https') {
+            URL::forceScheme('https');
+        }
     }
 }

@@ -22,6 +22,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\MultiSelect;
 use Illuminate\Database\Eloquent\Model;
+use Filament\Forms\Components\Placeholder;
 
 //
 class RealisationResource extends Resource
@@ -41,28 +42,37 @@ class RealisationResource extends Resource
                 DatePicker::make('date_realisation')
                 ->label('Date de realisation')
                 ->required(),
-                FileUpload::make('image')
-                ->label('Image principale')
+                FileUpload::make('new_image')
+                ->label('remplacer Image principale')
                 ->image() // force l’upload d’image
                 ->directory('realisation_image') // dossier de stockage (storage/app/public/services)
                 ->disk('public')
                 ->maxSize(2048) // limite en Ko (ici 2 Mo)
                 ->required(),
                             
-                            
-                Repeater::make('realisationImages')
-                ->label('Images du projet')
-                ->relationship()
-                ->schema([
-                    FileUpload::make('image')
-                        ->label('Photo du chantier')
-                        ->image()
-                        ->directory('realisation_image')
-                        ->disk('public')
-                        ->required(),
-                ])
-                ->minItems(1)
-                ->maxItems(10),
+                //
+                Placeholder::make('image_preview')
+            ->label('Image principal et secondaires')
+            ->content(fn ($record) => view('filament.components.image', [
+                'record' => $record,
+                'assocImages' => $record->realisationImages, // relation hasMany
+            ])),
+            //
+              Repeater::make('realisationImages')
+            ->label('Images secondaires')
+            ->relationship() // attention : doit correspondre à la relation hasMany dans le modèle
+            ->schema([
+                FileUpload::make('new_image')
+                    ->label('Ajouter une image')
+                    ->image()
+                    ->directory('realisation_image')
+                    ->disk('public')
+                    ->maxSize(2048)
+                    ->imagePreviewHeight('120')
+                    ->required(false)
+            ])
+            ->minItems(0)
+            ->maxItems(10),
 
 
             ]);
@@ -86,7 +96,7 @@ class RealisationResource extends Resource
             
                 ->circular()
                 ->size(60)
-
+                
             ])
             ->filters([
                 //

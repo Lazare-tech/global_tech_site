@@ -101,7 +101,7 @@
             <div class="team-photo-wrapper mx-auto">
                 <img src="{{ asset('storage/' .$dg->image) }}" 
                      class="rounded-circle team-photo" 
-                     alt="{{ $dg->nom }}">
+                     alt="{{ $dg->alt_text }}">
             </div>
             <h5 class="fw-bold text-dark mt-3">{{ $dg->nom }}</h5>
             <small class="text-dark">{{ $dg->post }}</small>
@@ -116,7 +116,7 @@
             <div class="team-photo-wrapper mx-auto">
                 <img src="{{ asset('storage/' .$member->image) }}" 
                      class="rounded-circle team-photo" 
-                     alt="{{ $member->nom }}">
+                     alt="{{ $member->alt_text }}">
             </div>
             <h6 class="fw-bold mt-3">{{ $member->nom }}</h6>
             <small>{{ $member->post }}</small>
@@ -131,7 +131,7 @@
             <div class="team-photo-wrapper mx-auto">
                 <img src="{{ asset('storage/' .$member->image) }}" 
                      class="rounded-circle team-photo" 
-                     alt="{{ $member->nom }}">
+                     alt="{{ $member->alt_text }}">
             </div>
             <h6 class="fw-bold mt-3">{{ $member->nom }}</h6>
             <small>{{ $member->post }}</small>
