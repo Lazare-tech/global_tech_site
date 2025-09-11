@@ -47,8 +47,7 @@ class RealisationResource extends Resource
                 ->image() // force l’upload d’image
                 ->directory('realisation_image') // dossier de stockage (storage/app/public/services)
                 ->disk('public')
-                ->maxSize(2048) // limite en Ko (ici 2 Mo)
-                ->required(),
+                ->maxSize(2048) ,// limite en Ko (ici 2 Mo)
                             
                 //
                 Placeholder::make('image_preview')
