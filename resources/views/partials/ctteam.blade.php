@@ -19,7 +19,7 @@
         <!-- Autres membres -->
         <div class="row justify-content-center g-4">
             @foreach($equipes->skip(1)->take(3) as $member)
-                <div class="col-md-4 text-center text-dark">
+                <div class="col-md-4 text-center text-dark ">
                     <div class="team-photo-wrapper mx-auto">
                         <img src="{{ asset('storage/' .$member->image) }}" 
                              class="rounded-circle team-photo" 

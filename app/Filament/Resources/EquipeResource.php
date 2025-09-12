@@ -40,7 +40,7 @@ class EquipeResource extends Resource
             ->label('Photo')
             ->content(fn ($record) => view('filament.components.image', ['record' => $record])),
        // Nouveau upload
-            FileUpload::make('new_image')
+            FileUpload::make('image')
                 ->label('remplacer par une nouvelle image')
                 ->image()
                 ->disk('public')

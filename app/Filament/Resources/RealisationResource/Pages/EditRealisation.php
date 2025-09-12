@@ -39,9 +39,22 @@ class EditRealisation extends EditRecord
     }
     //
         protected function afterSave(): void
-        {
-        if ($this->oldImage && $this->oldImage !== $this->record->image) {
-            Storage::disk('public')->delete($this->oldImage);
-        }
+{
+    // suppression ancienne image principale si besoin
+    if ($this->oldImage && $this->oldImage !== $this->record->image) {
+        Storage::disk('public')->delete($this->oldImage);
     }
+
+    // gestion de l’image secondaire
+    $data = $this->form->getState();
+
+    if (!empty($data['new_image_secondaire'])) {
+        $this->record->realisationImages()->create([
+            'image' => $data['new_image_secondaire'],
+        ]);
+    }
+}
+
+    
+
 }

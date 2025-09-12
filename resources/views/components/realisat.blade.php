@@ -128,36 +128,56 @@
   
   </section>
 
-  <!-- Témoignages -->
-  <section class="bg-light py-5">
-    <div class="container">
-      <h2 class="fw-bold mb-4 text-center">Ils nous font confiance</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow rounded">
-            <p>"Service impeccable et équipe professionnelle. Nous sommes très satisfaits."</p>
-            <h6 class="fw-bold mb-0">Entreprise XYZ</h6>
-            <small>Directeur Technique</small>
-          </div>
+   <section class="container pt-5">
+        <div class="row mb-5 align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold" style="color:#0E3253;">Ils nous ont fait confiance</h2>
+            </div>
+         
         </div>
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow rounded">
-            <p>"Installation rapide et conforme aux normes de sécurité."</p>
-            <h6 class="fw-bold mb-0">ONG Énergie Verte</h6>
-            <small>Responsable Projets</small>
-          </div>
+ <div class="d-flex">
+                <button class="carousel-button prev" onclick="scrollCarousel(-1)">
+                  <i class="fas fa-angle-left"></i>
+                </button>
+                <button class="carousel-button next" onclick="scrollCarousel(1)">
+                  <i class="fas fa-angle-right"></i>
+                </button>
+              </div>
+        <div class="carousel-container   carou ">
+            <!-- Service 1 -->
+             @foreach ($partenaires as $partenaires ) 
+                         <div class="carousel-item">
+                <div class="card border-0 shadow-sm">
+                 
+
+                    <!-- Contenu -->
+                    <div class="card-body text h-24 w-48 bg-white partenaire-box" data-bs-toggle="tooltip" title="{{ $partenaires->info }}">
+                     
+                        <img src="{{ asset('storage/' .$partenaires->image) }}" alt="{{ $partenaires->alt_text }}" class="band-partenire">
+                        <!-- bouton un peu décalé à droite -->
+                       
+                    </div>
+                </div>
+            </div>
+           
+            @endforeach
+            
+           
+
+
+            
         </div>
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow rounded">
-            <p>"Une équipe réactive et des solutions adaptées à nos besoins."</p>
-            <h6 class="fw-bold mb-0">Ministère des Infrastructures</h6>
-            <small>Chef de Projet</small>
-          </div>
+
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 @include('partials.ctmain', ['bg' => 'linear-gradient(135deg, #0056A6, #030e14)'])
 
 @include('partials.newsletter')
+<script>
+  // Initialiser les tooltips Bootstrap
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
 @endsection

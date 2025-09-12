@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\ProjetRealise;
 use Illuminate\Http\Request;
 use App\Models\Realisation;
+use App\Models\Partenaire;
+
 use Illuminate\Support\Str;
 
 //
@@ -18,6 +20,7 @@ class RealisationController extends Controller
     public function index(Request $request)
     {
         $projet_realise=ProjetRealise::first();
+        $partenaires=Partenaire::all();
         $query = Realisation::query();
         if ($request->filled('startDate')) {
             $query->whereDate('date_realisation', '>=', $request->startDate);
@@ -28,7 +31,7 @@ class RealisationController extends Controller
         }
 
         $realisations = $query->latest()->get();
-        return view('components.realisat', compact('realisations','projet_realise'));
+        return view('components.realisat', compact('realisations','projet_realise','partenaires'));
   }
 
     /**
@@ -51,6 +54,7 @@ class RealisationController extends Controller
     {
         //
         $imagePath = $request->file('image')->store('realisation_image','public');
+        
         Realisation::create([
             'titre' => $request->titre,
             'image' => $imagePath,

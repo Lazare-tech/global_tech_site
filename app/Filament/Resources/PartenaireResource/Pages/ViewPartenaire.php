@@ -14,13 +14,17 @@ class ViewPartenaire extends ViewRecord
 {
     return [
         Placeholder::make('image')
-            ->label('Photo')
+            ->label('Logo du partenaire')
             ->content(fn ($record) => view('filament.components.image', ['record' => $record])),
                     // Nom
         Placeholder::make('alt_text')
-            ->label('Nom')
+            ->label('Nom du partenaire')
+            ->content(fn ($record) => $record->alt_text),
+         Placeholder::make('info')
+            ->label('Informations sur le partenaire')
             ->content(fn ($record) => $record->alt_text),
 
+    
     
         
     ];

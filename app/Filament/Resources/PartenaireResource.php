@@ -31,17 +31,21 @@ class PartenaireResource extends Resource
         return $form
             ->schema([
                 //
+                TextInput::make('info'),
                 TextInput::make('alt_text'),
                   Placeholder::make('image_preview')
             ->label('Photo')
             ->content(fn ($record) => view('filament.components.image', ['record' => $record])),
        
-                  FileUpload::make('new_image')
-                ->label('remplacer image')
+                  FileUpload::make('image')
+                ->label('ajouter une nouvelle image')
                 ->image()
                 ->disk('public')
                 ->directory('partenaire_image')
                 ->maxSize(92160)
+                    ->imageResizeMode('contain') // ajuste sans couper
+                        ->imageResizeTargetHeight('150')
+                            ->imageResizeTargetWidth('300')
                 ->required(false)
                 ->imagePreviewHeight('150'), // prévisualisation immédiate de la nouvelle image
                  
@@ -56,10 +60,13 @@ class PartenaireResource extends Resource
             ->columns([
                 //
                 TextColumn::make('id'),
+                TextColumn::make('info'),
                 TextColumn::make('alt_text'),
                  ImageColumn::make('image')
                 ->label('image')
                 ->disk('public')
+                                ->visibility('public')
+
                 ->circular()
                 ->size(60)
                 

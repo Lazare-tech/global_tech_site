@@ -35,8 +35,14 @@ class PartenaireController extends Controller
      */
     public function store(Request $request)
     {
-       
-
+         //
+     
+                $imagePath = $request->file('image')->store('partenaire_image','public');
+                  Partenaire::create([
+            'info' => $request->info,
+            'image' => $imagePath,
+            'alt_text' => $request->alt_text,
+        ]);
     }
 
     /**
