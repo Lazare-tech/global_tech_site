@@ -20,7 +20,7 @@
             Nous accompagnons entreprises, institutions et particuliers dans la mise en place de solutions électriques modernes, sécurisées et durables.
         </p>
         <div class="mt-4">
-            <a href="#servicessection" class="btn btn-responsive-primaryl btn-lg me-2">Découvrir</a>
+            <a href="#services" class="btn btn-responsive-primaryl btn-lg me-2">Découvrir</a>
         </div>
     </div>
 </section>
@@ -29,7 +29,7 @@
     <div class="row align-items-center mb-5">
       <!-- Image illustrative -->
       <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src="{{ asset('storage/' . $services_detail->image) }}" class="img-fluid rounded shadow" alt="{{ $services_detail->nom_service }}">
+        <img src="{{ asset('storage/' . $services_detail->image) }}" class="img-fluid rounded shadow service-img" alt="{{ $services_detail->nom_service }}">
       </div>
       
       <!-- Description -->

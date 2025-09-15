@@ -405,6 +405,11 @@ p.lead {
      width: 100%;
   object-fit: cover;
 }
+.service-img{
+    height: 345px; 
+     width: 100%;
+  object-fit: cover;
+}
  #chiffres-cles .card {
   transition: transform 0.3s, box-shadow 0.3s;
 }
