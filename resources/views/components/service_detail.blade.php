@@ -25,7 +25,7 @@
     </div>
 </section>
 <!-- Section Service -->
-<section class="container py-5">
+<section class="container py-5" id="services">
     <div class="row align-items-center mb-5">
       <!-- Image illustrative -->
       <div class="col-lg-6 mb-4 mb-lg-0">
@@ -38,14 +38,15 @@
         <h2 class="fw-bold" style="color:#0E3253;">{{ $services_detail->nom_service }}</h2>
         <p class="text-muted">
          
-          {{ $services_detail->description }}
+          {{ $services_detail->description_service }}
         </p>
-        <ul class="list-unstyled">
-          <li><i class="fas fa-check-circle text-success me-2"></i> Études et conception de réseaux électriques</li>
-          <li><i class="fas fa-check-circle text-success me-2"></i> Installation et mise en service</li>
-          <li><i class="fas fa-check-circle text-success me-2"></i> Maintenance préventive et corrective</li>
-        </ul>
-        <a href="#" class="btn btn-success">Contacter nous via whatsApp</a>
+        
+        <a href="https://wa.me/{{ $contact_tel }}?text=Bonjour%20je%20souhaite%20plus%20d%27infos" 
+   class="btn btn-success" 
+   target="_blank">
+  Contacter nous via WhatsApp
+</a>
+
       </div>
     </div>
 </section>

@@ -10,7 +10,7 @@ class Services extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom_service', 'slug', 'description', 'image'];
+    protected $fillable = ['nom_service', 'slug', 'description','description_service','image'];
 
     // Utiliser le slug dans les routes
     public function getRouteKeyName()

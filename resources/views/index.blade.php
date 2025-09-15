@@ -151,7 +151,7 @@
                         </p>
                         <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" class="band-log">
                         <!-- bouton un peu décalé à droite -->
-                        <a href="{{ route('detail_service',['id' => $services->id,'slug' =>$services->slug]) }}" class="btn btn-dark btn-sm mt-2  float-end text-white">
+                        <a href="{{ route('detail_service',['id' => $services->id,'slug' =>$services->slug]) }}#services" class="btn btn-dark btn-sm mt-2  float-end text-white">
                             Plus de détails
                         </a>
                     </div>

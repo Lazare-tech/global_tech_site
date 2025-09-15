@@ -34,7 +34,7 @@ class ServiceResource extends Resource
                 //
                 TextInput::make('nom_service')->required(),
                 Textarea::make('description')->required(),
-                
+                Textarea::make('description_service'),
             Placeholder::make('image_preview')
             ->label('Photo')
             ->content(fn ($record) => view('filament.components.image', ['record' => $record])),
@@ -61,6 +61,7 @@ class ServiceResource extends Resource
                 TextColumn::make('slug')->sortable(),
                 TextColumn::make('nom_service'),
                 TextColumn::make('description')->limit(50),
+                TextColumn::make('description_service')->limit(50),
                 ImageColumn::make('image')
                 ->label('image')
                 ->disk('public')

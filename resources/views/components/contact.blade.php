@@ -22,7 +22,7 @@
         <a href="{{ route('contact') }}#form-contact" class="btn btn-responsive-primaryl btn-lg me-2 btn-responsive">
           Envoyer un message
         </a>
-        <a href="tel:+22667487164" class="btn btn-responsive-warning btn-lg btn-responsive">
+        <a href="{{ $contact_tel }}" class="btn btn-responsive-warning btn-lg btn-responsive">
           Appeler directement
         </a>
         

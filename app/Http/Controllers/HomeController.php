@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $services=Services::all();
+        $services=Services::all()->reverse();
                 $equipes=Equipe::all();
 
         

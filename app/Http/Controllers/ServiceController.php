@@ -51,6 +51,7 @@ class ServiceController extends Controller
             'nom_service' =>$request->nom_service,
             'image' => $imagePath,
             'description' => $request->description,
+            'description_service' => $request->description_service,
         ]);
         return response() ->json([
             'message' => 'Champ créé avec succès',
