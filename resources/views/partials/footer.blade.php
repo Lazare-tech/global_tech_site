@@ -10,10 +10,10 @@
   
       <!-- Right -->
       <div>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
+        <a href="{{ $facebook_link }}" class="me-4 text-reset" target="_blank">
+          <i class="fab fa-facebook-f fa-2x"></i>
         </a>
-        <a href="" class="me-4 text-reset">
+        {{-- <a href="" class="me-4 text-reset">
           <i class="fab fa-twitter"></i>
         </a>
         <a href="" class="me-4 text-reset">
@@ -27,7 +27,7 @@
         </a>
         <a href="" class="me-4 text-reset">
           <i class="fab fa-github"></i>
-        </a>
+        </a> --}}
       </div>
       <!-- Right -->
     </section>
@@ -104,12 +104,12 @@
           <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="fas fa-home me-1"></i>Burkina Faso,Bobo-Dioulasso</p>
+            <p><i class="fas fa-home me-1"></i>{{ $emplacement }}</p>
             <p>
               <i class="fas fa-envelope me-1"></i>
-              globaltechnology.bf@gmail.com
+              {{ $email }}
             </p>
-            <p><i class="fas fa-phone me-1"></i>+226 76 34 28 07<br>+226 72 13 94 15</p>
+            <p><i class="fas fa-phone me-1 fa-rotate-90"></i>{{ $contact_info }}</p>
           </div>
           <!-- Grid column -->
         </div>

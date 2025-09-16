@@ -16,7 +16,7 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
-                <img src="{{ asset('assets/images/work1.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/images/energie_solaire_2025-09-07 at 22.56.31.jpeg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-overlay"></div>
 
                 <div class="carousel-caption text-center  infoherocontent">
@@ -48,7 +48,7 @@
             </div>
 
             <div class="carousel-item">
-                <img src="{{ asset('assets/images/work3.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/images/WhatsApp Image 2025-09-07 at 21.35.43(1).jpeg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-overlay"></div>
 
                 <div class="carousel-caption text-center  infoherocontent">
