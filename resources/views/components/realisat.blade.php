@@ -12,7 +12,7 @@
     <div class="hero-opaciti-hero"></div>
 
     <!-- Contenu -->
-    <div class="container  infoherocontent"">
+    <div class="container  infoherocontent">
         <h1 class="fw-bold display-4">Nos réalisations</h1>
         <p class="lead">
             Nous accompagnons entreprises, institutions et particuliers dans la mise en place de solutions électriques modernes, sécurisées et durables.
@@ -104,7 +104,7 @@
                   <div class="card-body">
                       <h5 class="card-title">{{ $realisation->titre }}</h5>
                       <p class="card-text text-muted">
-                          {{ $realisation->lieu_realisation }} - {{ $realisation->date_realisation }}
+                          {{ $realisation->lieu_realisation }}
                       </p>
                       <a href="{{ route('detail_realisation', [
                           'id' => $realisation->id,

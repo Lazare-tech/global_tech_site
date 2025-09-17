@@ -40,8 +40,8 @@ class RealisationResource extends Resource
                 Textarea::make('description'),
                 TextInput::make('lieu_realisation'),
                 DatePicker::make('date_realisation')
-                ->label('Date de realisation')
-                ->required(),
+                ->label('Date de realisation'),
+            
                 //
                 FileUpload::make('new_image')
                 ->label('remplacer Image principale')

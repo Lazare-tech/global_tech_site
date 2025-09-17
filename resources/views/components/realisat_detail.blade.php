@@ -17,12 +17,12 @@
             Nous accompagnons entreprises, institutions et particuliers dans la mise en place de solutions électriques modernes, sécurisées et durables.
         </p>
         <div class="mt-4">
-            <a href="" class="btn btn-responsive-primaryl btn-lg me-2">Découvrir</a>
+            <a href="#detailrealsations" class="btn btn-responsive-primaryl btn-lg me-2">Découvrir</a>
         </div>
     </div>
 </section>
 <!-- Section Service -->
-<section class="container py-5">
+<section class="container py-5" id="detailrealsations">
     <div class="row align-items-center mb-5">
       <!-- Image illustrative -->
       <div class="col-lg-6 mb-4 mb-lg-0">

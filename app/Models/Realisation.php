@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class Realisation extends Model
 {
     use HasFactory;
-    protected $fillable = ['titre','description','lieu_realisation','image','date_realisation','slug'];
+    protected $fillable = ['titre','description','lieu_realisation','image','slug'];
     //
     public function getRouteKeyName()
     {
