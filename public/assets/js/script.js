@@ -55,6 +55,12 @@ function scrollToForm(id) {
     form.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
+
+    function scrollTestimonials(direction) {
+        const container = document.getElementById('testimonialCarousel');
+        const itemWidth = container.querySelector('.flex-shrink-0').offsetWidth + 16; // item + px-2 padding
+        container.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
+    }
 // //
 // document.addEventListener("DOMContentLoaded", function () {
 //   const toggleBtn = document.getElementById("toggleProjects");
@@ -89,3 +95,4 @@ function scrollToForm(id) {
 //       : "Voir tous nos réalisations";
 //   });
 // }); 
+

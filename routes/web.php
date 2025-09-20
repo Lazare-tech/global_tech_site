@@ -8,7 +8,7 @@ uSE App\Http\Controllers\RealisationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DevisController;
-
+use App\Http\Controllers\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +42,6 @@ Route::post('',[NewsletterController::class,'store'])->name('newsletter.store');
 Route::post('contact',[ContactController::class,'store'])->name('contact.store');
 //DEVIS
 Route::post('devis',[DevisController::class,'store'])->name('devis.store');
-
+//TESTIMONIAL
+Route::post('/temoignages', [TestimonialController::class, 'store'])->name('testimonials.store');
+Route::view('/temoignages/ajouter', 'testimonials.form')->name('testimonials.form');

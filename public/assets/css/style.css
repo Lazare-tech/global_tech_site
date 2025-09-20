@@ -428,6 +428,75 @@ p.lead {
 }
 
 /* Photo ronde avec bordure branding */
+.comment-photo-wrapper-comment {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: contain;        /* ne coupe plus l'image */
+  background-color: #f0f0f0;  /* fond neutre derrière */
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.comment-no-name{
+    width:150px;
+     height:150px; 
+     font-size:36px;
+}
+.bg-comment-no-img{
+    background: linear-gradient(135deg, #0056A6, #030e14);
+
+  
+}
+.carousel-nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #343a40;         /* fond sombre */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.btn-comment{
+    background: linear-gradient(135deg, #0056A6, #030e14);
+color:white;
+margin: 3px;
+  
+}
+.btn-comment:hover{
+    background: white;
+color:linear-gradient(135deg, #0056A6, #030e14);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+border-color: #004080;
+margin: 3px;
+  transition: all 1s ease;
+
+  
+}
+/* @media (max-width: 350px) {
+  .testi{
+    max-width: 320px !important ;
+  }
+  } */
+.carousel-nav-btn:hover {
+  background: linear-gradient(135deg, #0056A6, #030e14);
+  
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.carousel-nav-btn .carousel-control-prev-icon,
+.carousel-nav-btn .carousel-control-next-icon {
+  filter: invert(1);                 /* icônes blanches */
+  width: 20px;
+  height: 20px;
+}
+.background-comment{
+background:#f8f9fa;
+}
+
 .team-photo-wrapper {
   width: 150px;
   height: 150px;
