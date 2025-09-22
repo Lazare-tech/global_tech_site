@@ -39,9 +39,9 @@
             <div class="bg-white border rounded shadow-sm p-4 p-xl-5">
             
         <!-- Formulaire Bootstrap -->
-        @if (session('success'))
+        @if (session('contact_success'))
         <div class="alert alert-success">
-            {{ session('success') }}
+            {{ session('contact_success') }}
         </div>
     @endif
     
@@ -112,7 +112,7 @@
           <div class="col-12 col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
             <div class="social-card bg-light p-4 rounded shadow-sm text-center">
               <h6 class="fw-bold mb-3">Contactez-nous comme vous voulez !</h6>
-              <a href="https://wa.me/1234567890?text=Bonjour,%20je%20souhaite%20en%20savoir%20plus"
+              <a href="https://wa.me/72139415?text=Bonjour,%20je%20souhaite%20en%20savoir%20plus"
                  class="btn btn-success btn-sm d-block"
                  target="_blank" rel="noopener noreferrer">
                 Contactez-nous via WhatsApp

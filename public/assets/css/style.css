@@ -439,6 +439,7 @@ p.lead {
   align-items: center;
   justify-content: center;
 }
+
 .comment-no-name{
     width:150px;
      height:150px; 
@@ -460,22 +461,40 @@ p.lead {
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-.btn-comment{
-    background: linear-gradient(135deg, #0056A6, #030e14);
-color:white;
-margin: 3px;
-  
+.btn-comment {
+  position: relative;
+  display: inline-block;
+  padding: .5rem 1rem;
+  border: 1px solid #004080;
+  color: #004080;
+  background: transparent;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 0; /* le texte sera au-dessus */
 }
-.btn-comment:hover{
-    background: white;
-color:linear-gradient(135deg, #0056A6, #030e14);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-border-color: #004080;
-margin: 3px;
-  transition: all 1s ease;
 
-  
+.btn-comment::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #004080;
+  transition: left 0.3s ease;
+  z-index: -1; /* passe sous le texte */
 }
+
+/* texte et icônes restent au-dessus automatiquement */
+.btn-comment:hover::before {
+  left: 0;
+}
+
+.btn-comment:hover {
+  color: #fff; /* texte devient blanc */
+}
+
+
 /* @media (max-width: 350px) {
   .testi{
     max-width: 320px !important ;

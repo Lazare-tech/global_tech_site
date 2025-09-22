@@ -3,9 +3,13 @@
         <div class="col-md-6 mx-auto">
             <div class="collapse" id="testimonialForm">
                 <div class="card card-body shadow-sm mb-3 p-3">
-                    @if (session('success'))
-                        <div class="alert alert-success py-2 px-3">{{ session('success') }}</div>
-                    @endif
+                            
+
+            @if(session('testimonial_success'))
+                <div class="alert alert-success">
+                    {{ session('testimonial_success') }}
+                </div>
+            @endif
 
                     <form action="{{ route('testimonials.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -29,7 +33,7 @@
                             <label class="form-label">Message*</label>
                             <textarea name="message" class="form-control form-control-sm" rows="3" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-comment btn-sm text-white">Envoyer</button>
+                        <button type="submit" class="btn btn-comment btn-sm text-black">Envoyer</button>
                     </form>
                 </div>
             </div>

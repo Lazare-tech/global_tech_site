@@ -50,9 +50,9 @@
             <div class="col-lg-6" id="form-devis">
                 <div class="card shadow-lg rounded p-4 bg-white text-dark">
                     <h4 class="mb-3">Demander un devis</h4>
-                    @if (session('success'))
+                    @if (session('devis_success'))
                     <div class="alert alert-success">
-                        {{ session('success') }}
+                        {{ session('devis_success') }}
                     </div>
                 @endif
                 

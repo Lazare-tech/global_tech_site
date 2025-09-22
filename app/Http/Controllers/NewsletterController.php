@@ -50,7 +50,7 @@ class NewsletterController extends Controller
             'email' => $request->email, // ✅ correspond à la colonne
         ]);
         
-        return redirect()->back()->with('success', 'Merci pour votre inscription à la newsletter !');
+        return redirect()->back()->with('newsletter_success', 'Merci pour votre inscription à la newsletter !');
 
 
     }

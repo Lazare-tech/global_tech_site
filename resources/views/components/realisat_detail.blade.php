@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title','Nos réalisations')
+
+
+@section('title', $realisations_detail->titre . ' - Global Tech International Corporation')
+
 
 @section('content')
 <!-- Hero Section -->
@@ -37,11 +40,7 @@
          
           {{ $realisations_detail->description }}
         </p>
-        {{-- <ul class="list-unstyled">
-          <li><i class="fas fa-check-circle text-success me-2"></i> Études et conception de réseaux électriques</li>
-          <li><i class="fas fa-check-circle text-success me-2"></i> Installation et mise en service</li>
-          <li><i class="fas fa-check-circle text-success me-2"></i> Maintenance préventive et corrective</li>
-        </ul> --}}
+      
         <a href="#" class="btn btn-success">Contacter nous via whatsApp</a>
       </div>
     </div>

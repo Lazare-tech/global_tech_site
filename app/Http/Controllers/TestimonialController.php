@@ -24,7 +24,8 @@ class TestimonialController extends Controller
 
         Testimonial::create($validated); // status = pending par défaut
 
-        return back()->with('success', 'Merci pour votre témoignage ! Il sera publié après validation.');
+        return back()->with('testimonial_success', 'Merci pour votre témoignage !');
+
     }
 
 }

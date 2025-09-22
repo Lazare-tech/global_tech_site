@@ -54,6 +54,9 @@
                       Contacts
                   </a>
               </li>
+
+            
+
               <li class="nav-item">
                 <a class="fw-bold text-white btn-md  btn btn-responsive btn-responsive-primaryl" href="{{  route('devis') }}">
                     Demander un devis

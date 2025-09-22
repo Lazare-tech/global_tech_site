@@ -47,7 +47,7 @@ class DevisController extends Controller
             'email' => $request->email,
             'message' => $request->message
         ]);
-        return redirect()->back()->with('success', 'Merci de nous avoir contacter,nous vous repondons au plus vite');
+        return redirect()->back()->with('devis_success', 'Merci de nous avoir contacter,nous vous repondons au plus vite');
 
     }
 

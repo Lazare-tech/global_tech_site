@@ -16,4 +16,10 @@ class EditTestimonial extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+    //
+     public function getRedirectUrl():string
+    {
+        return $this->getResource()::getUrl('index');
+
+    }
 }

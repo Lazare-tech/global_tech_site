@@ -51,7 +51,7 @@ class ContactController extends Controller
             'email' => $request->email,
             'message' => $request->message,
         ]);
-        return redirect()->back()->with('success', 'Merci de nous avoir contacter !');
+        return redirect()->back()->with('contact_success', 'Merci de nous avoir contacter !');
 
     }
 

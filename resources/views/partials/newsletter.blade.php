@@ -12,11 +12,13 @@
      
   
         <!-- Formulaire Bootstrap -->
-        @if (session('success'))
+       
+@if(session('newsletter_success'))
     <div class="alert alert-success">
-        {{ session('success') }}
+        {{ session('newsletter_success') }}
     </div>
 @endif
+
 
 @if ($errors->any())
     <div class="alert alert-danger">

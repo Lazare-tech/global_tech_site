@@ -9,6 +9,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DevisController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\LocaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,5 @@ Route::post('devis',[DevisController::class,'store'])->name('devis.store');
 //TESTIMONIAL
 Route::post('/temoignages', [TestimonialController::class, 'store'])->name('testimonials.store');
 Route::view('/temoignages/ajouter', 'testimonials.form')->name('testimonials.form');
+//LANGUAGE SWITCHER
+Route::get('lang/{locale}', [LocaleController::class, 'switch'])->name('lang.switch');
