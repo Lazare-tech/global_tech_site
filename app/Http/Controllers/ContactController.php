@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Mail\ContactNotification;
+use Illuminate\Support\Facades\Mail;
 //
 class ContactController extends Controller
 {
@@ -39,18 +41,22 @@ class ContactController extends Controller
         $request->validate([
             'email' => 'required|email:rfc,dns|max:255',
             'nom' => 'required|string|max:255',
-            'numero_telephone' => 'required|string|max:255',
+                        'numero_telephone' => 'required|phone:AUTO',
+
             'message' => 'required|string',
         ],[
             'email.email' => 'Veuillez saisir une adresse e-mail valide.',
+                            'numero_telephone.phone' => 'Veuillez saisir un numéro de téléphone valide avec indicatif (+XXX).',
+
         ]);
-        Contact::create([
+        $data=Contact::create([
             'nom' => $request->nom,
             'objet' => $request->objet,
             'numero_telephone' => $request->numero_telephone,
             'email' => $request->email,
             'message' => $request->message,
         ]);
+        Mail::to('yelmaniyel@gmail.com')->send(new ContactNotification($data));
         return redirect()->back()->with('contact_success', 'Merci de nous avoir contacter !');
 
     }

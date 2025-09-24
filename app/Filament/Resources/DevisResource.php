@@ -17,7 +17,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Infolists\Components\TextEntry;
 use Illuminate\Database\Eloquent\Model;
-
+use Filament\Tables\Actions\Action;
+use Illuminate\Support\Facades\Mail;
 //
 class DevisResource extends Resource
 {
@@ -31,11 +32,11 @@ class DevisResource extends Resource
             ->schema([
                 //
                 TextInput::make('nom'),
+                TextInput::make('numero'),
                 TextInput::make('email'),
                 Textarea::make('message')
             ]);
     }
-
     public static function table(Table $table): Table
     {
         return $table
@@ -43,6 +44,7 @@ class DevisResource extends Resource
                 //
                 TextColumn::make('id'),
                 TextColumn::make('nom'),
+                TextColumn::make('numero'),
                 TextColumn::make('email'),
                 TextColumn::make('message')->limit(50)
             ])
@@ -53,13 +55,26 @@ class DevisResource extends Resource
                 Tables\Actions\ViewAction::make(),  
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(), 
+                  Tables\Actions\Action::make('Répondre')
+                ->form([
+                    Forms\Components\Textarea::make('réponse')
+                    ->label('Votre réponse')
+                    ->required()
+                ])
+                 ->action(function (array $data, $record): void {
+           Mail::raw($data['réponse'], function ($message) use ($record) {
+            $message->to($record->email)
+                    ->subject('Réponse à votre demande de devis');
+        });
+    })
+    ->color('success')
 
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
+              
             ]);
     }
-    
     public static function getRelations(): array
     {
         return [

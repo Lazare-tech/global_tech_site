@@ -18,7 +18,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\ImageEntry;
+use Illuminate\Support\Facades\Mail;
 
+//
 class ContactResource extends Resource
 {
     protected static ?string $model = Contact::class;
@@ -60,6 +62,19 @@ class ContactResource extends Resource
 
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(), 
+                   Tables\Actions\Action::make('Répondre')
+                ->form([
+                    Forms\Components\Textarea::make('réponse')
+                    ->label('Votre réponse')
+                    ->required()
+                ])
+                 ->action(function (array $data, $record): void {
+           Mail::raw($data['réponse'], function ($message) use ($record) {
+            $message->to($record->email)
+                    ->subject('Réponse à votre message');
+        });
+    })
+    ->color('success')
 
             ])
             ->bulkActions([

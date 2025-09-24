@@ -140,7 +140,8 @@
   document.addEventListener("DOMContentLoaded", function () {
       // Vérifie si un message Laravel est présent
       const form = document.getElementById("form-contact");
-      const hasError = document.querySelector(".invalid-feedback");
+          const hasError = document.querySelector(".alert-danger"); // <- changé ici
+
       const hasSuccess = document.querySelector(".alert-success");
   
       if ((hasError && hasError.innerText.trim() !== "") || hasSuccess) {

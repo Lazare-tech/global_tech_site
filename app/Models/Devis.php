@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Devis extends Model
 {
     use HasFactory;
-    protected $fillable =['nom','email','message'];
+    protected $fillable =['nom','email','numero','message'];
 }

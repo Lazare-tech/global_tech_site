@@ -72,6 +72,10 @@
                         <label for="nom" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom" required>
                     </div>
+                       <div class="mb-3">
+                        <label for="numero" class="form-label">Numero</label>
+                        <input type="tel" class="form-control" id="numero" name="numero" placeholder="Votre numero de telephone" required>
+                    </div>
                 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -93,17 +97,16 @@
 </section>
 @endsection
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Vérifie si un message Laravel est présent
-        const form = document.getElementById("form-devis");
-        const hasError = document.querySelector(".invalid-feedback");
-        const hasSuccess = document.querySelector(".alert-success");
-    
-        if ((hasError && hasError.innerText.trim() !== "") || hasSuccess) {
-            if (form) {
-                window.location.hash = "form-devis";
-            }
+document.addEventListener("DOMContentLoaded", function () {
+    // Vérifie si un message Laravel est présent
+    const form = document.getElementById("form-devis");
+    const hasError = document.querySelector(".alert-danger"); // <- changé ici
+    const hasSuccess = document.querySelector(".alert-success");
+
+    if ((hasError && hasError.innerText.trim() !== "") || hasSuccess) {
+        if (form) {
+            window.location.hash = "form-devis";
         }
-    });
-    </script>
-    
+    }
+});
+</script>

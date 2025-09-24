@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NotificationDevis;
 use Illuminate\Http\Request;
 use App\Models\Devis;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Mail\Mailable;
+use Propaganistas\LaravelPhone\PhoneNumber;
 //
 class DevisController extends Controller
 {
@@ -38,15 +42,20 @@ class DevisController extends Controller
         //
         $request->validate([
             'email' => 'required|email:rfc,dns|max:255',
+            'numero' => 'required|phone:AUTO',
 
         ],[
             'email.email' => 'Veuillez saisir une adresse e-mail valide.',
+                'numero.phone' => 'Veuillez saisir un numéro de téléphone valide avec indicatif (+XXX).',
         ]);
-        Devis::create([
+        $devis=Devis::create([
             'nom' => $request->nom,
             'email' => $request->email,
+            'numero' => $request->numero,
             'message' => $request->message
         ]);
+        //
+        Mail::to('yelmaniyel@gmail.com')->send(new NotificationDevis($devis));
         return redirect()->back()->with('devis_success', 'Merci de nous avoir contacter,nous vous repondons au plus vite');
 
     }
