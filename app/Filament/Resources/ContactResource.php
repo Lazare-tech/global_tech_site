@@ -19,8 +19,9 @@ use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\ImageEntry;
 use Illuminate\Support\Facades\Mail;
-
+use App\Mail\ReponseMail;
 //
+use Filament\Tables\Actions\StaticAction; // en haut du fichier, si nécessaire
 class ContactResource extends Resource
 {
     protected static ?string $model = Contact::class;
@@ -40,47 +41,57 @@ class ContactResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                //
-                TextColumn::make('id'),
-                TextColumn::make('nom'),
-                TextColumn::make('objet'),
-                TextColumn::make('numero_telephone'),
-                TextColumn::make('email'),
-                TextColumn::make('message')->limit(50),
-                  
-               
-            ])
-            ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\ViewAction::make(),  
+   public static function table(Table $table): Table
+{
+    return $table
+        ->columns([
+            TextColumn::make('id'),
+            TextColumn::make('nom'),
+            TextColumn::make('objet'),
+            TextColumn::make('numero_telephone'),
+            TextColumn::make('email'),
+            TextColumn::make('message')->limit(50),
+        ])
+        ->filters([
+            //
+        ])
+        ->actions([
+            Tables\Actions\ViewAction::make(),
+            Tables\Actions\EditAction::make(),
+            Tables\Actions\DeleteAction::make(),
 
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(), 
-                   Tables\Actions\Action::make('Répondre')
+            Tables\Actions\Action::make('Répondre')
+                ->icon('heroicon-o-mail')
+                ->color('success')
+                ->label('Répondre au message')
                 ->form([
                     Forms\Components\Textarea::make('réponse')
-                    ->label('Votre réponse')
-                    ->required()
-                ])
-                 ->action(function (array $data, $record): void {
-           Mail::raw($data['réponse'], function ($message) use ($record) {
-            $message->to($record->email)
-                    ->subject('Réponse à votre message');
-        });
-    })
-    ->color('success')
+                        ->label('Votre réponse')
+                        ->required(),
 
-            ])
-            ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
-            ]);
-    }
+                    Forms\Components\FileUpload::make('fichiers')
+                        ->label('Joindre des fichiers')
+                        ->multiple()
+                        ->directory('reponses')
+                        ->preserveFilenames()
+                        ->maxSize(9096)
+                        ->helperText('Formats acceptés : PDF, JPG, PNG, DOCX'),
+                ])
+                ->action(function (array $data, $record): void {
+                    $fichiers = $data['fichiers'] ?? [];
+                    Mail::to($record->email)->send(
+                        new \App\Mail\ReponseMail($data['réponse'], $fichiers)
+                    );
+                })
+                ->modalHeading('Envoyer une réponse')
+                        ->modalButton('Envoyer le mail') // ✅ c’est la bonne méthode pour Filament 2
+                ->successNotificationTitle('Réponse envoyée avec succès ✅'),
+        ]) // ✅ fermeture correcte du bloc actions()
+        ->bulkActions([
+            Tables\Actions\DeleteBulkAction::make(),
+        ]); // ✅ fermeture du bloc bulkActions()
+} // ✅ fermeture de la fonction table()
+
     public static function getRelations(): array
     {
         return [

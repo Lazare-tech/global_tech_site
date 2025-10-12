@@ -77,7 +77,7 @@
                     <label class="form-label" for="telephone">
                       <i class="fas fa-phone-alt"></i> Téléphone <span class="text-danger">*</span>
                     </label>
-                    <input id="telephone" type="tel" name="numero_telephone" class="form-control" required>
+                    <input id="telephone" type="tel" name="numero_telephone" class="form-control" placeholder="ex:+226numéro" required>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="objet">
