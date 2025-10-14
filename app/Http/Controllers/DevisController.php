@@ -55,7 +55,7 @@ class DevisController extends Controller
             'message' => $request->message
         ]);
         //
-        Mail::to('yelmaniyel@gmail.com')->send(new NotificationDevis($devis));
+        Mail::to('globaltechnology.bf@gmail.com')->send(new NotificationDevis($devis));
         return redirect()->back()->with('devis_success', 'Merci de nous avoir contacter,nous vous repondons au plus vite');
 
     }

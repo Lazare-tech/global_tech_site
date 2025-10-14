@@ -56,7 +56,7 @@ class ContactController extends Controller
             'email' => $request->email,
             'message' => $request->message,
         ]);
-        Mail::to('yelmaniyel@gmail.com')->send(new ContactNotification($data));
+        Mail::to('globaltechnology.bf@gmail.com')->send(new ContactNotification($data));
         return redirect()->back()->with('contact_success', 'Merci de nous avoir contacter !');
 
     }

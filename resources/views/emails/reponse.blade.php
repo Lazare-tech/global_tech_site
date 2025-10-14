@@ -53,7 +53,7 @@ body {
     <div class="email-container">
         <!-- Header -->
         <div class="header">
-            <img src="{{ asset('assets/images/logo_noire.png') }}" alt="Logo Global Tech">
+            <img src="{{ asset('assets/images/logo_noire.png') }}" alt="Global Tech">
             <h1>Global Tech</h1>
         </div>
 

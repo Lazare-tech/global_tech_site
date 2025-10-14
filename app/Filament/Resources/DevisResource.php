@@ -81,10 +81,21 @@ class DevisResource extends Resource
                 // 1. Passez le corps de la réponse et les chemins des fichiers à la Mailable
                 new ReponseDevis($data['reponse'], $fichiers)
             );
+              $record->status = 'replied';
+                    $record->save();
         })
-        ->modalHeading('Envoyer une réponse au devis')
+        ->modalHeading(fn ($record) =>'Envoyer une réponse au devis de ' .$record->nom)
+        
         ->modalButton('Envoyer le mail')
         ->successNotificationTitle('Réponse envoyée avec succès ✅')
+                                ->visible(fn ($record) => $record->status !== 'replied'),
+
+         Tables\Actions\Action::make('Déjà répondu')
+        ->label('Déjà répondu')
+        ->color('gray')
+        ->icon('heroicon-o-check')
+        ->disabled()
+        ->visible(fn ($record) => $record->status === 'replied'),
              ])
             
             ->bulkActions([

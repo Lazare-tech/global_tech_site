@@ -51,6 +51,7 @@ class ContactResource extends Resource
             TextColumn::make('numero_telephone'),
             TextColumn::make('email'),
             TextColumn::make('message')->limit(50),
+            TextColumn::make('created_at')->dateTime('d/m/Y H:i')->label('Envoye le'),
         ])
         ->filters([
             //
@@ -82,10 +83,22 @@ class ContactResource extends Resource
                     Mail::to($record->email)->send(
                         new \App\Mail\ReponseMail($data['réponse'], $fichiers)
                     );
+                     $record->status = 'replied';
+                    $record->save();
                 })
-                ->modalHeading('Envoyer une réponse')
+                ->after(fn ($record) => $record->refresh())
+                
+                ->modalHeading(fn ($record) =>'Envoyer une réponse à ' .$record->nom)
                         ->modalButton('Envoyer le mail') // ✅ c’est la bonne méthode pour Filament 2
-                ->successNotificationTitle('Réponse envoyée avec succès ✅'),
+                ->successNotificationTitle('Réponse envoyée avec succès ✅')
+                        ->visible(fn ($record) => $record->status !== 'replied'),
+                           Tables\Actions\Action::make('Déjà répondu')
+        ->label('Déjà répondu')
+        ->color('gray')
+        ->icon('heroicon-o-check')
+        ->disabled()
+        ->visible(fn ($record) => $record->status === 'replied'),
+
         ]) // ✅ fermeture correcte du bloc actions()
         ->bulkActions([
             Tables\Actions\DeleteBulkAction::make(),

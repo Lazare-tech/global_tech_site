@@ -42,7 +42,10 @@ class NewsletterResource extends Resource
                 //
                 TextColumn::make('id')->sortable(),
                 TextColumn::make('email')
-                ->label('Email')
+                ->label('Email'),
+                TextColumn::make('created_at')
+                ->dateTime('d/m/Y H:i')
+                ->label('Inscrit le'),
             ])
             ->filters([
                 //

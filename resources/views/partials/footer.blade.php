@@ -13,21 +13,7 @@
         <a href="{{ $facebook_link }}" class="me-4 text-reset" target="_blank">
           <i class="fab fa-facebook-f fa-2x"></i>
         </a>
-        {{-- <a href="" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a> --}}
+       
       </div>
       <!-- Right -->
     </section>

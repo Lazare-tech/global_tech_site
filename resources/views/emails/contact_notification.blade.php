@@ -17,7 +17,6 @@
                     <tr>
                         <td style="font-size:16px;color:#333333;line-height:1.6;">
                             <p><strong style="color:#0d6efd;">Nom :</strong> {{ $data['nom'] }}</p>
-                            <p><strong style="color:#0d6efd;">Email :</strong> {{ $data['email'] }}</p>
                             <p><strong style="color:#0d6efd;">Téléphone :</strong> {{ $data['numero_telephone'] }}</p>
                             <p style="margin-top:20px;"><strong style="color:#0d6efd;">Message :</strong></p>
                             <div style="background:#f1f1f1;padding:15px;border-radius:5px;">

@@ -3,7 +3,7 @@
   <div class="container">
 
       <!-- Logo + titre -->
-      <a class="navbar-brand d-flex align-items-center" href="#">
+      <a class="navbar-brand d-flex align-items-center" href="{{ $facebook_link }}">
           <img src="{{ asset('assets/images/logo_noire.png') }}" alt="logo" style="width:50px; height:auto;">
           
           <div class="d-flex flex-column ms-2 text-global">
