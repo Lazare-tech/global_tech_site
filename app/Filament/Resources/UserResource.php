@@ -65,7 +65,9 @@ class UserResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+    ->visible(fn ($record) => ! $record->hasRole('super_admin')),
+
                 Tables\Actions\DeleteAction::make()
                 ->visible(fn () => auth()->user()?->is_superuser ?? false),
             ])
@@ -91,15 +93,35 @@ class UserResource extends Resource
     }    
     //
     
-    // public static function canEdit(Model $record): bool
-    // {
-    //     return auth()->user()?->is_superuser ?? false;
-    // }
+ 
 
-    // public static function canDelete(Model $record): bool
-    // {
-    //     return auth()->user()?->is_superuser ?? false;
-    // }
+public static function canEdit(Model $record): bool
+{
+    $authUser = auth()->user();
+
+    // Empêche un superuser de modifier un autre superuser
+    if ($record->is_superuser && $record->id !== $authUser->id) {
+        return false;
+    }
+
+    // Sinon, autorise la modification
+    return true;
+}
+
+public static function canDelete(Model $record): bool
+{
+    $authUser = auth()->user();
+
+    // Empêche la suppression d’un autre superuser
+    if ($record->is_superuser && $record->id !== $authUser->id) {
+        return false;
+    }
+
+    // Sinon, autorise la suppression
+    return true;
+}
+
+
     public static function canCreate(): bool
     {
         return auth()->user()?->is_superuser ?? false;
